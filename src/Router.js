@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
-import Cart from './pages/Cart/Cart';
-import Details from './pages/Details/Details';
-import ItemLists from './pages/ItemLists/ItemLists';
-import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
-import Signup from './pages/Signup/Sigup';
+import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
+import ItemList from './pages/ItemList/ItemList';
+import Details from './pages/Details/Details';
+import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
 
 export default function Router() {
@@ -17,7 +17,7 @@ export default function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/item-lists" element={<ItemLists />} />
+        <Route path="/item-list" element={<ItemList />} />
         <Route path="/details" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
