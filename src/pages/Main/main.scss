@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.main {
+  .eventImages {
+    @include widthHeightSort(100vw, 318px);
+    background-color: green;
+  }
+  .productsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 20px;
+  }
+}

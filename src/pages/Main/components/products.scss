@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.products {
+  @include widthHeightSort(1082px, 450px);
+  .productsName {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .productLists {
+    @include widthHeightSort(1050px, 450px);
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+  }
+}
