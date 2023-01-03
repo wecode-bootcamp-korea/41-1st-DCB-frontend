@@ -1,14 +1,100 @@
 .nav {
-  .logo {
-    color: rgb(143, 116, 87);
-    font-family: 'Courier new';
-    font-size: 50px;
-    font-weight: 700;
+  .navTop {
+    .navFirst {
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      margin: 20px 20px 0px 0px;
+
+      &Style {
+        color: rgb(143, 116, 87);
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+
+    .navSecond {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0px 30px;
+
+      .navLogo {
+        color: rgb(143, 116, 87);
+        font-family: 'Courier new';
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+      .navSearch {
+        display: flex;
+        justify-content: center;
+        width: 410px;
+        height: 50px;
+        border: 1px solid rgb(143, 116, 87);
+        border-radius: 3px;
+        text-align: center;
+
+        .navInput {
+          width: 85%;
+          border: none;
+        }
+
+        .navButton {
+          border: 0;
+          outline: 0;
+          background-color: white;
+
+          .navInputIcon {
+            width: 30px;
+            height: 30px;
+            color: rgb(143, 116, 87);
+          }
+        }
+      }
+
+      .navCart {
+        width: 30px;
+        height: 35px;
+        color: rgb(143, 116, 87);
+      }
+    }
   }
 
-  .divbox {
-    height: 30px;
-    border: 1px solid rgb(143, 116, 87);
-    border-radius: 3px;
+  .navThird {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(143, 116, 87);
+
+    &Left {
+      display: flex;
+      align-items: center;
+
+      .navThirdBar {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+      .navThirdCat {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    &Mid {
+      font-size: 20px;
+      font-weight: 600;
+
+      .navThirdList {
+        margin-right: 40px;
+        color: rgb(143, 116, 87);
+        text-decoration: none;
+      }
+      .navThirdLast {
+        color: rgb(143, 116, 87);
+        text-decoration: none;
+      }
+    }
   }
 }
