@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "images": "/images/orora.png",
+    "brand": "도깨비 불",
+    "itemName": "오로라 불꽃",
+    "shortDescription": "너무 예쁘죠? 해보고 싶죠?",
+    "price": 100,
+    "option": null
+  }
+]
