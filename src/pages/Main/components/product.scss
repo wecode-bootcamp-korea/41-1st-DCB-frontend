@@ -1,0 +1,28 @@
+@import '../../../styles/variables';
+
+.product {
+  @include widthHeightSort(250px, 250px);
+
+  .productImage {
+    @include widthHeightSort(250px, 250px);
+    position: relative;
+    border-radius: 5px;
+
+    .cartImage {
+      @include widthHeightSort(28px, 28px);
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 50%;
+      background-color: gray;
+    }
+  }
+
+  .productName {
+    font-size: 18px;
+  }
+  .productPrice {
+    font-size: 18px;
+    font-weight: bolder;
+  }
+}
