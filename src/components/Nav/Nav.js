@@ -1,4 +1,8 @@
 import React from 'react';
+import { CiSearch } from 'react-icons/ci';
+import { BsCart3 } from 'react-icons/bs';
+import { HiOutlineBars3 } from 'react-icons/hi2';
+import './Nav.scss';
 
 const Nav = () => {
   return (
@@ -9,12 +13,13 @@ const Nav = () => {
         <span>고객센터</span>
       </div>
       <div>
-        <p>SIMPLE</p>
-        <div>box</div>
-        <div>장바구니</div>
+        <p className="logo">SIMPLE</p>
+        <div className="divbox">box</div>
+        <CiSearch />
+        <BsCart3 />
       </div>
       <div>
-        <div>이미지</div>
+        <HiOutlineBars3 />
         <span>추천</span>
         <span>신제품</span>
       </div>
