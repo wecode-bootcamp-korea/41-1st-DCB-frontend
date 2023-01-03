@@ -19,13 +19,13 @@ const Main = () => {
     <div className="main">
       <div className="eventImages" style={{ transform: `translate(${vw}vw)` }}>
         <div className="imageContainer">
-          <img src="./images/1.jpg" />
+          <img src="./images/10.jpg" />
         </div>
         <div className="imageContainer">
-          <img src="./images/2.jpg" />
+          <img src="./images/12.jpg" />
         </div>
         <div className="imageContainer">
-          <img src="./images/3.jpg" />
+          <img src="./images/14.jpg" />
         </div>
       </div>
       <div className="productsList">
