@@ -11,7 +11,7 @@ const ItemLists = () => {
   }, []);
   return (
     <div className="itemList">
-      <div className="adBanner" />
+      <img src="./images/banner_1.jpg" className="adBanner" />
       <div className="titleArea">제목제목</div>
       <div className="sort">
         <p>총 {mock.length}개</p>
