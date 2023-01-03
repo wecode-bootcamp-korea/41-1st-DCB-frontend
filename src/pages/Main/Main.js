@@ -19,13 +19,13 @@ const Main = () => {
     <div className="main">
       <div className="eventImages" style={{ transform: `translate(${vw}vw)` }}>
         <div className="imageContainer">
-          <img src="./images/10.jpg" />
+          <img src="./images/10.jpg" alt="하늘" />
         </div>
         <div className="imageContainer">
-          <img src="./images/12.jpg" />
+          <img src="./images/12.jpg" alt="바다" />
         </div>
         <div className="imageContainer">
-          <img src="./images/14.jpg" />
+          <img src="./images/14.jpg" alt="하늘과 바다" />
         </div>
       </div>
       <div className="productsList">
@@ -33,7 +33,7 @@ const Main = () => {
         <div className="adBanner">
           {/* <img src="./images/banner.png" className="adBanner" /> */}
           <span className="bannerComment">Do you wanna go camping?</span>
-          <img className="bannerImg" src="./images/선물.png" />
+          <img className="bannerImg" src="./images/선물.png" alt="선물" />
         </div>
         <Products productName="지갑은 가볍게 양손은 무겁게" />
       </div>
