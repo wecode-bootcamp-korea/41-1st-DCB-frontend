@@ -9,12 +9,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footerInner">
         <div className="footerFirst">
-          <Link
-            className="logo"
-            rel="stylesheet"
-            type="text/html"
-            href="/signup"
-          >
+          <Link className="logo" to="/signup">
             로그인
           </Link>
           <p>고객센터</p>
