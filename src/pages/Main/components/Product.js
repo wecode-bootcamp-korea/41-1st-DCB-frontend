@@ -2,6 +2,7 @@ import { BsCart3 } from 'react-icons/bs';
 import './product.scss';
 
 export const Product = ({ name, src, price }) => {
+  const handleClickCart = () => {};
   return (
     <article className="product">
       <div
@@ -13,7 +14,7 @@ export const Product = ({ name, src, price }) => {
           backgroundSize: 'cover',
         }}
       >
-        <div className="cartImage">
+        <div className="cartImage" onClick={handleClickCart}>
           <BsCart3 className="cart" size="18px" />
         </div>
       </div>

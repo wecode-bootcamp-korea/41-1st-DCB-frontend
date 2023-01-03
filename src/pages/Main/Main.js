@@ -31,7 +31,9 @@ const Main = () => {
       <div className="productsList">
         <Products productName="따끈따끈한 신상" />
         <div className="adBanner">
-          <img src="./images/banner.png" className="adBanner" />
+          {/* <img src="./images/banner.png" className="adBanner" /> */}
+          <span className="bannerComment">Do you wanna go camping?</span>
+          <img className="bannerImg" src="./images/선물.png" />
         </div>
         <Products productName="지갑은 가볍게 양손은 무겁게" />
       </div>
