@@ -10,11 +10,15 @@
 
     .cartImage {
       @include widthHeightSort(28px, 28px);
+      display: flex;
       position: absolute;
       right: 10px;
       bottom: 10px;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
-      background-color: gray;
+      background-color: lightgray;
+      color: white;
     }
   }
 

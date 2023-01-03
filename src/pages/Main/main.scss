@@ -24,7 +24,6 @@
 
     .adBanner {
       @include widthHeightSort(1050px, 140px);
-      background-color: gray;
       border-radius: 10px;
     }
   }

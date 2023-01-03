@@ -1,3 +1,4 @@
+import { BsCart3 } from 'react-icons/bs';
 import './product.scss';
 
 export const Product = ({ name, src, price }) => {
@@ -12,7 +13,9 @@ export const Product = ({ name, src, price }) => {
           backgroundSize: 'cover',
         }}
       >
-        <div className="cartImage" />
+        <div className="cartImage">
+          <BsCart3 className="cart" size="18px" />
+        </div>
       </div>
       <p className="productName">{name}</p>
       <p className="productPrice">{price}</p>
