@@ -5,6 +5,7 @@
 
   .eventImages {
     @include widthHeightSort(300vw, 318px);
+    transition: transform 0.2s;
 
     .imageContainer {
       @include widthHeightSort(100vw, 318px);
