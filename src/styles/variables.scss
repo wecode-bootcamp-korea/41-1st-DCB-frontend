@@ -6,6 +6,23 @@
 @mixin flexSort($direction, $justify, $alignItems) {
   display: flex;
   flex-direction: $direction;
-  justify-content: $justify;
   align-items: $alignItems;
+  justify-content: $justify;
 }
+
+@mixin positionSort($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin borderSort($border, $borderRadius) {
+  border: $border;
+  border-radius: $borderRadius;
+}
+
+/*color*/
+$color-gray: #aaa8a8;
+$color-main: #rgb(143, 116, 87);
