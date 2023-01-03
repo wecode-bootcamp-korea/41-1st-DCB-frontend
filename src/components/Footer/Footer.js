@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import { FaComment } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer = () => {
@@ -32,7 +33,7 @@ const Footer = () => {
           </div>
           <div className="footerMidRight">
             <div>
-              <p>이미지</p>
+              <FaComment className="imgSize" />
               <p className="fontwhite">카카오톡 채널 'DCB컴퍼니'</p>
             </div>
             <div>

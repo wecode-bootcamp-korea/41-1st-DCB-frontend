@@ -17,7 +17,10 @@
   }
 
   .hr {
+    height: 1px;
     margin: 5px 0px 20px 0px;
+    border: 0px;
+    background-color: #999999;
   }
 
   /* ======== footer middle ======== */
@@ -28,7 +31,7 @@
 
     .footerMidLeft {
       .fontSize15 {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         font-size: 15px;
       }
 
@@ -43,6 +46,11 @@
     }
 
     .footerMidRight {
+      .imgSize {
+        width: 30px;
+        height: 30px;
+        color: white;
+      }
       .fontwhite {
         color: white;
         font-weight: 700;
@@ -70,7 +78,7 @@
   .footerBtm {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 30px;
 
     .footerBtmLeft {
       display: flex;
