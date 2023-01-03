@@ -1,10 +1,21 @@
 @import '../../styles/variables';
 
 .main {
+  overflow: hidden;
+
   .eventImages {
-    @include widthHeightSort(100vw, 318px);
-    background-color: green;
+    @include widthHeightSort(300vw, 318px);
+
+    .imageContainer {
+      @include widthHeightSort(100vw, 318px);
+      float: left;
+
+      & > img {
+        @include widthHeightSort(100vw, 318px);
+      }
+    }
   }
+
   .productsList {
     display: flex;
     flex-direction: column;

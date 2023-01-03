@@ -1,13 +1,12 @@
 @import '../../../styles/variables';
 
 .product {
-  @include widthHeightSort(307px, 307px);
+  @include widthHeightSort(250px, 250px);
 
   .productImage {
-    @include widthHeightSort(307px, 307px);
+    @include widthHeightSort(250px, 250px);
     position: relative;
     border-radius: 5px;
-    background-color: gray;
 
     .cartImage {
       @include widthHeightSort(28px, 28px);
@@ -20,10 +19,10 @@
   }
 
   .productName {
-    font-size: 13px;
+    font-size: 18px;
   }
   .productPrice {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bolder;
   }
 }
