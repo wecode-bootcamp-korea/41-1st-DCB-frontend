@@ -18,8 +18,7 @@
   }
 
   .productsList {
-    display: flex;
-    flex-direction: column;
+    @include flexSort(column, null, null);
     gap: 15px;
     margin-left: 46px;
 
@@ -31,9 +30,7 @@
       background-color: rgb(143, 116, 87);
 
       .bannerComment {
-        position: absolute;
-        top: 80px;
-        left: 250px;
+        @include positionSort(80px, null, null, 250px);
         color: #553830;
         font-family: 'Times New Roman', Times, serif;
         font-size: 40px;
@@ -42,9 +39,7 @@
 
       .bannerImg {
         @include widthHeightSort(200px, 200px);
-        position: absolute;
-        top: 20px;
-        left: 780px;
+        @include positionSort(20px, null, null, 780px);
       }
     }
   }

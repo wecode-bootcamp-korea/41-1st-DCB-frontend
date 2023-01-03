@@ -10,14 +10,11 @@
 
     .cartImage {
       @include widthHeightSort(28px, 28px);
-      display: flex;
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      align-items: center;
-      justify-content: center;
+      @include flexSort(null, center, center);
+      @include positionSort(null, 10px, 10px, null);
       border-radius: 50%;
-      background-color: lightgray;
+      opacity: 0.8;
+      background-color: gray;
       color: white;
     }
   }
