@@ -18,6 +18,7 @@ const Main = () => {
       </div>
       <div className="productsList">
         <Products productName="따끈따끈한 신상" />
+        <div className="adBanner"></div>
         <Products productName="지갑은 가볍게 양손은 무겁게" />
       </div>
     </div>

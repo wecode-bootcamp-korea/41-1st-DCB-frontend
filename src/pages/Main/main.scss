@@ -20,6 +20,12 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-left: 20px;
+    margin-left: 46px;
+
+    .adBanner {
+      @include widthHeightSort(1050px, 140px);
+      background-color: gray;
+      border-radius: 10px;
+    }
   }
 }
