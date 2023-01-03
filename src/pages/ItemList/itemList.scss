@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.itemList {
+  @include widthHeightSort(100vw, 1698px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .adBanner {
+    @include widthHeightSort(1018px, 193px);
+    background-color: gray;
+    border-radius: 15px;
+  }
+
+  .titleArea {
+    @include widthHeightSort(1018px, 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bolder;
+  }
+
+  .sort {
+    @include widthHeightSort(1018px, 40px);
+    display: flex;
+    justify-content: space-between;
+
+    .selectList {
+      width: 100px;
+      text-align: center;
+    }
+  }
+}
