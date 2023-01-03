@@ -1,10 +1,8 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 
 .itemList {
   @include widthHeightSort(100vw, 1698px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexSort(column, null, center);
   .adBanner {
     @include widthHeightSort(1018px, 193px);
     border-radius: 15px;
@@ -12,17 +10,14 @@
 
   .titleArea {
     @include widthHeightSort(1018px, 140px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexSort(null, center, center);
     font-size: 32px;
     font-weight: bolder;
   }
 
   .sort {
     @include widthHeightSort(1018px, 40px);
-    display: flex;
-    justify-content: space-between;
+    @include flexSort(null, space-between, null);
 
     .selectList {
       width: 100px;
