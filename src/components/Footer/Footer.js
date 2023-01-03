@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { FaComment } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const Footer = () => {
@@ -8,7 +9,14 @@ const Footer = () => {
     <div className="footer">
       <div className="footerInner">
         <div className="footerFirst">
-          <p>로그인</p>
+          <Link
+            className="logo"
+            rel="stylesheet"
+            type="text/html"
+            href="/signup"
+          >
+            로그인
+          </Link>
           <p>고객센터</p>
           <p>브랜드 스토리</p>
           <p>블로그</p>
