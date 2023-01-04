@@ -8,12 +8,9 @@ export const Product = ({ name, thumbnail, price, descriptions }) => {
         className="productImage"
         style={{
           backgroundImage: `url(${thumbnail})`,
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
         }}
       >
-        <div className="cartImage">
+        <div className="cartIcon">
           <BsCart3 className="cart" size="25px" />
         </div>
       </div>

@@ -7,8 +7,11 @@
     @include widthHeightSort(328px, 328px);
     position: relative;
     border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-    .cartImage {
+    .cartIcon {
       @include widthHeightSort(50px, 50px);
       @include flexSort(null, center, center);
       @include positionSort(null, 10px, 10px, null);
@@ -22,10 +25,12 @@
   .productName {
     font-size: 18px;
   }
+
   .productPrice {
     font-size: 18px;
     font-weight: bolder;
   }
+
   .productDesc {
     font-size: 15px;
   }
