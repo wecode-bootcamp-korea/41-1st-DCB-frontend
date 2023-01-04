@@ -55,11 +55,11 @@
   },
   {
     "id": 7,
-    "name": "도톰한 물티슈",
+    "name": "모이스트 핸드 크림",
     "thumbnail": "./images/8.jpeg",
-    "price": "8000원",
+    "price": "4000원",
     "item_catgory_id": "",
-    "created_at": "2022.11.11",
-    "updated_at": "2022.11.13"
+    "created_at": "2022.12.01",
+    "updated_at": "2022.12.02"
   }
 ]
