@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  justify-content: center;
+  padding: 100px 0px;
 
   input::placeholder {
     color: #dddddd;
