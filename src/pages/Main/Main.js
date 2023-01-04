@@ -4,14 +4,14 @@ import { EventImages } from './components/EventImages';
 import './main.scss';
 
 const Main = () => {
-  const [vw, setVw] = useState(0);
+  const [vw, setVw] = useState(100);
   useEffect(() => {
     const timer = setInterval(() => {
-      if (vw <= 0 && vw > -200) {
+      if (vw <= 100 && vw > -100) {
         setVw(prev => prev - 100);
       }
-      if (vw <= -200) {
-        setVw(0);
+      if (vw <= -100) {
+        setVw(100);
       }
     }, 2000);
     return () => clearInterval(timer);
