@@ -15,10 +15,14 @@ export const Products = ({ productName }) => {
   }, []);
 
   const handleClickLeft = () => {
-    setPx(prev => prev + 260);
+    if (px <= -265) {
+      setPx(prev => prev + 265);
+    }
   };
   const handleClickRight = () => {
-    setPx(prev => prev - 260);
+    if (px >= -265) {
+      setPx(prev => prev - 265);
+    }
   };
   return (
     <div className="products">

@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 
 .products {
-  @include widthHeightSort(1075px, 450px);
+  @include widthHeightSort(1080px, 450px);
   position: relative;
 
   .productsName {
@@ -9,13 +9,14 @@
     font-weight: bolder;
   }
   .carouselContainer {
-    @include widthHeightSort(1075px, 450px);
+    @include widthHeightSort(1080px, 450px);
     overflow: hidden;
 
     .productLists {
-      @include widthHeightSort(1050px, 450px);
+      @include widthHeightSort(1080px, 450px);
       display: flex;
       gap: 20px;
+      transition: transform 1s;
     }
   }
 
@@ -24,13 +25,14 @@
     z-index: 1;
     border-radius: 50%;
     background-color: white;
+    box-shadow: 2px 2px 2px 2px lightgray;
 
     &:nth-child(2) {
       @include positionSort(200px, null, null, -30px);
     }
 
     &:nth-child(3) {
-      @include positionSort(200px, -15px, null, null);
+      @include positionSort(200px, -30px, null, null);
     }
   }
 }
