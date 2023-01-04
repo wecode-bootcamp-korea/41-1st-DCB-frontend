@@ -22,7 +22,7 @@ const Login = () => {
       </div>
       <button className="btnLogin">로그인</button>
       <button className="btnSignup">회원가입</button>
-      <div className="loginFind">
+      <div className="memberFind">
         <Link to="#" className="colorWhite margin30">
           이메일 찾기
         </Link>
