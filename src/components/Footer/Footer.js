@@ -2,13 +2,14 @@
 import React from 'react';
 import { FaComment } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LINK_LIST } from './FooterData';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="footerInner">
-        <div className="footerFirst">
+      <div className="container">
+        <div className="linkBox">
           <Link className="logo" to="/signup">
             로그인
           </Link>
@@ -18,8 +19,8 @@ const Footer = () => {
           <p>인재채용</p>
         </div>
         <hr className="hr" />
-        <div className="footerMid">
-          <div className="footerMidLeft">
+        <div className="footerInfo">
+          <div className="infoLeft">
             <p className="fontSize15">(주)DCB컴퍼니 사업자정보</p>
             <div className="fontSize14">
               <p>서울특별시 강남구 테헤란로 427 대표자: 송은우</p>
@@ -34,10 +35,10 @@ const Footer = () => {
               <p>제휴문의: help@wecode.com</p>
             </div>
           </div>
-          <div className="footerMidRight">
+          <div className="infoRight">
             <div>
               <FaComment className="imgSize" />
-              <p className="fontwhite">카카오톡 채널 'DCB컴퍼니'</p>
+              <p className="fontWhite">카카오톡 채널 'DCB컴퍼니'</p>
             </div>
             <div>
               <div className="flexStart">
@@ -48,20 +49,27 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footerBtm">
-          <div className="footerBtmLeft">
+        <div className="linkBoxBtm">
+          <div className="linkBoxBtmLeft">
             <span className="borderBar">개인정보처리방침</span>
             <span className="borderBar">이용안내</span>
             <span className="borderBar">사업자정보확인</span>
             <span className="borderBar">이용약관</span>
             <span>이메일무단수집거부</span>
           </div>
-          <div className="footerBtmRight">
+          <div className="linkBoxBtmRight">
             <span>
               ©2018-2022. <b>DCB COMPANY</b> All rights reserved.
             </span>
           </div>
         </div>
+        {/* {LINK_LIST.map(list => {
+          return (
+            <span className="borderBar" key={list}>
+              {list}
+            </span>
+          );
+        })} */}
       </div>
     </div>
   );
