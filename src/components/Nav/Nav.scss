@@ -1,29 +1,33 @@
+@import '../../styles/variables';
+
 .nav {
+  z-index: 1;
   .navTop {
-    .navFirst {
+    .memberLink {
       display: flex;
       justify-content: flex-end;
       gap: 30px;
-      margin: 20px 20px 0px 0px;
+      margin: 20px 160px 0px 0px;
 
       &Style {
-        color: rgb(143, 116, 87);
-        font-weight: 700;
+        color: $color-main;
+        font-size: 14px;
         text-decoration: none;
       }
     }
 
-    .navSecond {
+    .navMain {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin: 0px 30px;
+      margin: 15px 40px 35px;
 
       .navLogo {
-        color: rgb(143, 116, 87);
+        color: $color-main;
         font-family: 'Courier new';
         font-size: 40px;
         font-weight: 700;
+        text-decoration: none;
       }
 
       .navSearch {
@@ -31,7 +35,7 @@
         justify-content: center;
         width: 410px;
         height: 50px;
-        border: 1px solid rgb(143, 116, 87);
+        border: 1px solid rgba(143, 116, 87, 0.302);
         border-radius: 3px;
         text-align: center;
 
@@ -45,10 +49,10 @@
           outline: 0;
           background-color: white;
 
-          .navInputIcon {
+          &Icon {
             width: 30px;
             height: 30px;
-            color: rgb(143, 116, 87);
+            color: $color-main;
           }
         }
       }
@@ -56,7 +60,7 @@
       .navCart {
         width: 30px;
         height: 35px;
-        color: rgb(143, 116, 87);
+        color: $color-main;
       }
     }
   }
@@ -65,7 +69,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: rgb(143, 116, 87);
+    margin: 0px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(143, 116, 87, 0.302);
+    color: $color-main;
 
     &Left {
       display: flex;
@@ -77,23 +84,19 @@
         margin-right: 10px;
       }
       &Cat {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
       }
     }
 
-    &Mid {
+    .pageLink {
       display: flex;
       gap: 50px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
 
       &Li {
-        color: rgb(143, 116, 87);
-        text-decoration: none;
-      }
-      &Last {
-        color: rgb(143, 116, 87);
+        color: $color-main;
         text-decoration: none;
       }
     }

@@ -3,29 +3,30 @@ import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
+import { LINK_LIST, LINKBTM_LIST } from './NavData.js';
 import './Nav.scss';
 
 const Nav = () => {
   return (
     <div className="nav">
       <div className="navTop">
-        <div className="navFirst">
-          <Link to="/signup" className="navFirstStyle">
-            회원가입
-          </Link>
-          <Link to="/login" className="navFirstStyle">
-            로그인
-          </Link>
-          <Link to="#" className="navFirstStyle">
-            고객센터
-          </Link>
+        <div className="memberLink">
+          {LINK_LIST.map(list => {
+            return (
+              <Link className="memberLinkStyle" to={list.to} key={list}>
+                {list.title}
+              </Link>
+            );
+          })}
         </div>
-        <div className="navSecond">
-          <p className="navLogo">SIMPLE</p>
+        <div className="navMain">
+          <Link to="/" className="navLogo">
+            SIMPLE
+          </Link>
           <div className="navSearch">
             <input className="navInput" />
             <button className="navButton">
-              <CiSearch className="navInputIcon" />
+              <CiSearch className="navButtonIcon" />
             </button>
           </div>
           <BsCart3 className="navCart" />
@@ -36,19 +37,14 @@ const Nav = () => {
           <HiOutlineBars3 className="navBtmLeftBar" />
           <span className="navBtmLeftCat">카테고리</span>
         </div>
-        <div className="navBtmMid">
-          <Link to="#" className="navBtmMidLi">
-            추천
-          </Link>
-          <Link to="#" className="navBtmMidLi">
-            신제품
-          </Link>
-          <Link to="#" className="navBtmMidLi">
-            베스트
-          </Link>
-          <Link to="#" className="navBtmMidLast">
-            심플NOW
-          </Link>
+        <div className="pageLink">
+          {LINKBTM_LIST.map(listbtm => {
+            return (
+              <Link className="pageLinkLi" to={listbtm.to} key={listbtm}>
+                {listbtm.title}
+              </Link>
+            );
+          })}
         </div>
         <div className="navThirdRight" />
       </div>
