@@ -1,0 +1,269 @@
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  // padding: 20px;
+  // border: 5px solid black;
+  // background-color: red;
+
+  .sectionContainer {
+    display: flex;
+    max-width: 1050px;
+    // padding: 20px;
+    // border: 3px solid black;
+    // background-color: aqua;
+
+    .contentsContainer {
+      width: 500px;
+      // padding: 0px 20px;
+      // border: 3px solid black;
+      // background-color: blueviolet;
+
+      .contentsCart {
+        // height: 1000px;
+        // padding: 20px;
+        // border: 3px solid black;
+        // background-color: orange;
+
+        .title {
+          padding-top: 20px;
+          text-align: center;
+        }
+
+        .selectContainer {
+          display: flex;
+          align-items: center;
+          padding: 15px 0;
+          border-bottom: 1px solid black;
+
+          .checkAll {
+            width: 1rem;
+            height: 1rem;
+            transition: background 0.2s;
+            border: 1px solid #999;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            appearance: none;
+          }
+
+          .checkAll:checked {
+            border: none;
+            background: $color-main;
+          }
+
+          .selectAll {
+            padding-left: 10px;
+          }
+
+          .selectedDelete {
+            margin-left: 20px;
+            padding-left: 20px;
+            border: 0;
+            border-left: 1px solid #e8e8e8;
+            background-color: transparent;
+            font-size: 16px;
+            cursor: pointer;
+          }
+        }
+
+        .cartItemContainer {
+          // display: none;
+          padding: 22px 0;
+          // border: 3px solid black;
+          // background-color: darkgreen;
+
+          .cartItemWrap {
+            display: flex;
+            align-items: center;
+            // padding: 10px;
+            // border: 3px solid black;
+
+            .check {
+              width: 1rem;
+              height: 1rem;
+              transition: background 0.2s;
+              border: 1px solid #999;
+              border-radius: 50%;
+              background-color: white;
+              cursor: pointer;
+              appearance: none;
+            }
+
+            .check:checked {
+              border: none;
+              background: $color-main;
+            }
+
+            .thumbnail {
+              width: 83px;
+              height: 83px;
+              padding: 10px;
+
+              .thumbnailImg {
+                width: 100%;
+                height: 100%;
+                border-radius: 5%;
+              }
+            }
+
+            .prdboxWrap {
+              display: flex;
+              flex-grow: 1;
+              align-items: center;
+              justify-content: space-between;
+              // padding: 10px;
+              // border: 3px solid black;
+
+              .prdName {
+                // flex-grow: 1;
+              }
+
+              .quantityPriceWrap {
+                display: flex;
+                // flex-grow: 1;
+                align-items: center;
+                justify-content: space-between;
+                width: 210px;
+
+                .quantity {
+                  border: 1px solid #dddddd;
+                  border-radius: 5px;
+                  background-color: white;
+
+                  .controlBtn {
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                  }
+
+                  .amount {
+                    border: none;
+                    background-color: transparent;
+                    text-align: center;
+                  }
+                }
+
+                .priceDelWrap {
+                  display: flex;
+                  // align-items: center;
+                  .price {
+                    margin-right: 10px;
+                  }
+
+                  .deleteBtn {
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .message {
+          display: none;
+          padding: 140px 0;
+          background-color: white;
+          color: #dddddd;
+          text-align: center;
+        }
+      }
+
+      .contentsOrder {
+        height: 1000px;
+        // padding: 20px;
+        // border: 3px solid black;
+        // background-color: green;
+
+        .title {
+          padding-top: 20px;
+          text-align: center;
+        }
+
+        .billingInfo {
+          height: 100px;
+        }
+
+        .shippingInfo {
+          height: 100px;
+        }
+
+        .discountInfo {
+          height: 100px;
+        }
+
+        .paymethod {
+          height: 100px;
+        }
+      }
+    }
+
+    .cartTotal {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 215px;
+      width: 200px;
+      height: fit-content;
+      margin-left: 30px;
+      // padding: 20px;
+      // border: 3px solid black;
+      // background-color: brown;
+
+      .totalSummaryContainer {
+        padding: 20px 10px 30px 10px;
+        // background-color: #fbfafa;
+        background-color: #fbfafa;
+
+        .totalContainer {
+          .sumPriceWrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+          }
+
+          .discountWrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+          }
+
+          .shippingWrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+          }
+        }
+
+        .paymentDueAmount {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 30px;
+          padding-top: 30px;
+          border-top: 1px solid #e5e5e5;
+          font-weight: 600;
+        }
+      }
+
+      .buyButtonWrap {
+        .buyButton {
+          width: 100%;
+          height: 52px;
+          margin-top: 15px;
+          border: 0;
+          border-radius: 5px;
+          background-color: $color-main;
+          color: white;
+          cursor: pointer;
+        }
+
+        .buyButton:disabled {
+          background-color: #dddedd;
+        }
+      }
+    }
+  }
+}
