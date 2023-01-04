@@ -1,9 +1,7 @@
 @import '../../styles/variables';
 
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexSort(column, null, center);
   overflow: hidden;
 
   .eventImages {
