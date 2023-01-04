@@ -2,7 +2,6 @@ import { BsCart3 } from 'react-icons/bs';
 import './product.scss';
 
 export const Product = ({ name, thumbnail, price }) => {
-  const handleClickCart = () => {};
   return (
     <article className="product">
       <div
