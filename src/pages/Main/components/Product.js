@@ -1,20 +1,17 @@
 import { BsCart3 } from 'react-icons/bs';
 import './product.scss';
 
-export const Product = ({ name, src, price }) => {
+export const Product = ({ name, thumbnail, price }) => {
   const handleClickCart = () => {};
   return (
     <article className="product">
       <div
         className="productImage"
         style={{
-          backgroundImage: `url(${src})`,
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
+          backgroundImage: `url(${thumbnail})`,
         }}
       >
-        <div className="cartImage" onClick={handleClickCart}>
+        <div className="cartIcon" onClick={handleClickCart}>
           <BsCart3 className="cart" size="28px" />
         </div>
       </div>

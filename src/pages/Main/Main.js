@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Products } from './components/Products';
+import { EventImages } from './components/EventImages';
 import './main.scss';
 
 const Main = () => {
@@ -19,15 +20,9 @@ const Main = () => {
   return (
     <div className="main">
       <div className="eventImages" style={{ transform: `translate(${vw}vw)` }}>
-        <div className="imageContainer">
-          <img src="./images/10.jpg" alt="하늘" />
-        </div>
-        <div className="imageContainer">
-          <img src="./images/12.jpg" alt="바다" />
-        </div>
-        <div className="imageContainer">
-          <img src="./images/14.jpg" alt="하늘과 바다" />
-        </div>
+        {EVENTIMAGES.map(({ id, src, alt }) => (
+          <EventImages key={id} src={src} alt={alt} />
+        ))}
       </div>
       <div className="productsList">
         <Products productName="따끈따끈한 신상" />
@@ -41,3 +36,9 @@ const Main = () => {
   );
 };
 export default Main;
+
+const EVENTIMAGES = [
+  { id: 1, src: './images/10.jpg', alt: '하늘' },
+  { id: 2, src: './images/12.jpg', alt: '바다' },
+  { id: 3, src: './images/14.jpg', alt: '하늘과 바다' },
+];

@@ -7,8 +7,11 @@
     @include widthHeightSort(250px, 250px);
     position: relative;
     border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-    .cartImage {
+    .cartIcon {
       @include widthHeightSort(48px, 48px);
       @include flexSort(null, center, center);
       @include positionSort(null, 10px, 10px, null);
