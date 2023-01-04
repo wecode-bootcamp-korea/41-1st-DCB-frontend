@@ -9,7 +9,7 @@
     border-radius: 5px;
 
     .cartImage {
-      @include widthHeightSort(44px, 44px);
+      @include widthHeightSort(50px, 50px);
       @include flexSort(null, center, center);
       @include positionSort(null, 10px, 10px, null);
       border-radius: 50%;

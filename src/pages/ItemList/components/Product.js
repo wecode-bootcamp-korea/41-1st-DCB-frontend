@@ -1,13 +1,13 @@
 import { BsCart3 } from 'react-icons/bs';
 import './product.scss';
 
-export const Product = ({ name, src, price, description }) => {
+export const Product = ({ name, thumbnail, price, descriptions }) => {
   return (
     <article className="product">
       <div
         className="productImage"
         style={{
-          backgroundImage: `url(${src})`,
+          backgroundImage: `url(${thumbnail})`,
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -19,7 +19,7 @@ export const Product = ({ name, src, price, description }) => {
       </div>
       <p className="productName">{name}</p>
       <p className="productPrice">{price}</p>
-      <p className="productDesc">{description}</p>
+      <p className="productDesc">{descriptions}</p>
     </article>
   );
 };

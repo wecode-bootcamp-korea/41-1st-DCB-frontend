@@ -3,23 +3,23 @@ import { Product } from './Product';
 import './products.scss';
 
 export const Products = () => {
-  const [mock, setMock] = useState([]);
+  const [items, setItems] = useState([]);
   useEffect(() => {
     fetch('data/selectedItems.json')
       .then(res => res.json())
-      .then(result => setMock(result));
+      .then(result => setItems(result));
   }, []);
 
   return (
     <div className="products">
       <div className="productLists">
-        {mock.map(product => (
+        {items.map(({ id, name, thumbnail, price, descriptions }) => (
           <Product
-            key={product.id}
-            name={product.itemName}
-            src={product.thumbnail}
-            price={product.price}
-            description={product.description}
+            key={id}
+            name={name}
+            thumbnail={thumbnail}
+            price={price}
+            descriptions={descriptions}
           />
         ))}
       </div>

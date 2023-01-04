@@ -3,18 +3,18 @@ import { Products } from './components/Products';
 import './itemList.scss';
 
 const ItemLists = () => {
-  const [mock, setMock] = useState([]);
+  const [items, setItems] = useState([]);
   useEffect(() => {
     fetch('data/selectedItems.json')
       .then(res => res.json())
-      .then(result => setMock(result));
+      .then(result => setItems(result));
   }, []);
   return (
     <div className="itemList">
-      <img src="./images/banner_1.jpg" className="adBanner" />
+      <img src="./images/banner_1.jpg" className="adBanner" alt="광고배너" />
       <div className="titleArea">제목제목</div>
       <div className="sort">
-        <p>총 {mock.length}개</p>
+        <p>총 {items.length}개</p>
         <select className="selectList">
           <option>최신순</option>
           <option>가격 낮은 순</option>
