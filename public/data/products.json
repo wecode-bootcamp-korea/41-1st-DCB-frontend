@@ -52,5 +52,14 @@
     "item_catgory_id": "",
     "created_at": "2022.11.11",
     "updated_at": "2022.11.13"
+  },
+  {
+    "id": 7,
+    "name": "도톰한 물티슈",
+    "thumbnail": "./images/8.jpeg",
+    "price": "8000원",
+    "item_catgory_id": "",
+    "created_at": "2022.11.11",
+    "updated_at": "2022.11.13"
   }
 ]

@@ -14,13 +14,15 @@ export const Products = ({ productName }) => {
       });
   }, []);
 
+  const overFlowValue =
+    productData.length < 5 ? 0 : (productData.length - 5) * 265;
   const handleClickLeft = () => {
-    if (px <= -265) {
+    if (px <= -overFlowValue) {
       setPx(prev => prev + 265);
     }
   };
   const handleClickRight = () => {
-    if (px >= -265) {
+    if (px >= -overFlowValue) {
       setPx(prev => prev - 265);
     }
   };

@@ -13,7 +13,6 @@
     overflow: hidden;
 
     .productLists {
-      @include widthHeightSort(1080px, 450px);
       display: flex;
       gap: 20px;
       transition: transform 1s;
