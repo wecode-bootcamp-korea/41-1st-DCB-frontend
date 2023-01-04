@@ -31,7 +31,7 @@
 
       .bannerComment {
         @include positionSort(80px, null, null, 250px);
-        color: #553830;
+        color: $color-main;
         font-family: 'Times New Roman', Times, serif;
         font-size: 40px;
         font-weight: 900;
