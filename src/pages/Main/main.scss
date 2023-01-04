@@ -5,7 +5,7 @@
 
   .eventImages {
     @include widthHeightSort(300vw, 318px);
-    transition: transform 0.2s;
+    transition: transform 1s;
 
     .imageContainer {
       @include widthHeightSort(100vw, 318px);
@@ -19,8 +19,8 @@
 
   .productsList {
     @include flexSort(column, null, null);
-    gap: 15px;
     margin-left: 46px;
+    gap: 15px;
 
     .adBanner {
       @include widthHeightSort(1050px, 140px);

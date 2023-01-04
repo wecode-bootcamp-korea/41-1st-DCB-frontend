@@ -15,6 +15,7 @@ const Main = () => {
     }, 2000);
     return () => clearInterval(timer);
   }, [vw]);
+
   return (
     <div className="main">
       <div className="eventImages" style={{ transform: `translate(${vw}vw)` }}>
@@ -31,7 +32,6 @@ const Main = () => {
       <div className="productsList">
         <Products productName="따끈따끈한 신상" />
         <div className="adBanner">
-          {/* <img src="./images/banner.png" className="adBanner" /> */}
           <span className="bannerComment">Do you wanna go camping?</span>
           <img className="bannerImg" src="./images/선물.png" alt="선물" />
         </div>

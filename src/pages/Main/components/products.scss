@@ -1,15 +1,36 @@
 @import '../../../styles/variables';
 
 .products {
-  @include widthHeightSort(1082px, 450px);
+  @include widthHeightSort(1075px, 450px);
+  position: relative;
+
   .productsName {
     font-size: 30px;
     font-weight: bolder;
   }
-  .productLists {
-    @include widthHeightSort(1050px, 450px);
-    display: flex;
-    gap: 20px;
+  .carouselContainer {
+    @include widthHeightSort(1075px, 450px);
     overflow: hidden;
+
+    .productLists {
+      @include widthHeightSort(1050px, 450px);
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  .carouselBtn {
+    @include widthHeightSort(48px, 48px);
+    z-index: 1;
+    border-radius: 50%;
+    background-color: white;
+
+    &:nth-child(2) {
+      @include positionSort(200px, null, null, -30px);
+    }
+
+    &:nth-child(3) {
+      @include positionSort(200px, -15px, null, null);
+    }
   }
 }

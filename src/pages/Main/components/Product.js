@@ -15,7 +15,7 @@ export const Product = ({ name, src, price }) => {
         }}
       >
         <div className="cartImage" onClick={handleClickCart}>
-          <BsCart3 className="cart" size="18px" />
+          <BsCart3 className="cart" size="28px" />
         </div>
       </div>
       <p className="productName">{name}</p>
