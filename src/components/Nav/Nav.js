@@ -31,20 +31,23 @@ const Nav = () => {
           <BsCart3 className="navCart" />
         </div>
       </div>
-      <div className="navThird">
-        <div className="navThirdLeft">
-          <HiOutlineBars3 className="navThirdBar" />
-          <span className="navThirdCat">카테고리</span>
+      <div className="navBtm">
+        <div className="navBtmLeft">
+          <HiOutlineBars3 className="navBtmLeftBar" />
+          <span className="navBtmLeftCat">카테고리</span>
         </div>
-        <div className="navThirdMid">
-          <Link to="#" className="navThirdList">
+        <div className="navBtmMid">
+          <Link to="#" className="navBtmMidLi">
             추천
           </Link>
-          <Link to="#" className="navThirdList">
+          <Link to="#" className="navBtmMidLi">
             신제품
           </Link>
-          <Link to="#" className="navThirdLast">
+          <Link to="#" className="navBtmMidLi">
             베스트
+          </Link>
+          <Link to="#" className="navBtmMidLast">
+            심플NOW
           </Link>
         </div>
         <div className="navThirdRight" />

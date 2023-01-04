@@ -61,7 +61,7 @@
     }
   }
 
-  .navThird {
+  .navBtm {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -71,27 +71,28 @@
       display: flex;
       align-items: center;
 
-      .navThirdBar {
+      &Bar {
         width: 30px;
         height: 30px;
         margin-right: 10px;
       }
-      .navThirdCat {
+      &Cat {
         font-size: 20px;
         font-weight: 600;
       }
     }
 
     &Mid {
+      display: flex;
+      gap: 50px;
       font-size: 20px;
       font-weight: 600;
 
-      .navThirdList {
-        margin-right: 40px;
+      &Li {
         color: rgb(143, 116, 87);
         text-decoration: none;
       }
-      .navThirdLast {
+      &Last {
         color: rgb(143, 116, 87);
         text-decoration: none;
       }
