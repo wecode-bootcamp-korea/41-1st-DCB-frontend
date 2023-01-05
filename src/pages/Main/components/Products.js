@@ -6,6 +6,7 @@ import './products.scss';
 export const Products = ({ productName }) => {
   const [productData, setProductData] = useState([]);
   const [px, setPx] = useState(0);
+
   useEffect(() => {
     fetch('data/products.json')
       .then(res => res.json())
@@ -17,16 +18,19 @@ export const Products = ({ productName }) => {
   const overFlowValue =
     productData.length < 5 ? 0 : (productData.length - 5) * 265;
   const CARDWIDTH = 265;
+
   const handleClickLeft = () => {
     if (px <= -overFlowValue) {
       setPx(prev => prev + CARDWIDTH);
     }
   };
+
   const handleClickRight = () => {
     if (px >= -overFlowValue) {
       setPx(prev => prev - CARDWIDTH);
     }
   };
+
   return (
     <div className="products">
       <p className="productsName">{productName}</p>
