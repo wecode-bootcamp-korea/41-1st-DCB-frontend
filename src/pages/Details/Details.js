@@ -47,7 +47,7 @@ const Details = () => {
   const option = productDetails[0].option;
 
   return (
-    <div id="Detail">
+    <div className="detail">
       <div className="contents">
         <div className="DetailAreaPadding">
           <div className="DetailArea">

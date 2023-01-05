@@ -28,7 +28,7 @@ const Option = ({ product }) => {
       <div className="productOptionSelect">
         <div className="productNameOption">
           <span className="selectproductName">
-            {productDetails[0].itemName} -{' '}
+            {productDetails[0].itemName} -
           </span>
           <span className="optionName">{product}</span>
         </div>
