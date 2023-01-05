@@ -9,7 +9,7 @@ const CartItemContainer = () => {
 
   useEffect(() => {
     console.log('useEffect');
-    fetch('data/car.json')
+    fetch('data/cartItems.json')
       .then(res => res.json())
       .then(data => setCartItems(data));
   }, []);
