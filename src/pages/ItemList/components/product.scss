@@ -3,13 +3,17 @@
 .product {
   @include widthHeightSort(328px, 328px);
 
-  .productImage {
-    @include widthHeightSort(328px, 328px);
+  .productCard {
     position: relative;
-    border-radius: 5px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
+    .productImage {
+      @include widthHeightSort(328px, 328px);
+      position: relative;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
 
     .cartIcon {
       @include widthHeightSort(50px, 50px);

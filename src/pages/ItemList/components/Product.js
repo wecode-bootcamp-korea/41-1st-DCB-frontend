@@ -4,12 +4,8 @@ import './product.scss';
 export const Product = ({ name, thumbnail, price, descriptions }) => {
   return (
     <article className="product">
-      <div
-        className="productImage"
-        style={{
-          backgroundImage: `url(${thumbnail})`,
-        }}
-      >
+      <div className="productCard">
+        <img src={thumbnail} alt="product" className="productImage" />
         <div className="cartIcon">
           <BsCart3 className="cart" size="25px" />
         </div>
