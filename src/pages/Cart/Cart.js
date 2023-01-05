@@ -7,10 +7,12 @@ import './Cart.scss';
 
 const Cart = () => {
   return (
-    <div className="container">
-      <div className="sectionContainer">
-        <ContentsContainer />
-        <CartTotal />
+    <div className="cart">
+      <div className="container">
+        <div className="sectionContainer">
+          <ContentsContainer />
+          <CartTotal />
+        </div>
       </div>
     </div>
   );
