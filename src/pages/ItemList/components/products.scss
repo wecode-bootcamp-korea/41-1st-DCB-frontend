@@ -8,7 +8,7 @@
   }
   .productLists {
     @include widthHeightSort(1050px, 450px);
-    display: flex;
+    @include flexSort(null, center, null);
     gap: 20px;
     overflow: hidden;
   }
