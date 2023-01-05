@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UserInput from './component/UserInput';
+import { useNavigate } from 'react-router-dom';
+import { SIGNUP_LIST } from './component/SignupData';
 import './Signup.scss';
 
 const Signup = () => {
+  const [signupInfo, setSignupInfo] = useState({
+    email: '',
+    password: '',
+    passwordCheck: '',
+    name: '',
+    phone: '',
+  });
+
+  const handleInfo = e => {
+    const { name, value } = e.target;
+    setSignupInfo(prev => ({ ...prev, [name]: value }));
+  };
+
+  const isPasswordCorrect = signupInfo.password === signupInfo.passwordCheck;
+
+  const navigate = useNavigate();
+
+  const loginClick = e => {
+    e.preventDefault();
+    fetch('http://152.67.208.118:3000/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: signupInfo.email,
+        password: signupInfo.passwordCheck,
+        name: signupInfo.name,
+        phoneNumber: signupInfo.phone,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'userCreated') {
+          alert('회원가입 되었습니다!');
+          navigate('/login');
+        } else if (result.message === 'Email already exists') {
+          alert('이미 존재하는 이메일입니다.');
+        } else {
+          alert('빈칸을 채워주세요.');
+        }
+        console.log(result);
+      });
+  };
+
   return (
     <form className="signup">
       <div className="container">
@@ -16,30 +61,27 @@ const Signup = () => {
           </div>
         </div>
         <div className="inputTable">
-          <UserInput title="이메일" placeholder="이메일을 입력해주세요" />
-          <div className="inputAdd">
-            로그인 아이디로 사용할 이메일을 입력해 주세요.
-          </div>
-          <UserInput title="비밀번호" placeholder="비밀번호를 입력해주세요" />
-          <div className="inputAdd">
-            (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
-          </div>
-          <UserInput
-            title="비밀번호 확인"
-            placeholder="비밀번호를 한번 더 입력해주세요"
-          />
-          <UserInput title="이름" placeholder="실명으로 기입해주세요" />
-          <UserInput title="휴대전화" placeholder="휴대폰 번호를 입력하세요" />
+          {SIGNUP_LIST.map(({ id, title, placeholder, info, name, type }) => {
+            return (
+              <UserInput
+                key={id}
+                title={title}
+                placeholder={placeholder}
+                info={info}
+                name={name}
+                handleInfo={handleInfo}
+                check={isPasswordCorrect}
+                type={type}
+              />
+            );
+          })}
         </div>
-        <button className="inputButton">가입하기</button>
+        <button className="inputButton" onClick={loginClick}>
+          가입하기
+        </button>
       </div>
     </form>
   );
 };
-export default Signup;
 
-// const INFO_LIST = [
-//   { id: 1, title: '이메일', placeholder: '이메일을 입력해주세요' },
-//   { id: 2, title: '비밀번호', placeholder: '비밀번호를 입력해주세요' },
-//   { id: 3, title: '비밀번호 확인', placeholder: '비밀번호를 입력해주세요' },
-// ];
+export default Signup;
