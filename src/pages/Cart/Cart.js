@@ -1,9 +1,17 @@
 import React from 'react';
 
+import CartTotal from './components/CartTotal/CartTotal';
+import ContentsContainer from './components/ContentsContainer/ContentsContainer';
+
+import './Cart.scss';
+
 const Cart = () => {
   return (
-    <div>
-      <h1>hello!</h1>
+    <div className="container">
+      <div className="sectionContainer">
+        <ContentsContainer />
+        <CartTotal />
+      </div>
     </div>
   );
 };
