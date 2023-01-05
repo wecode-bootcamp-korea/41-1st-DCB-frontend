@@ -2,18 +2,22 @@
 
 .main {
   @include flexSort(column, null, center);
-  overflow: hidden;
 
-  .eventImages {
-    @include widthHeightSort(300vw, 318px);
-    transition: transform 1s;
+  .imageWrap {
+    width: 100vw;
+    overflow: hidden;
 
-    .imageContainer {
-      @include widthHeightSort(100vw, 318px);
-      float: left;
+    .eventImages {
+      @include widthHeightSort(300vw, 318px);
+      display: flex;
+      transition: transform 1s;
 
-      & > img {
+      .imageContainer {
         @include widthHeightSort(100vw, 318px);
+
+        & > img {
+          @include widthHeightSort(100vw, 318px);
+        }
       }
     }
   }

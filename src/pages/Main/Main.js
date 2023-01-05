@@ -4,25 +4,29 @@ import { EventImages } from './components/EventImages';
 import './main.scss';
 
 const Main = () => {
-  const [vw, setVw] = useState(100);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      if (vw <= 100 && vw > -100) {
-        setVw(prev => prev - 100);
-      }
-      if (vw <= -100) {
-        setVw(100);
-      }
+      currentImageIndex >= EVENTIMAGES.length - 1
+        ? setCurrentImageIndex(0)
+        : setCurrentImageIndex(prev => prev + 1);
     }, 2000);
+
     return () => clearInterval(timer);
-  }, [vw]);
+  }, [currentImageIndex]);
 
   return (
     <div className="main">
-      <div className="eventImages" style={{ transform: `translate(${vw}vw)` }}>
-        {EVENTIMAGES.map(({ id, src, alt }) => (
-          <EventImages key={id} src={src} alt={alt} />
-        ))}
+      <div className="imageWrap">
+        <div
+          className="eventImages"
+          style={{ transform: `translateX(${currentImageIndex * -100}vw)` }}
+        >
+          {EVENTIMAGES.map(({ id, src, alt }) => (
+            <EventImages key={id} src={src} alt={alt} />
+          ))}
+        </div>
       </div>
       <div className="productsList">
         <Products productName="따끈따끈한 신상" />
