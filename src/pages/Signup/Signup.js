@@ -4,7 +4,7 @@ import './Signup.scss';
 
 const Signup = () => {
   return (
-    <form className="Signup">
+    <form className="signup">
       <div className="container">
         <div className="title">
           <h2 className="mainTitle">회원가입</h2>
@@ -31,6 +31,7 @@ const Signup = () => {
           <UserInput title="이름" placeholder="실명으로 기입해주세요" />
           <UserInput title="휴대전화" placeholder="휴대폰 번호를 입력하세요" />
         </div>
+        <button className="inputButton">가입하기</button>
       </div>
     </form>
   );

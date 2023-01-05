@@ -1,54 +1,71 @@
 @import '../../styles/variables';
 
-.Signup {
+.signup {
   display: flex;
   justify-content: center;
+  margin: 50px 0px;
 
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 40vw;
-  }
 
-  .title {
-    width: 100%;
-    // height: 100px;
-    border-bottom: 1px solid $color-main;
+    .title {
+      width: 500px;
+      border-bottom: 1px solid $color-main;
 
-    .mainTitle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $color-main;
-      font-size: 35px;
-    }
-
-    .subTitle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .fontBold {
+      .mainTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: $color-main;
-        font-size: 22px;
-        font-weight: 700;
+        font-size: 35px;
       }
-      .fontRight {
-        display: inline;
-        color: $color-main;
 
-        .fontRed {
-          color: rgb(153, 15, 15);
+      .subTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .fontBold {
+          color: $color-main;
+          font-size: 22px;
           font-weight: 700;
+        }
+
+        .fontRight {
+          display: inline;
+          color: $color-main;
+
+          .fontRed {
+            color: rgb(153, 15, 15);
+            font-weight: 700;
+          }
         }
       }
     }
-  }
 
-  .inputTable {
-    // display: flex;
-    margin-top: 20px;
+    .inputTable {
+      width: 500px;
+      margin-top: 20px;
 
-    .inputAdd {
-      color: $color-main;
+      .inputAdd {
+        margin-left: 150px;
+        color: rgba(143, 116, 87, 0.663);
+        font-size: 12px;
+      }
+    }
+    .inputButton {
+      width: 180px;
+      height: 40px;
+      margin-top: 50px;
+      border: 1px solid $color-main;
+      border-radius: 5px;
+      background-color: $color-main;
+      color: white;
+      font-size: 15px;
     }
   }
 }
