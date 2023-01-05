@@ -1,30 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './CartItemWrap.scss';
 
-const CartItemWrap = () => {
+const CartItemWrap = ({ cartItem, checkedItemHandler }) => {
+  const [bChecked, setChecked] = useState(false);
+  // console.log(bChecked);
+
+  const checkHandler = ({ target }) => {
+    setChecked(!bChecked);
+    checkedItemHandler(cartItem.cartsId, target.checked);
+  };
+
+  const price = cartItem.itemsPrice * cartItem.cartsQuantity;
+  const toStrPrice = price => price.toLocaleString();
+
   return (
     <div className="cartItemWrap">
-      <input type="checkbox" className="check" />
+      <input
+        className="check"
+        type="checkbox"
+        checked={bChecked}
+        onChange={e => checkHandler(e)}
+      />
       <div className="thumbnail">
         <a href="">
           <img
             className="thumbnailImg"
-            src="https://www.wiselycompany.com/web/product/tiny/202212/417b79482396985d181c901fe9485504.png"
-            alt="콜라겐"
+            src={cartItem.itemsThumbnail}
+            alt={cartItem.itemsName}
           />
         </a>
       </div>
       <div className="prdboxWrap">
-        <div className="prdName">콜라겐·히알루론산</div>
+        <div className="prdName">{cartItem.itemsName}</div>
         <div className="quantityPriceWrap">
           <div className="quantity">
             <button className="controlBtn">-</button>
-            <input className="amount" type="text" value="5" size="2" />
+            <input
+              className="amount"
+              type="text"
+              value={cartItem.cartsQuantity}
+              size="2"
+            />
             <button className="controlBtn">+</button>
           </div>
           <div className="priceDelWrap">
-            <div className="price">9,790(단가)원</div>
+            <div className="price">{toStrPrice(price)}원</div>
             <button className="deleteBtn">x</button>
           </div>
         </div>

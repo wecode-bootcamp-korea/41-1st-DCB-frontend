@@ -2,7 +2,9 @@ import React from 'react';
 
 import './CartTotal.scss';
 
-const CartTotal = () => {
+const CartTotal = ({ totalPrice }) => {
+  const toStrPrice = price => price.toLocaleString();
+
   return (
     <div className="cartTotal">
       <div className="totalSummaryContainer">
@@ -10,7 +12,7 @@ const CartTotal = () => {
           <div className="sumPriceWrap">
             <div className="title">합계</div>
             <div className="dataWrap">
-              <span className="data">69,810</span>원
+              <span className="data">{toStrPrice(totalPrice)}</span>원
             </div>
           </div>
           <div className="discountWrap">
@@ -30,7 +32,7 @@ const CartTotal = () => {
         <div className="paymentDueAmount">
           <div className="title">결제예정금액</div>
           <div className="dataWrap">
-            <span className="data">72,810</span>원
+            <span className="data">{toStrPrice(totalPrice + 3000)}</span>원
           </div>
         </div>
       </div>

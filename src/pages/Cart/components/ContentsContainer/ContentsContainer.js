@@ -5,10 +5,15 @@ import ContentsOrder from './ContentsOrder/ContentsOrder';
 
 import './ContentsContainer.scss';
 
-const ContentsContainer = () => {
+const ContentsContainer = ({ cartItems, totalPrice, checkedItemHandler }) => {
+  const changeChecked = e => (e.target.checked = '');
   return (
     <div className="contentsContainer">
-      <ContentsCart />
+      <ContentsCart
+        cartItems={cartItems}
+        totalPrice={totalPrice}
+        checkedItemHandler={checkedItemHandler}
+      />
       <ContentsOrder />
     </div>
   );
