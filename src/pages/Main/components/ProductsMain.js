@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Product } from './Product';
+import { ProductMain } from './ProductMain';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import './products.scss';
+import './productsMain.scss';
 
-export const Products = ({ productName }) => {
+export const ProductsMain = ({ productName }) => {
   const [productData, setProductData] = useState([]);
   const [px, setPx] = useState(0);
 
@@ -32,7 +32,7 @@ export const Products = ({ productName }) => {
   };
 
   return (
-    <div className="products">
+    <div className="productsMain">
       <p className="productsName">{productName}</p>
       <FiChevronLeft
         size="25px"
@@ -50,7 +50,7 @@ export const Products = ({ productName }) => {
           style={{ transform: `translate(${px}px)` }}
         >
           {productData.map(({ id, name, thumbnail, price }) => (
-            <Product
+            <ProductMain
               className="productCard"
               key={id}
               name={name}

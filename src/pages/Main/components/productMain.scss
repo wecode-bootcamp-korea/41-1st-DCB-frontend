@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
-.product {
+.productMain {
   @include widthHeightSort(250px, 250px);
 
   .productCard {

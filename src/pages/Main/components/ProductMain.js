@@ -1,9 +1,9 @@
 import { BsCart3 } from 'react-icons/bs';
-import './product.scss';
+import './productMain.scss';
 
-export const Product = ({ name, thumbnail, price }) => {
+export const ProductMain = ({ name, thumbnail, price }) => {
   return (
-    <article className="product">
+    <article className="productMain">
       <div className="productCard">
         <img src={thumbnail} alt="product" className="productImage" />
         <div className="cartIcon">

@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
-.products {
+.productsMain {
   @include widthHeightSort(1080px, 450px);
   position: relative;
 
