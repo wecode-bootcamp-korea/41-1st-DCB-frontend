@@ -1,0 +1,14 @@
+.UserInput {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .inputTitle {
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .inputBox {
+    margin-top: 0;
+  }
+}
