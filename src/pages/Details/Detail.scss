@@ -1,24 +1,23 @@
 #Detail {
   width: 1351px;
-  height: 7775.86px;
   margin: 0 auto;
-  background-color: lightgray;
+  background-color: #ffffff;
   .contents {
     width: 1018px;
-    height: 7655px;
+
     margin: 0 150.5px;
     padding: 0 0 120px;
-    background-color: gray;
+    background-color: #ffffff;
     .DetailAreaPadding {
       width: 1018px;
       height: 650px;
       padding: 80px 0;
-      background-color: aquamarine;
+      background-color: #ffffff;
       .DetailArea {
         display: flex;
         width: 1018px;
         height: 449px;
-        background-color: wheat;
+        background-color: #ffffff;
         gap: 60px;
         .BigImg {
           width: 431.09px;
@@ -27,11 +26,12 @@
         .infoArea {
           width: 526.91px;
           height: 449.09px;
-          background-color: rgb(63, 119, 204);
+          background-color: #ffffff;
           .headingArea {
             display: block;
             width: 526.91px;
             height: 70px;
+            margin-bottom: 6px;
             .brandName {
               display: block;
               margin-bottom: 12px;
@@ -44,7 +44,10 @@
               font-weight: 600;
             }
           }
-          .productInfo {
+          .Info {
+            color: #999999;
+          }
+          .productInfoDetail {
             display: flex;
             box-sizing: border-box;
             justify-content: space-between;
@@ -54,6 +57,11 @@
               font-size: 28px;
               font-weight: 700;
             }
+          }
+          .rateScore {
+            margin-left: 5px;
+            color: #999999;
+            line-height: 6px;
           }
           .productTheNumber {
             display: flex;
@@ -160,6 +168,7 @@
               font-size: 16px;
               font-weight: 400;
               letter-spacing: -0.025em;
+              line-height: 6px;
               text-align: center;
               text-decoration: none;
               cursor: pointer;
@@ -177,75 +186,14 @@
               background-color: rgb(143, 116, 87);
               color: #fff;
               font-size: 16px;
-
               font-weight: 400;
               font-weight: bold;
               letter-spacing: -0.025em;
+              line-height: 6px;
               text-align: center;
               text-decoration: none;
               cursor: pointer;
             }
-          }
-        }
-      }
-    }
-    .detailTab {
-      display: block;
-      position: sticky;
-      top: 60px;
-      height: 64px;
-      margin: 0 auto 40px;
-      .DetailedInformation {
-        display: block;
-        .productInfo {
-          display: inline-block;
-          width: calc(100% / 3);
-          border: 1px solid #dddddd;
-          border-bottom: 2px solid #ffffff;
-          background-color: #fff;
-          list-style: none;
-          vertical-align: top;
-          .productInfoDetail {
-            height: 60px;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 60px;
-            text-align: center;
-            cursor: pointer;
-          }
-        }
-        .review {
-          display: inline-block;
-          width: calc(100% / 3);
-          border: 1px solid #dddddd;
-          border-bottom: 2px solid #ffffff;
-          background-color: #fff;
-          list-style: none;
-          vertical-align: top;
-          .reviewDetail {
-            height: 60px;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 60px;
-            text-align: center;
-            cursor: pointer;
-          }
-        }
-        .productDetailInfo {
-          display: inline-block;
-          width: calc(100% / 3);
-          border: 1px solid #dddddd;
-          border-bottom: 2px solid #ffffff;
-          background-color: #fff;
-          list-style: none;
-          vertical-align: top;
-          .productDetailInfomation {
-            height: 60px;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 60px;
-            text-align: center;
-            cursor: pointer;
           }
         }
       }

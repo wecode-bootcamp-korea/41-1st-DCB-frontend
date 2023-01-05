@@ -2,11 +2,31 @@ import React from 'react';
 import './Detail.scss';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AiFillStar } from 'react-icons/ai';
+import './components/TotalInfo';
+import TotalInfo from './components/TotalInfo';
+import Option from './components/Option';
 
 const Details = () => {
   const navigate = useNavigate();
+
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumber, setproductTheNumber] = useState(1);
+  const [selectOption, setselectOption] = useState([]);
+  const [totalprice, settotalprice] = useState(productDetails[0].price);
+
+  const totalPrice = () => {
+    settotalprice(productDetails[0].price * productTheNumber);
+  };
+  console.log('a', productTheNumber);
+  console.log('b', productDetails[0].price);
+  console.log(totalPrice);
+
+  const select = e => {
+    e.preventDefault();
+    setselectOption(e.target.value);
+  };
+
   const incrementCount = e => {
     e.preventDefault();
     setproductTheNumber(productTheNumber => productTheNumber + 1);
@@ -17,9 +37,6 @@ const Details = () => {
     const value = productTheNumber - 1;
     if (value < 0) return;
     setproductTheNumber(value);
-  };
-  const totalPrice = () => {
-    return productTheNumber * productDetails[0].price;
   };
 
   useEffect(() => {
@@ -45,9 +62,12 @@ const Details = () => {
                 <h1 className="productName">{productDetails[0].itemName}</h1>
               </div>
               <span className="Info">{productDetails[0].shortDescription}</span>
-              <div className="productInfo">
-                <div className="productPrice">{productDetails[0].price}</div>
-                <div className="rate"> 별점 </div>
+              <div className="productInfoDetail">
+                <div className="productPrice">{productDetails[0].price}원</div>
+                <div className="rate">
+                  <AiFillStar size="16" color="rgb(143, 116, 87)" />
+                  <span className="rateScore">4.8</span>
+                </div>
               </div>
               {option == null ? (
                 <td className="productTheNumber">
@@ -58,6 +78,7 @@ const Details = () => {
                     <input
                       className="quantityNumber"
                       value={productTheNumber}
+                      onChange={totalPrice}
                     />
                     <button className="plus" onClick={incrementCount}>
                       +
@@ -65,14 +86,22 @@ const Details = () => {
                   </span>
                 </td>
               ) : (
-                <div className="productOption">
-                  <span className="prductOptionName">타입-수량</span>
-                  <select className="productOptionSelect">
-                    {productDetails[0].option.map((data, i) => {
-                      return <option key={i}> {data} </option>;
-                    })}
-                  </select>
-                </div>
+                <>
+                  <div className="productOption">
+                    <span className="prductOptionName">타입-수량</span>
+                    <select className="productOptionSelect" onChange={select}>
+                      <option>-필수! 옵션을 선택해주세요.-</option>
+                      {productDetails[0].option.map((data, i) => {
+                        return <option key={i}> {data} </option>;
+                      })}
+                    </select>
+                  </div>
+                  {/* {console.log('type', typeof { selectOption }.selectOption)}
+                  {console.log('select', { selectOption }.selectOption)} */}
+                  {{ selectOption }.selectOption == '' ? null : (
+                    <Option product={selectOption} />
+                  )}
+                </>
               )}
 
               <div className="totalPrice">
@@ -90,19 +119,8 @@ const Details = () => {
             </div>
           </div>
         </div>
-        <div className="detailTab">
-          <ul className="DetailedInformation">
-            <li className="productInfo">
-              <div className="productInfoDetail"> 상품설명</div>
-            </li>
-            <li className="review">
-              <div className="reviewDetail"> 후기</div>
-            </li>
-            <li className="productDetailInfo">
-              <div className="productDetailInfomation"> 상세정보</div>
-            </li>
-          </ul>
-        </div>
+        <div className="detailTal" />
+        <TotalInfo />
       </div>
     </div>
   );

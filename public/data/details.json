@@ -4,8 +4,13 @@
     "images": "/images/orora.png",
     "brand": "도깨비 불",
     "itemName": "오로라 불꽃",
-    "shortDescription": "너무 예쁘죠? 해보고 싶죠?",
+    "shortDescription": "한번 불멍 떄리면 체크아웃할 시간이 되어있을걸요?",
     "price": 100,
-    "option": null
+    "option": [
+      "빨강",
+      "파랑",
+      "초록",
+      "라라라라라라라랄라라라라라라라라라라라라라"
+    ]
   }
 ]
