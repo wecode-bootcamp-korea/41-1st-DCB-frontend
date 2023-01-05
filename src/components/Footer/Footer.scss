@@ -1,0 +1,107 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #1c1c1c;
+  color: #999999;
+
+  .container {
+    margin: 0px 160px;
+    padding: 80px 50px 70px;
+
+    .linkBox {
+      display: flex;
+      justify-content: flex-start;
+      gap: 50px;
+      font-size: 16px;
+
+      &Li {
+        margin: 16px 0px;
+        color: #999999;
+        text-decoration: none;
+      }
+    }
+
+    .hr {
+      height: 1px;
+      margin: 5px 0px 20px;
+      border: 0px;
+      background-color: #999999;
+    }
+
+    /* ======== footer middle ======== */
+    .footerInfo {
+      display: flex;
+      justify-content: flex-start;
+      gap: 200px;
+
+      .infoLeft {
+        .fontSize15 {
+          margin-bottom: 15px;
+          font-size: 15px;
+        }
+
+        .fontSize14 {
+          font-size: 14px;
+        }
+
+        p {
+          margin: 0px;
+          padding: 3px;
+        }
+      }
+
+      .infoRight {
+        .imgSize {
+          width: 30px;
+          height: 30px;
+          color: white;
+        }
+        .fontWhite {
+          color: white;
+          font-weight: 700;
+        }
+
+        .flexStart {
+          display: flex;
+          justify-content: flex-start;
+          gap: 30px;
+
+          p {
+            margin: 0;
+          }
+        }
+
+        .flexEnd {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    /* ======== footer bottom ======== */
+    .linkBoxBtm {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      &Left {
+        display: flex;
+        justify-content: space-between;
+
+        .borderBar {
+          margin-right: 10px;
+          padding-right: 10px;
+          border-right: 1px solid #999999;
+          color: #999999;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      }
+
+      &Right {
+        margin: 0;
+      }
+    }
+  }
+}
