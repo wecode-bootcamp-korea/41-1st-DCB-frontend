@@ -11,12 +11,13 @@
   .title {
     width: 100%;
     // height: 100px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $color-main;
 
     .mainTitle {
       display: flex;
       align-items: center;
       justify-content: center;
+      color: $color-main;
       font-size: 35px;
     }
 
@@ -26,13 +27,17 @@
       justify-content: space-between;
 
       .fontBold {
+        color: $color-main;
         font-size: 22px;
         font-weight: 700;
       }
       .fontRight {
         display: inline;
+        color: $color-main;
 
         .fontRed {
+          color: rgb(153, 15, 15);
+          font-weight: 700;
         }
       }
     }
@@ -41,5 +46,9 @@
   .inputTable {
     // display: flex;
     margin-top: 20px;
+
+    .inputAdd {
+      color: $color-main;
+    }
   }
 }

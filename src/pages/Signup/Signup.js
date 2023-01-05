@@ -17,9 +17,13 @@ const Signup = () => {
         </div>
         <div className="inputTable">
           <UserInput title="이메일" placeholder="이메일을 입력해주세요" />
-          <div>로그인 아이디로 사용할 이메일을 입력해 주세요.</div>
+          <div className="inputAdd">
+            로그인 아이디로 사용할 이메일을 입력해 주세요.
+          </div>
           <UserInput title="비밀번호" placeholder="비밀번호를 입력해주세요" />
-          <div>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</div>
+          <div className="inputAdd">
+            (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
+          </div>
           <UserInput
             title="비밀번호 확인"
             placeholder="비밀번호를 한번 더 입력해주세요"

@@ -1,14 +1,30 @@
+@import '../../../styles/variables';
+
 .UserInput {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin: 20px 0px;
 
   .inputTitle {
-    display: inline-block;
+    // display: inline-block;
+    color: $color-main;
     font-size: 16px;
+
+    .fontRed {
+      color: rgb(153, 15, 15);
+    }
   }
 
   .inputBox {
-    margin-top: 0;
+    width: 200px;
+    height: 50px;
+    padding-left: 10px;
+    border: 1px solid $color-main;
+    border-radius: 5px;
+  }
+
+  input::placeholder {
+    color: rgba(143, 116, 87, 0.467);
   }
 }
