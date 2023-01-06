@@ -24,7 +24,7 @@ const Signup = () => {
 
   const loginClick = e => {
     e.preventDefault();
-    fetch('http://152.67.208.118:3000/signup', {
+    fetch('http://10.58.52.89:3000/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({
@@ -36,16 +36,23 @@ const Signup = () => {
     })
       .then(response => response.json())
       .then(result => {
-        result.message === 'userCreated'
-          ? alert('회원가입 되었습니다!')
-          : alert(messageList[result.message]);
-
-        console.log(result);
+        if (result.message === 'userCreated') {
+          alert('회원가입 되었습니다!');
+          navigate('/login');
+        } else if (messageList[result.message]) {
+          alert(messageList[result.message]);
+        } else {
+          alert('빈칸을 입력해주세요.');
+        }
       });
   };
 
   const messageList = {
     ' Email already exists ': '이미 존재하는 이메일입니다.',
+    'name must be provided! ': '이름이 입력되지 않았습니다.',
+    ' email must be provided! ': '이메일이 입력되지 않았습니다.',
+    ' password must be provided! ': '비밀번호가 입력되지 않았습니다.',
+    ' phoneNumber must be provided!2 ': '핸드폰 번호를 입력해주세요.',
   };
 
   return (
