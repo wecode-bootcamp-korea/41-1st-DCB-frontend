@@ -6,6 +6,7 @@ import ContentsContainer from './components/ContentsContainer/ContentsContainer'
 import './Cart.scss';
 
 const Cart = () => {
+  // 체크된 상품의 id 배열
   const [checkedItems, setCheckedItems] = useState(new Set());
 
   const checkedItemHandler = (id, isChecked) => {
@@ -31,7 +32,7 @@ const Cart = () => {
   );
 
   // 전체선택 상태관리
-  const [isAllChecked, setIsAllChecked] = useState(true);
+  const [isAllChecked, setIsAllChecked] = useState(false);
   const allCheckedHandeler = isChecked => {
     console.log('isChecked :', isChecked);
     if (isChecked) {
@@ -62,6 +63,7 @@ const Cart = () => {
             checkedItemHandler={checkedItemHandler}
             allCheckedHandeler={allCheckedHandeler}
             isAllChecked={isAllChecked}
+            checkedItems={checkedItems}
           />
           <CartTotal totalPrice={totalPrice} />
         </div>

@@ -2,7 +2,13 @@ import React from 'react';
 
 import './SelectContainer.scss';
 
-const SelectContainer = ({ cartItems, isAllChecked, allCheckedHandeler }) => {
+const SelectContainer = ({
+  cartItems,
+  isAllChecked,
+  allCheckedHandeler,
+  checkedItems,
+}) => {
+  console.log(checkedItems);
   const cartItemsLength = cartItems.length;
 
   const checkHandler = ({ target }) => {
@@ -17,7 +23,9 @@ const SelectContainer = ({ cartItems, isAllChecked, allCheckedHandeler }) => {
         checked={isAllChecked}
         onChange={e => checkHandler(e)}
       />
-      <div className="selectAll">전체선택(0/{cartItemsLength})</div>
+      <div className="selectAll">
+        전체선택({checkedItems.size}/{cartItemsLength})
+      </div>
       <button className="selectedDelete">선택삭제</button>
     </div>
   );

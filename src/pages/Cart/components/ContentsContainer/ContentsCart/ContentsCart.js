@@ -11,6 +11,7 @@ const ContentsCart = ({
   checkedItemHandler,
   allCheckedHandeler,
   isAllChecked,
+  checkedItems,
 }) => {
   return (
     <div className="contentsCart">
@@ -19,6 +20,7 @@ const ContentsCart = ({
         cartItems={cartItems}
         isAllChecked={isAllChecked}
         allCheckedHandeler={allCheckedHandeler}
+        checkedItems={checkedItems}
       />
       <CartItemContainer
         cartItems={cartItems}

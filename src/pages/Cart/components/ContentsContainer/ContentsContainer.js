@@ -11,6 +11,7 @@ const ContentsContainer = ({
   checkedItemHandler,
   allCheckedHandeler,
   isAllChecked,
+  checkedItems,
 }) => {
   return (
     <div className="contentsContainer">
@@ -20,6 +21,7 @@ const ContentsContainer = ({
         checkedItemHandler={checkedItemHandler}
         allCheckedHandeler={allCheckedHandeler}
         isAllChecked={isAllChecked}
+        checkedItems={checkedItems}
       />
       <ContentsOrder />
     </div>

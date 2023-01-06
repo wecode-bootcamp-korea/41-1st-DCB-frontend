@@ -1,35 +1,11 @@
 [
   {
-    "cId": 1,
-    "cQuantity": 2,
-    "cUserId": 4,
-    "cItemId": 7,
-    "iName": "감성 테이블+의자 세트",
-    "iThumbnail": "http://drive.google.com/uc?export=view&id=1_hzi5K9ShmdK2P4TstXNrjM64mdkaiWJ",
-    "iPrice": "2000.000",
-    "optionDescription": [
-      {
-        "content": "테이블 + 의자 L",
-        "option_id": 2,
-        "categoryName": "Set"
-      }
-    ]
-  },
-  {
-    "cId": 1,
-    "cQuantity": 1,
-    "cUserId": 4,
-    "cItemId": 7,
-    "iName": "감성 테이블+의자 세트",
-    "iThumbnail": "http://drive.google.com/uc?export=view&id=1_hzi5K9ShmdK2P4TstXNrjM64mdkaiWJ",
-    "iPrice": "2000.000",
-    "optionDescription": [
-      {
-        "content": "테이블 + 의자 L",
-        "option_id": 2,
-        "categoryName": "Set"
-      }
-    ]
+    "cartsId": 1,
+    "itemsName": "엠보싱 비닐장갑 200매",
+    "cartsQuantity": 1,
+    "itemsPrice": 2490,
+    "optionsContent": null,
+    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/5b6575423fbb6ad38c01daab840447e8.png"
   },
   {
     "cartsId": 2,
