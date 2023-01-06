@@ -22,6 +22,7 @@
         .BigImg {
           width: 431.09px;
           height: 431.09px;
+          border-radius: 5px;
         }
         .infoArea {
           width: 526.91px;
@@ -137,7 +138,7 @@
             align-items: center;
             justify-content: flex-end;
             padding: 27px 0 26px;
-            // border-top: 1px solid #fafafa;
+            border-top: 1px solid #ececec;
             .totalTitle {
               font-size: 16px;
             }
@@ -149,11 +150,13 @@
                 font-size: 30px;
                 font-style: normal;
                 font-weight: 800;
+                line-height: 18px;
               }
             }
           }
           .actionBtn {
             display: flex;
+
             font-size: 14px;
             .cartBtn {
               display: inline-block;

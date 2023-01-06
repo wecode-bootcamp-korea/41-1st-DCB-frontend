@@ -4,8 +4,6 @@ import { AiFillStar } from 'react-icons/ai';
 import ReviewBottom from './ReviewBottom';
 
 const Review = () => {
-  console.log(like);
-
   return (
     <div className="reviewContent">
       <div className="content">

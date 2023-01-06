@@ -1,0 +1,17 @@
+.Description {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+  background-color: antiquewhite;
+  .img {
+    margin: 0px auto;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: top;
+  }
+}
+.longDescription {
+  width: 100%;
+  padding: 30px 100px;
+  background-color: aqua;
+}
