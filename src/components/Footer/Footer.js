@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="linkBox">
           {LINK_LIST.map(list => {
             return (
-              <Link className="linkBoxLi" to={list.to} key={list}>
+              <Link className="linkBoxLi" to={list.to} key={list.id}>
                 {list.title}
               </Link>
             );
@@ -24,7 +24,7 @@ const Footer = () => {
             <p className="fontSize15">(주)DCB컴퍼니 사업자정보</p>
             <div className="fontSize14">
               {INFO_LIST.map(info => {
-                return <p key={info}>{info.title}</p>;
+                return <p key={info.id}>{info.title}</p>;
               })}
             </div>
           </div>
@@ -46,7 +46,7 @@ const Footer = () => {
           <div className="linkBoxBtmLeft">
             {LINKBTM_LIST.map(listbtm => {
               return (
-                <Link className="borderBar" to={listbtm.to} key={listbtm}>
+                <Link className="borderBar" to={listbtm.to} key={listbtm.id}>
                   {listbtm.title}
                 </Link>
               );
