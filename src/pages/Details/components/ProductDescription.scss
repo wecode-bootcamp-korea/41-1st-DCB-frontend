@@ -12,6 +12,55 @@
 }
 .longDescription {
   width: 100%;
+  margin-bottom: 200px;
   padding: 30px 100px;
-  background-color: aqua;
+  background-color: antiquewhite;
+}
+.shippingInformation {
+  margin: 50px 0;
+  padding: 20px 50px;
+  border-bottom: 1px solid lightgray;
+
+  .shippingInformationTextBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    cursor: pointer;
+    .plusTogle {
+      width: 22px;
+      height: 22px;
+      opacity: 50%;
+    }
+  }
+
+  .infoDelivery {
+    margin: 50px 0;
+    padding: 0 15px;
+    color: rgb(151, 151, 151);
+    line-height: 25px;
+  }
+}
+.exchangeReturn {
+  margin: 50px 0px;
+  padding: 20px 50px 0 50px;
+
+  border-bottom: 1px solid lightgray;
+  .exchangeReturnTextBtn {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+    cursor: pointer;
+    .plusTogle {
+      width: 22px;
+      height: 22px;
+      opacity: 50%;
+    }
+  }
+  .exchangeInfo {
+    margin: 50px 0;
+    padding: 0 10px;
+    color: rgb(151, 151, 151);
+    line-height: 12px;
+  }
 }
