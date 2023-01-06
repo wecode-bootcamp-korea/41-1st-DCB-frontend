@@ -52,10 +52,10 @@ const Details = () => {
   return (
     <div className="detail">
       <div className="contents">
-        <div className="DetailAreaPadding">
-          <div className="DetailArea">
+        <div className="detailAreaPadding">
+          <div className="detailArea">
             <img
-              className="BigImg"
+              className="bigImg"
               src={productDetails[0].thumbnail}
               alt="상품사진"
             />
@@ -66,7 +66,7 @@ const Details = () => {
                   {productDetails[0].product_name}
                 </h1>
               </div>
-              <span className="Info">{productDetails[0].contents}</span>
+              <span className="info">{productDetails[0].contents}</span>
               <div className="productInfoDetail">
                 <div className="productPrice">{productDetails[0].price}원</div>
                 <div className="rate">
@@ -128,7 +128,7 @@ const Details = () => {
 
               <div className="actionBtn">
                 <button className="cartBtn">장바구니 </button>
-                <button className="SubmitBtn"> 구매하기 </button>
+                <button className="submitBtn"> 구매하기 </button>
               </div>
             </div>
           </div>

@@ -2,24 +2,28 @@
   width: 1351px;
   margin: 0 auto;
   background-color: #ffffff;
+
   .contents {
     width: 1018px;
-
     margin: 0 150.5px;
     padding: 0 0 120px;
     background-color: #ffffff;
-    .DetailAreaPadding {
+
+    .detailAreaPadding {
       width: 1018px;
       height: 650px;
+      margin-top: 40px;
       padding: 80px 0;
       background-color: #ffffff;
-      .DetailArea {
+
+      .detailArea {
         display: flex;
         width: 1018px;
         height: 449px;
         background-color: #ffffff;
         gap: 60px;
-        .BigImg {
+
+        .bigImg {
           width: 431.09px;
           height: 431.09px;
           border-radius: 5px;
@@ -28,11 +32,13 @@
           width: 526.91px;
           height: 449.09px;
           background-color: #ffffff;
+
           .headingArea {
             display: block;
             width: 526.91px;
             height: 70px;
             margin-bottom: 6px;
+
             .brandName {
               display: block;
               margin-bottom: 12px;
@@ -45,7 +51,7 @@
               font-weight: 600;
             }
           }
-          .Info {
+          .info {
             color: #999999;
           }
           .productInfoDetail {
@@ -54,6 +60,7 @@
             justify-content: space-between;
             margin-top: 14px;
             padding-bottom: 20px;
+
             .productPrice {
               font-size: 28px;
               font-weight: 700;
@@ -71,6 +78,7 @@
             width: 100%;
             word-wrap: break-word;
             word-break: break-all;
+
             .quantity {
               display: inline-block;
               position: relative;
@@ -80,6 +88,7 @@
               float: right;
               border: 1px solid #dddddd;
               border-radius: 5px;
+
               .quantityNumber {
                 width: 45px;
                 height: 30px;
@@ -115,6 +124,7 @@
             align-items: center;
             width: 100%;
             margin: 20px 0;
+
             .prductOptionName {
               display: block;
               box-sizing: border-box;
@@ -139,6 +149,7 @@
             justify-content: flex-end;
             padding: 27px 0 26px;
             border-top: 1px solid #ececec;
+
             .totalTitle {
               font-size: 16px;
             }
@@ -156,8 +167,8 @@
           }
           .actionBtn {
             display: flex;
-
             font-size: 14px;
+
             .cartBtn {
               display: inline-block;
               box-sizing: border-box;
@@ -176,7 +187,7 @@
               text-decoration: none;
               cursor: pointer;
             }
-            .SubmitBtn {
+            .submitBtn {
               display: inline-block;
               box-sizing: border-box;
               width: 50%;
