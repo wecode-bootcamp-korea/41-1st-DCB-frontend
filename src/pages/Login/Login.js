@@ -18,24 +18,21 @@ const Login = () => {
   const gotoSignup = () => navigate('/signup');
 
   const loginClick = () => {
-    fetch('http://152.67.208.118:3000/login', {
+    fetch('http://10.58.52.89:3000/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ email: loginInfo.email, password: loginInfo.pw }),
     })
       .then(response => response.json())
       .then(result => {
-        localStorage.setItem('Token', result.accessToken);
-        // result.message === 'userCreated'
-        //   ? alert('회원가입 되었습니다!')
-        //   : alert(messageList[result.message]);
+        if (result.accessToken) {
+          localStorage.setItem('Token', result.accessToken);
+          navigate('/main');
+        } else {
+          alert('이메일, 비밀번호가 일치하지 않습니다.');
+        }
       });
   };
-
-  // const messageList = {
-  //   ' userCreated ': '회원가입 되었습니다!',
-  //   ' Email already exists ': '이미 존재하는 이메일입니다.',
-  // };
 
   return (
     <div className="login">
