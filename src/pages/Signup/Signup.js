@@ -36,16 +36,16 @@ const Signup = () => {
     })
       .then(response => response.json())
       .then(result => {
-        if (result.message === 'userCreated') {
-          alert('회원가입 되었습니다!');
-          navigate('/login');
-        } else if (result.message === 'Email already exists') {
-          alert('이미 존재하는 이메일입니다.');
-        } else {
-          alert('빈칸을 채워주세요.');
-        }
+        result.message === 'userCreated'
+          ? alert('회원가입 되었습니다!')
+          : alert(messageList[result.message]);
+
         console.log(result);
       });
+  };
+
+  const messageList = {
+    ' Email already exists ': '이미 존재하는 이메일입니다.',
   };
 
   return (
