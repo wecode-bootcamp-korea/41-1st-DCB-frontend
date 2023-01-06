@@ -1,7 +1,9 @@
 @import '../../styles/variables';
 
 .nav {
+  position: relative;
   z-index: 1;
+
   .linkWrap {
     .memberLink {
       display: flex;
@@ -101,4 +103,8 @@
       }
     }
   }
+}
+
+.hide {
+  display: none;
 }

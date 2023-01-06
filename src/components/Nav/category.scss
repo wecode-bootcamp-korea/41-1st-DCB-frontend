@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.category {
+  @include widthHeightSort(270px, 240px);
+  @include positionSort(null, null, null, 10%);
+  @include flexSort(column, null, null);
+  margin-top: 2px;
+  padding: 10px 15px;
+  background-color: white;
+  color: $color-main;
+  font-size: 18px;
+
+  .categoryList {
+    @include flexSort(null, null, center);
+    gap: 10px;
+  }
+}

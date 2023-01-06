@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { LINK_LIST, LINKBTM_LIST } from './NavData.js';
+import { Category } from './Category.js';
 import './Nav.scss';
 
 const Nav = () => {
+  const [isMouseHover, setIsMouseHover] = useState(false);
+
+  const hoverCategory = () => {
+    setIsMouseHover(true);
+  };
+
+  const removeCategory = () => {
+    setIsMouseHover(false);
+  };
+
   return (
     <div className="nav">
       <div className="linkWrap">
@@ -32,7 +43,11 @@ const Nav = () => {
           <BsCart3 className="navCart" />
         </div>
       </div>
-      <div className="categoryWrap">
+      <div
+        className="categoryWrap"
+        onMouseEnter={hoverCategory}
+        onMouseLeave={removeCategory}
+      >
         <div className="categoryWrapLeft">
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
@@ -47,6 +62,13 @@ const Nav = () => {
           })}
         </div>
         <div className="blank" />
+      </div>
+      <div
+        className={isMouseHover ? null : 'hide'}
+        onMouseEnter={hoverCategory}
+        onMouseLeave={removeCategory}
+      >
+        <Category />
       </div>
     </div>
   );
