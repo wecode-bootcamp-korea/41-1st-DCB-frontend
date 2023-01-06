@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "모이스트 핸드 크림",
+    "thumbnail": "./images/8.jpeg",
+    "price": "4000원",
+    "item_catgory_id": "",
+    "created_at": "2022.12.01",
+    "updated_at": "2022.12.02"
+  },
+  {
+    "id": 2,
+    "name": "데일리케어 샴푸",
+    "thumbnail": "./images/8.jpeg",
+    "price": "2000원",
+    "item_catgory_id": "",
+    "created_at": "2022.12.23",
+    "updated_at": "2022.12.25"
+  },
+  {
+    "id": 3,
+    "name": "도톰한 물티슈",
+    "thumbnail": "./images/8.jpeg",
+    "price": "8000원",
+    "item_catgory_id": "",
+    "created_at": "2022.11.11",
+    "updated_at": "2022.11.13"
+  },
+  {
+    "id": 4,
+    "name": "모이스트 핸드 크림",
+    "thumbnail": "./images/8.jpeg",
+    "price": "4000원",
+    "item_catgory_id": "",
+    "created_at": "2022.12.01",
+    "updated_at": "2022.12.02"
+  },
+  {
+    "id": 5,
+    "name": "데일리케어 샴푸",
+    "thumbnail": "./images/8.jpeg",
+    "price": "2000원",
+    "item_catgory_id": "",
+    "created_at": "2022.12.23",
+    "updated_at": "2022.12.25"
+  },
+  {
+    "id": 6,
+    "name": "도톰한 물티슈",
+    "thumbnail": "./images/8.jpeg",
+    "price": "8000원",
+    "item_catgory_id": "",
+    "created_at": "2022.11.11",
+    "updated_at": "2022.11.13"
+  },
+  {
+    "id": 7,
+    "name": "모이스트 핸드 크림",
+    "thumbnail": "./images/8.jpeg",
+    "price": "4000원",
+    "item_catgory_id": "",
+    "created_at": "2022.12.01",
+    "updated_at": "2022.12.02"
+  }
+]

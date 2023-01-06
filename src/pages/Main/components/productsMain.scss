@@ -1,0 +1,37 @@
+@import '../../../styles/variables';
+
+.productsMain {
+  @include widthHeightSort(1080px, 450px);
+  position: relative;
+
+  .productsName {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .carouselContainer {
+    @include widthHeightSort(1080px, 450px);
+    overflow: hidden;
+
+    .productLists {
+      display: flex;
+      gap: 20px;
+      transition: transform 1s;
+    }
+  }
+
+  .carouselBtn {
+    @include widthHeightSort(48px, 48px);
+    z-index: 1;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px lightgray;
+
+    &:nth-child(2) {
+      @include positionSort(200px, null, null, -30px);
+    }
+
+    &:nth-child(3) {
+      @include positionSort(200px, -30px, null, null);
+    }
+  }
+}
