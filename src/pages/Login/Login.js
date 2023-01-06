@@ -9,6 +9,7 @@ const Login = () => {
     pw: '',
   });
 
+  console.log(loginInfo);
   const handleInfo = e => {
     console.log(e);
     const { name, value } = e.target;
@@ -31,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <form className="login">
       <input
         className="loginBox"
         type="text"
@@ -64,7 +65,7 @@ const Login = () => {
           비밀번호 찾기
         </Link>
       </div>
-    </div>
+    </form>
   );
 };
 export default Login;
