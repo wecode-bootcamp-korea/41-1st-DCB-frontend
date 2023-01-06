@@ -9,7 +9,7 @@ import './Nav.scss';
 const Nav = () => {
   return (
     <div className="nav">
-      <div className="navTop">
+      <div className="linkWrap">
         <div className="memberLink">
           {LINK_LIST.map(list => {
             return (
@@ -32,10 +32,10 @@ const Nav = () => {
           <BsCart3 className="navCart" />
         </div>
       </div>
-      <div className="navBtm">
-        <div className="navBtmLeft">
-          <HiOutlineBars3 className="navBtmLeftBar" />
-          <span className="navBtmLeftCat">카테고리</span>
+      <div className="categoryWrap">
+        <div className="categoryWrapLeft">
+          <HiOutlineBars3 className="categoryWrapLeftBar" />
+          <span className="categoryWrapLeftText">카테고리</span>
         </div>
         <div className="pageLink">
           {LINKBTM_LIST.map(listbtm => {
@@ -46,7 +46,7 @@ const Nav = () => {
             );
           })}
         </div>
-        <div className="navThirdRight" />
+        <div className="blank" />
       </div>
     </div>
   );

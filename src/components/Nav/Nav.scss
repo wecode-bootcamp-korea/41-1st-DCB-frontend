@@ -2,7 +2,7 @@
 
 .nav {
   z-index: 1;
-  .navTop {
+  .linkWrap {
     .memberLink {
       display: flex;
       justify-content: flex-end;
@@ -65,7 +65,7 @@
     }
   }
 
-  .navBtm {
+  .categoryWrap {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -83,7 +83,7 @@
         height: 30px;
         margin-right: 10px;
       }
-      &Cat {
+      &Text {
         font-size: 18px;
         font-weight: 600;
       }
