@@ -43,12 +43,12 @@ const Nav = () => {
           <BsCart3 className="navCart" />
         </div>
       </div>
-      <div
-        className="categoryWrap"
-        onMouseEnter={hoverCategory}
-        onMouseLeave={removeCategory}
-      >
-        <div className="categoryWrapLeft">
+      <div className="categoryWrap">
+        <div
+          className="categoryWrapLeft"
+          onMouseOver={hoverCategory}
+          onMouseLeave={removeCategory}
+        >
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
         </div>
