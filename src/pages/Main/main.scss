@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.main {
+  @include flexSort(column, null, center);
+
+  .imageWrap {
+    width: 100vw;
+    overflow: hidden;
+
+    .eventImages {
+      @include widthHeightSort(300vw, 318px);
+      display: flex;
+      transition: transform 1s;
+
+      .imageContainer {
+        @include widthHeightSort(100vw, 318px);
+
+        & > img {
+          @include widthHeightSort(100vw, 318px);
+        }
+      }
+    }
+  }
+
+  .productsList {
+    @include flexSort(column, null, null);
+    margin-left: 46px;
+    gap: 15px;
+
+    .adBanner {
+      @include widthHeightSort(1050px, 140px);
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: rgb(143, 116, 87);
+
+      .bannerComment {
+        @include positionSort(80px, null, null, 250px);
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 40px;
+        font-weight: 900;
+      }
+
+      .bannerImg {
+        @include widthHeightSort(200px, 200px);
+        @include positionSort(20px, null, null, 780px);
+      }
+    }
+  }
+}
