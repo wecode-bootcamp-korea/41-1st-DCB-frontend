@@ -4,7 +4,25 @@ import { EventImages } from './components/EventImages';
 import './main.scss';
 
 const Main = () => {
+  const [productData, setProductData] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    fetch('data/products.json')
+      .then(res => res.json())
+      .then(result => {
+        setProductData(result);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch('data/selectedItems.json')
+      .then(res => res.json())
+      .then(result => {
+        setSelectedItems(result);
+      });
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,12 +47,15 @@ const Main = () => {
         </div>
       </div>
       <div className="productsList">
-        <ProductsMain productName="따끈따끈한 신상" />
+        <ProductsMain productName="따끈따끈한 신상" items={productData} />
         <div className="adBanner">
           <span className="bannerComment">Do you wanna go camping?</span>
           <img className="bannerImg" src="./images/선물.png" alt="선물" />
         </div>
-        <ProductsMain productName="지갑은 가볍게 양손은 무겁게" />
+        <ProductsMain
+          productName="지갑은 가볍게 양손은 무겁게"
+          items={selectedItems}
+        />
       </div>
     </div>
   );

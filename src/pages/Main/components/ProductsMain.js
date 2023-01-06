@@ -1,22 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ProductMain } from './ProductMain';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './productsMain.scss';
 
-export const ProductsMain = ({ productName }) => {
-  const [productData, setProductData] = useState([]);
+export const ProductsMain = ({ productName, items }) => {
+  // const [productData, setProductData] = useState([]);
   const [px, setPx] = useState(0);
 
-  useEffect(() => {
-    fetch('data/products.json')
-      .then(res => res.json())
-      .then(result => {
-        setProductData(result);
-      });
-  }, []);
-
-  const overFlowValue =
-    productData.length < 5 ? 0 : (productData.length - 5) * 265;
+  const overFlowValue = items.length < 5 ? 0 : (items.length - 5) * 265;
   const CARDWIDTH = 265;
 
   const handleClickLeft = () => {
@@ -49,7 +40,7 @@ export const ProductsMain = ({ productName }) => {
           className="productLists"
           style={{ transform: `translate(${px}px)` }}
         >
-          {productData.map(({ id, name, thumbnail, price }) => (
+          {items.map(({ id, name, thumbnail, price }) => (
             <ProductMain
               className="productCard"
               key={id}
