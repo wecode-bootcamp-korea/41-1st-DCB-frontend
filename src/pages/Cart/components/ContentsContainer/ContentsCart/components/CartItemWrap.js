@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './CartItemWrap.scss';
 
-const CartItemWrap = ({ cartItem, checkedItemHandler }) => {
+const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
   const [bChecked, setChecked] = useState(false);
   // console.log(bChecked);
 
@@ -13,6 +13,8 @@ const CartItemWrap = ({ cartItem, checkedItemHandler }) => {
 
   const price = cartItem.itemsPrice * cartItem.cartsQuantity;
   const toStrPrice = price => price.toLocaleString();
+
+  useEffect(() => setChecked(isAllChecked), [isAllChecked]);
 
   return (
     <div className="cartItemWrap">

@@ -4,7 +4,12 @@ import CartItemWrap from '../components/CartItemWrap';
 
 import './CartItemContainer.scss';
 
-const CartItemContainer = ({ cartItems, totalPrice, checkedItemHandler }) => {
+const CartItemContainer = ({
+  cartItems,
+  totalPrice,
+  checkedItemHandler,
+  isAllChecked,
+}) => {
   return (
     <div className="cartItemContainer">
       {cartItems.map(cartItem => (
@@ -13,6 +18,7 @@ const CartItemContainer = ({ cartItems, totalPrice, checkedItemHandler }) => {
           cartItem={cartItem}
           totalPrice={totalPrice}
           checkedItemHandler={checkedItemHandler}
+          isAllChecked={isAllChecked}
         />
       ))}
     </div>
