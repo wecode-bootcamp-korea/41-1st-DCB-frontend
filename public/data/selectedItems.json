@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "모이스트 핸드 크림",
+    "thumbnail": "./images/banner_1.jpg",
+    "price": "4000원",
+    "created_at": "2022.12.01",
+    "updated_at": "2022.12.02",
+    "descriptions": "아기도 쓸 수 있는 저자극 성분, 도톰한 물티슈"
+  },
+  {
+    "id": 2,
+    "name": "데일리케어 샴푸",
+    "thumbnail": "./images/banner_1.jpg",
+    "price": "2000원",
+    "created_at": "2022.12.23",
+    "updated_at": "2022.12.25",
+    "descriptions": "아기도 쓸 수 있는 저자극 성분, 도톰한 물티슈"
+  },
+  {
+    "id": 3,
+    "name": "도톰한 물티슈",
+    "thumbnail": "./images/banner_1.jpg",
+    "price": "8000원",
+    "created_at": "2022.11.11",
+    "updated_at": "2022.11.13",
+    "descriptions": "아기도 쓸 수 있는 저자극 성분, 도톰한 물티슈"
+  }
+]
