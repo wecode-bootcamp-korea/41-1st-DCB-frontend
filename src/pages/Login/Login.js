@@ -38,7 +38,7 @@ const Login = () => {
   // };
 
   return (
-    <form className="login">
+    <div className="login">
       <input
         className="loginBox"
         type="text"
@@ -73,7 +73,7 @@ const Login = () => {
           비밀번호 찾기
         </Link>
       </div>
-    </form>
+    </div>
   );
 };
 export default Login;
