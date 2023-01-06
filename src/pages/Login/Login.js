@@ -9,9 +9,7 @@ const Login = () => {
     pw: '',
   });
 
-  console.log(loginInfo);
   const handleInfo = e => {
-    console.log(e);
     const { name, value } = e.target;
     setLoginInfo(prev => ({ ...prev, [name]: value }));
   };
@@ -28,8 +26,16 @@ const Login = () => {
       .then(response => response.json())
       .then(result => {
         localStorage.setItem('Token', result.accessToken);
+        // result.message === 'userCreated'
+        //   ? alert('회원가입 되었습니다!')
+        //   : alert(messageList[result.message]);
       });
   };
+
+  // const messageList = {
+  //   ' userCreated ': '회원가입 되었습니다!',
+  //   ' Email already exists ': '이미 존재하는 이메일입니다.',
+  // };
 
   return (
     <form className="login">
@@ -37,6 +43,7 @@ const Login = () => {
         className="loginBox"
         type="text"
         placeholder="이메일을 입력해주세요"
+        name="email"
         value={loginInfo.email}
         onChange={handleInfo}
       />
@@ -44,6 +51,7 @@ const Login = () => {
         className="loginBox"
         type="password"
         placeholder="비밀번호를 입력해주세요"
+        name="pw"
         value={loginInfo.pw}
         onChange={handleInfo}
       />
