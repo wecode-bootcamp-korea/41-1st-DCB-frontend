@@ -17,7 +17,8 @@ const Login = () => {
   const navigate = useNavigate();
   const gotoSignup = () => navigate('/signup');
 
-  const loginClick = () => {
+  const loginClick = e => {
+    e.preventDefault();
     fetch('http://10.58.52.89:3000/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
@@ -35,7 +36,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <form className="login">
       <input
         className="loginBox"
         type="text"
@@ -70,7 +71,7 @@ const Login = () => {
           비밀번호 찾기
         </Link>
       </div>
-    </div>
+    </form>
   );
 };
 export default Login;
