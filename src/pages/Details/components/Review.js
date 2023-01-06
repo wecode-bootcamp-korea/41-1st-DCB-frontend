@@ -1,9 +1,18 @@
 import React from 'react';
-import './Review.scss';
-import { AiFillStar } from 'react-icons/ai';
+import { useState, useEffect } from 'react';
 import ReviewBottom from './ReviewBottom';
+import { AiFillStar } from 'react-icons/ai';
+import './Review.scss';
 
 const Review = () => {
+  const [reviewData, setreviewData] = useState([]);
+
+  useEffect(() => {
+    fetch('data/review.json')
+      .then(result => result.json())
+      .then(data => setreviewData(data));
+  }, []);
+
   return (
     <div className="reviewContent">
       <div className="content">
@@ -28,7 +37,7 @@ const Review = () => {
                 </div>
                 <div className="veryBadToGood">
                   <ul className="veryBadToGoodlist">
-                    {like.map(value => {
+                    {reviewData.map(value => {
                       return (
                         <li className="reteList" key={value.id}>
                           <div className="veryGoodText">{value.text}</div>
@@ -46,7 +55,6 @@ const Review = () => {
           </div>
           <div className="productsReviews" />
           <div className="filterSortBasic" />
-
           <ReviewBottom />
         </div>
       </div>
@@ -55,10 +63,11 @@ const Review = () => {
 };
 export default Review;
 
-const like = [
-  { id: 1, text: '아주 좋아요', number: '79%' },
-  { id: 2, text: '마음에 들어요', number: '15%' },
-  { id: 3, text: '보통이에요', number: '4%' },
-  { id: 4, text: '그냥 그래요', number: '0%' },
-  { id: 5, text: '별로에요', number: '1%' },
-];
+// TODO: Mock데이터 사용 불가시 상수데이터 like 사용!
+// const LIKE = [
+//   { id: 1, text: '아주 좋아요', number: '79%' },
+//   { id: 2, text: '마음에 들어요', number: '15%' },
+//   { id: 3, text: '보통이에요', number: '4%' },
+//   { id: 4, text: '그냥 그래요', number: '0%' },
+//   { id: 5, text: '별로에요', number: '1%' },
+// ];

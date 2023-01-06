@@ -6,7 +6,7 @@ import { BsHandThumbsDown } from 'react-icons/bs';
 
 const Comment = ({ value }) => {
   return (
-    <li className="mainComment">
+    <li className="comment">
       <div className="mainCommentLeft">
         <div className="mainCommentLeftContent">
           <div className="commentTop">

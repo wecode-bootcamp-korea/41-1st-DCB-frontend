@@ -1,12 +1,11 @@
 import React from 'react';
-import './Detail.scss';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
-import './components/TotalInfo';
 import TotalInfo from './components/TotalInfo';
 import Option from './components/Option';
-import { type } from '@testing-library/user-event/dist/type';
+import './components/TotalInfo';
+import './Detail.scss';
 
 const Details = () => {
   const navigate = useNavigate();
@@ -14,11 +13,6 @@ const Details = () => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumber, setproductTheNumber] = useState(1);
   const [selectOption, setselectOption] = useState([]);
-  // const [totalPrice, settotalPrice] = useState(0);
-
-  // const totalpr = () => {
-  //   settotalPrice(Number(productDetails[0].price) * productTheNumber);
-  // };
 
   const totalPrice = Number(productDetails[0].price) * productTheNumber;
 
@@ -32,8 +26,6 @@ const Details = () => {
   const incrementCount = e => {
     e.preventDefault();
     setproductTheNumber(productTheNumber => productTheNumber + 1);
-
-    // setproductTheNumber(productTheNumber + 1);
   };
   const decrementCount = e => {
     e.preventDefault();
@@ -84,7 +76,6 @@ const Details = () => {
                       <input
                         className="quantityNumber"
                         value={productTheNumber}
-                        // onChange={totalPrice}
                       />
                       <button className="plus" onClick={incrementCount}>
                         +
@@ -120,7 +111,6 @@ const Details = () => {
                       product={selectOption}
                       total={totalPrice}
                       number={productTheNumber}
-                      // pr={totalpr}
                     />
                   )}
                 </>

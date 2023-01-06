@@ -5,26 +5,16 @@ import './Option.scss';
 const Option = ({ product, total, pr }) => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumbers, setproductTheNumbers] = useState(1);
-  // const [atotal, setatotal] = useState(total);
 
   const remove = e => {
     e.target.parentElement.remove();
   };
 
-  console.log('atotal', total);
-  console.log('productTheNumbers', productTheNumbers);
-
   const totalPrice = Number(productDetails[0].price) * productTheNumbers;
-
-  // const able = () => {
-  //   Number(productDetails[0].price) * productTheNumbers
-  //   pr();
-  // };
 
   const incrementCount = e => {
     e.preventDefault();
     setproductTheNumbers(productTheNumbers => productTheNumbers + 1);
-    // setproductTheNumber(productTheNumber + 1);
   };
   const decrementCount = e => {
     e.preventDefault();

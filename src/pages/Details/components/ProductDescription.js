@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import './ProductDescription.scss';
-import { FiPlus } from 'react-icons/fi';
 import Delivery from './Delivery';
 import Exchange from './Exchange';
+import { FiPlus } from 'react-icons/fi';
+import './ProductDescription.scss';
 
 const ProductDescription = () => {
   const [productDetails, setproductDeatils] = useState([{}]);
@@ -16,19 +16,16 @@ const ProductDescription = () => {
   const turn2 = e => {
     return setswitchBtn2(!switchBtn2);
   };
-
-  console.log(switchBtn);
-
   useEffect(() => {
     fetch('data/details.json')
       .then(result => result.json())
       .then(data => setproductDeatils(data));
   }, []);
-  console.log(productDetails);
+
   return (
     <div className="productDescription">
       <div className="Description">
-        <img className="img" src={productDetails[0].thumbnail} />
+        <img className="img" src={productDetails[0].thumbnail} alt="대표사진" />
       </div>
 
       <div className="longDescription">{productDetails[0].discriptions}</div>
@@ -43,7 +40,9 @@ const ProductDescription = () => {
           <FiPlus className="plusTogle" />
         </div>
         <div className="deliveryInfo">
-          {switchBtn ? <Delivery className="Deliver" /> : null}
+          {switchBtn ? (
+            <Delivery className={switchBtn ? 'deliver' : 'deliveroff'} />
+          ) : null}
         </div>
       </div>
       <div className="exchangeReturn">

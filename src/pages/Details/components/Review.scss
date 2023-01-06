@@ -38,15 +38,18 @@
   .content {
     margin: 0 auto;
     font-size: 12px;
+
     .headerBasic {
       display: flex;
       width: 100%;
       padding: 16px 0;
       border-bottom: 2px solid #14161a;
+
       .headerBasicTitle {
         color: #14161a;
         font-size: 20px;
         line-height: 30px;
+
         .spanHeaderTitle {
           margin-right: 4px;
         }
@@ -59,21 +62,22 @@
     .productReviewSummary {
       padding: 32px 0;
       border-bottom: 1px solid #ebeff5;
+
       .productReviewedStar {
         display: inline-block;
         width: 399px;
         border-right: 1px solid #d8dde5;
+
         .productReviewScore {
           margin-top: 9px;
-
           text-align: center;
+
           .star {
             margin: 12px 0;
             color: $color-main;
           }
           .reviewStar {
             margin-left: 4px;
-
             color: $color-main;
             font-size: 48px;
             font-weight: bold;
@@ -95,6 +99,7 @@
         width: calc(100% - 399px - 1px);
         padding-left: 64px;
         vertical-align: top;
+
         .veryBadToGoodlist {
           display: block;
           margin-block-start: 1em;
@@ -105,19 +110,18 @@
             display: flex;
             margin: 4px 0;
             list-style-type: none;
+
             .veryGoodText {
               width: 90px;
-              // color: #14161a;
-              // font-weight: bold;
             }
             .graph {
               display: inline-block;
-
               width: calc(100% - 158px);
               height: 12px;
               margin: 3px 0;
               border-radius: 5px;
               background-color: #ebeff5;
+
               .graphScore {
                 height: 100%;
                 border-radius: 5px;

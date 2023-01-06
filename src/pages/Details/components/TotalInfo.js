@@ -1,49 +1,35 @@
-import React from 'react';
-import '../components/TotalInfo.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ProductDescription from './ProductDescription';
 import Review from './Review';
 import MoreInformation from './MoreInformation';
-import { Link } from 'react-router-dom';
+import '../components/TotalInfo.scss';
 
 const TotalInfo = () => {
-  // const [productDetailClick, setproductDetailClick] = useState(
-  //   <ProductDescription />
-  // );
-
-  // const changer = e => {
-  //   e.preventDefault();
-  //   setproductDetailClick();
-  // };
-  const [state, setstate] = useState(0);
-
-  function tab0() {
-    setstate(0);
-  }
-  function tab1() {
-    setstate(1);
-  }
-  function tab2() {
-    setstate(2);
-  }
+  const [currentTap, setCurrentTap] = useState(0);
 
   return (
     <div className="detailTab">
-      <ul className="DetailedInformation">
-        <li className="productInfo" onClick={tab0}>
-          <div className="productInfoDetail">상품설명</div>
-        </li>
-        <li className="review" onClick={tab1}>
-          <div className="reviewDetail">후기</div>
-        </li>
-        <li className="productDetailInfo" onClick={tab2}>
-          <div className="productDetailInfomation">상세정보</div>
-        </li>
-        {state == 0 && <ProductDescription />}
-        {state == 1 && <Review />}
-        {state == 2 && <MoreInformation />}
+      <ul className="detailedInformation">
+        {TAP_LIST.map(list => {
+          return (
+            <li
+              key={list.id}
+              className="productInfo"
+              onClick={() => setCurrentTap(list.id)}
+            >
+              <div className="productInfoDetail">{list.title}</div>
+            </li>
+          );
+        })}
+        {TAP_LIST[currentTap].component}
       </ul>
     </div>
   );
 };
 export default TotalInfo;
+
+const TAP_LIST = [
+  { id: 0, title: '상품설명', component: <ProductDescription /> },
+  { id: 1, title: '후기', component: <Review /> },
+  { id: 2, title: '상세정보', component: <MoreInformation /> },
+];

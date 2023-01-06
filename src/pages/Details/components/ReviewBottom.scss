@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
-.mainComment {
+.comment {
   display: list-item;
   padding: 32px 0;
   border-bottom: 1px solid #d8dde5;
@@ -11,11 +11,12 @@
     width: 75%;
     padding-right: 40px;
     border-right: 1px solid #d8dde5;
-    // background-color: aqua;
     vertical-align: top;
+
     .mainCommentLeftContent {
       .commentTop {
         margin-bottom: 8px;
+
         .shoppingmall {
           padding: 4px 8px;
           border: 1px solid #ebeff5;
@@ -31,8 +32,10 @@
       .starDate {
         display: flex;
         justify-content: space-between;
+
         .rateScore {
           display: flex;
+
           .starRate {
             display: inline-block;
             width: 20px;
@@ -54,6 +57,7 @@
           position: relative;
           margin-right: 5px;
           float: right;
+
           .uploadDate {
             display: inline-block;
             padding: 1px 0;
@@ -66,6 +70,7 @@
         color: #14161a;
         font-size: 13px;
         line-height: 18px;
+
         .commentContent {
           display: block;
           position: relative;
@@ -78,6 +83,7 @@
         height: 20px;
         margin-top: 20px;
         color: #707680;
+
         .good {
           margin: 0 4px;
         }
@@ -94,6 +100,7 @@
   width: 25%;
   padding-left: 40px;
   vertical-align: top;
+
   .whatuserName {
     margin-bottom: 4px;
     overflow: hidden;
