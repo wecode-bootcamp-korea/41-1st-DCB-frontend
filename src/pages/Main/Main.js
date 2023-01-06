@@ -9,18 +9,22 @@ const Main = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    fetch('data/products.json')
+    fetch('http://10.58.52.89:3000/itemsFetch/?page=&sort=', {
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(result => {
-        setProductData(result);
+        setProductData(result.data);
       });
   }, []);
 
   useEffect(() => {
-    fetch('data/selectedItems.json')
+    fetch('http://10.58.52.89:3000/itemsFetch/?page=&sort=cheap', {
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(result => {
-        setSelectedItems(result);
+        setSelectedItems(result.data);
       });
   }, []);
 

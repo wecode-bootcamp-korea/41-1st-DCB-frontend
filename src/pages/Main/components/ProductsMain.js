@@ -4,7 +4,6 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './productsMain.scss';
 
 export const ProductsMain = ({ productName, items }) => {
-  // const [productData, setProductData] = useState([]);
   const [px, setPx] = useState(0);
 
   const overFlowValue = items.length < 5 ? 0 : (items.length - 5) * 265;

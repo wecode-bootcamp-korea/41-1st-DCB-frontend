@@ -35,8 +35,9 @@
       background-color: rgb(143, 116, 87);
 
       .bannerComment {
-        @include positionSort(80px, null, null, 250px);
-        color: white;
+        @include positionSort(50px, null, null, 200px);
+        animation: slide 2s ease-in;
+        color: beige;
         font-family: 'Times New Roman', Times, serif;
         font-size: 40px;
         font-weight: 900;
@@ -46,6 +47,17 @@
         @include widthHeightSort(200px, 200px);
         @include positionSort(20px, null, null, 780px);
       }
+    }
+  }
+
+  @keyframes slide {
+    from {
+      left: -100px;
+      opacity: 0;
+    }
+    to {
+      left: 200px;
+      opacity: 1;
     }
   }
 }
