@@ -2,19 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import './Option.scss';
 
-const Option = ({ product, total, pr }) => {
+const Option = ({ product, total, item }) => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumbers, setproductTheNumbers] = useState(1);
+  console.log('atotal', item);
+  console.log('productTheNumbers', productTheNumbers);
 
-  const remove = e => {
-    e.target.parentElement.remove();
-  };
+  const totalPrice = parseInt(Number(item.price)) * productTheNumbers;
 
-  const totalPrice = Number(productDetails[0].price) * productTheNumbers;
+  // const able = () => {
+  //   Number(item.price) * productTheNumbers
+  //   pr();
+  // };
 
   const incrementCount = e => {
     e.preventDefault();
     setproductTheNumbers(productTheNumbers => productTheNumbers + 1);
+    // setproductTheNumber(productTheNumber + 1);
   };
   const decrementCount = e => {
     e.preventDefault();
@@ -33,9 +37,7 @@ const Option = ({ product, total, pr }) => {
       <div className="option">
         <div className="productOptionSelect">
           <div className="productNameOption">
-            <span className="selectproductName">
-              {productDetails[0].product_name} -
-            </span>
+            <span className="selectproductName">{item.product_name} -</span>
             <span className="optionName">{product}</span>
           </div>
 
@@ -50,7 +52,7 @@ const Option = ({ product, total, pr }) => {
               </button>
             </div>
             <div className="closeZone">
-              <AiOutlineClose className="close" onClick={remove} />
+              <AiOutlineClose className="close" />
             </div>
           </div>
           <div className="optionTotalPrice">{totalPrice}원</div>

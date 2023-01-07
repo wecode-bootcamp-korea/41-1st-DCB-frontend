@@ -13,11 +13,9 @@ const Details = () => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumber, setproductTheNumber] = useState(1);
   const [selectOption, setselectOption] = useState([]);
-
-  const totalPrice = Number(productDetails[0].price) * productTheNumber;
-
-  console.log(totalPrice);
-
+  const [item, setItem] = useState([]);
+  const [options, setOptions] = useState('');
+  const totalPrice = Number(item.price) * productTheNumber;
   const select = e => {
     e.preventDefault();
     setselectOption(e.target.value);
@@ -34,33 +32,46 @@ const Details = () => {
     setproductTheNumber(value);
   };
 
-  useEffect(() => {
-    fetch('data/details.json')
-      .then(result => result.json())
-      .then(data => setproductDeatils(data));
-  }, []);
-  const option = productDetails[0].option;
+  // const a = () => {
+  //   fetch('http://127.0.0.1:3000/items/7')
+  //     .then(response => response.json())
+  //     .then(json => console.log(json));
+  //   a();
+  //   console.log(a);
 
+  useEffect(() => {
+    fetch('http://152.67.208.118:3000/items/7', {
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    })
+      .then(result => result.json())
+      .then(data => {
+        setItem(data.data);
+        setOptions(item.options);
+        console.log('a', options);
+        console.log(item);
+      });
+  }, []);
+
+  const option = item;
   return (
     <div className="detail">
       <div className="contents">
         <div className="detailAreaPadding">
           <div className="detailArea">
-            <img
-              className="bigImg"
-              src={productDetails[0].thumbnail}
-              alt="상품사진"
-            />
+            <img className="bigImg" src={item.thumbnail} alt="상품사진" />
             <div className="infoArea">
               <div className="headingArea">
-                <h3 className="brandName">{productDetails[0].brand_name}</h3>
-                <h1 className="productName">
-                  {productDetails[0].product_name}
-                </h1>
+                <h3 className="brandName">
+                  <div>{item.brand_name}</div>
+                  <div>{item.product_category}</div>
+                </h3>
+                <h1 className="productName">{item.product_name}</h1>
               </div>
-              <span className="info">{productDetails[0].contents}</span>
+              <span className="info">{item.contents}</span>
               <div className="productInfoDetail">
-                <div className="productPrice">{productDetails[0].price}원</div>
+                <div className="productPrice">
+                  {parseInt(Number(item.price))}원
+                </div>
                 <div className="rate">
                   <AiFillStar size="16" color="rgb(143, 116, 87)" />
                   <span className="rateScore">4.8</span>
@@ -100,8 +111,12 @@ const Details = () => {
                         -필수! 옵션을 선택해주세요.-
                       </option>
 
-                      {productDetails[0].option.map((data, i) => {
-                        return <option key={i}> {data} </option>;
+                      {options.map(data => {
+                        return (
+                          <option key={data.option_id}>
+                            {data.option_content}
+                          </option>
+                        );
                       })}
                     </select>
                   </div>
@@ -111,6 +126,7 @@ const Details = () => {
                       product={selectOption}
                       total={totalPrice}
                       number={productTheNumber}
+                      item={item}
                     />
                   )}
                 </>
@@ -124,9 +140,10 @@ const Details = () => {
           </div>
         </div>
         <div className="detailTal" />
-        <TotalInfo />
+        <TotalInfo items={item} />
       </div>
     </div>
   );
 };
+
 export default Details;

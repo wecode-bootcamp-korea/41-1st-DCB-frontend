@@ -26,8 +26,8 @@ const TotalInfo = () => {
     </div>
   );
 };
-export default TotalInfo;
 
+export default TotalInfo;
 const TAP_LIST = [
   { id: 0, title: '상품설명', component: <ProductDescription /> },
   { id: 1, title: '후기', component: <Review /> },

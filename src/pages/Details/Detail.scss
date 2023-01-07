@@ -40,7 +40,8 @@
             margin-bottom: 6px;
 
             .brandName {
-              display: block;
+              display: flex;
+              justify-content: space-between;
               margin-bottom: 12px;
               color: rgb(143, 116, 87);
               font-size: 18px;

@@ -17,18 +17,20 @@ const ProductDescription = () => {
     return setswitchBtn2(!switchBtn2);
   };
   useEffect(() => {
-    fetch('data/details.json')
+    fetch('http://152.67.208.118:3000/items/7')
       .then(result => result.json())
-      .then(data => setproductDeatils(data));
+      .then(data => {
+        setproductDeatils(data.data);
+      });
   }, []);
 
   return (
     <div className="productDescription">
       <div className="Description">
-        <img className="img" src={productDetails[0].thumbnail} alt="대표사진" />
+        <img className="img" src={productDetails.thumbnail} alt="대표사진" />
       </div>
 
-      <div className="longDescription">{productDetails[0].discriptions}</div>
+      <div className="longDescription">{productDetails.descriptions}</div>
       <div className="shippingInformation">
         <div
           className="shippingInformationTextBtn"
