@@ -3,6 +3,7 @@
 .productsMain {
   @include widthHeightSort(1080px, 450px);
   position: relative;
+  margin: 100px 0 50px 0;
 
   .productsName {
     font-size: 30px;
