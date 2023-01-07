@@ -8,8 +8,23 @@
 
   .adBanner {
     @include widthHeightSort(1018px, 193px);
+    position: relative;
     margin-top: 30px;
+    overflow: hidden;
     border-radius: 15px;
+    background-color: rgba($color: $color-main, $alpha: 0.3);
+    span {
+      @include positionSort(70px, null, null, 120px);
+      color: $color-main;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 50px;
+      font-weight: bolder;
+    }
+
+    .bannerImgRight {
+      @include widthHeightSort(300px, 230px);
+      @include positionSort(null, 100px, -20px, null);
+    }
   }
 
   .titleArea {

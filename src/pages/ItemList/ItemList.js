@@ -19,7 +19,14 @@ const ItemLists = () => {
 
   return (
     <div className="itemList">
-      <img src="./images/banner_1.jpg" className="adBanner" alt="광고배너" />
+      <div className="adBanner">
+        <span>Let's go Camping!</span>
+        <img
+          src="./images/오른쪽.png"
+          alt="다람쥐"
+          className="bannerImgRight"
+        />
+      </div>
       <div className="titleArea">{title}</div>
       <div className="sort">
         <p>총 {items.length}개</p>
