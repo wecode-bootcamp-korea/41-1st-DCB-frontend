@@ -1,15 +1,7 @@
-import { useEffect, useState } from 'react';
 import { Product } from './Product';
 import './products.scss';
 
-export const Products = () => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    fetch('data/selectedItems.json')
-      .then(res => res.json())
-      .then(result => setItems(result));
-  }, []);
-
+export const Products = ({ items }) => {
   return (
     <div className="products">
       <div className="productLists">

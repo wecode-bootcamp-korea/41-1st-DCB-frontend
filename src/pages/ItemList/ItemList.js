@@ -4,15 +4,21 @@ import './itemList.scss';
 
 const ItemLists = () => {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
-    fetch('data/selectedItems.json')
+    fetch('', {
+      method: 'GET',
+    })
       .then(res => res.json())
-      .then(result => setItems(result));
+      .then(result => {
+        setItems(result.data);
+      });
   }, []);
+
   return (
     <div className="itemList">
       <img src="./images/banner_1.jpg" className="adBanner" alt="광고배너" />
-      <div className="titleArea">제목제목</div>
+      <div className="titleArea">{items}</div>
       <div className="sort">
         <p>총 {items.length}개</p>
         <select className="selectList">
@@ -21,7 +27,7 @@ const ItemLists = () => {
           <option>가격 높은 순</option>
         </select>
       </div>
-      <Products />
+      <Products items={items} />
     </div>
   );
 };
