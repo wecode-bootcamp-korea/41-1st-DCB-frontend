@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { RxMagnifyingGlass } from 'react-icons/rx';
 import {
   GiCampingTent,
@@ -10,22 +11,22 @@ import './category.scss';
 export const Category = () => {
   return (
     <div className="category">
-      <div className="categoryList">
+      <Link to="/" className="categoryList">
         <RxMagnifyingGlass size="25px" />
         <p>전체보기</p>
-      </div>
-      <div className="categoryList">
+      </Link>
+      <Link to="/" className="categoryList">
         <GiCampingTent size="25px" />
         <p>캠핑 용품</p>
-      </div>
-      <div className="categoryList">
+      </Link>
+      <Link to="/" className="categoryList">
         <GiLanternFlame size="25px" />
         <p>조명 + 랜턴</p>
-      </div>
-      <div className="categoryList">
+      </Link>
+      <Link to="/" className="categoryList">
         <GiLifeInTheBalance size="25px" />
         <p>라이프 스타일</p>
-      </div>
+      </Link>
     </div>
   );
 };
