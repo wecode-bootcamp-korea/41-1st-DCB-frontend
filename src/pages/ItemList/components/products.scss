@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 
 .products {
-  @include widthHeightSort(1082px, 450px);
+  @include widthHeightSort(1082px, null);
   margin-left: 30px;
 
   .productsName {
@@ -9,8 +9,9 @@
     font-weight: bolder;
   }
   .productLists {
-    @include widthHeightSort(1050px, 450px);
+    @include widthHeightSort(1050px, null);
     @include flexSort(null, center, null);
+    flex-wrap: wrap;
     gap: 20px;
     overflow: hidden;
   }

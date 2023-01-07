@@ -11,7 +11,7 @@ export const Product = ({ name, thumbnail, price, descriptions }) => {
         </div>
       </div>
       <p className="productName">{name}</p>
-      <p className="productPrice">{price}</p>
+      <p className="productPrice">{Number(price)}원</p>
       <p className="productDesc">{descriptions}</p>
     </article>
   );
