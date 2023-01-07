@@ -13,7 +13,7 @@ const Nav = () => {
         <div className="memberLink">
           {LINK_LIST.map(list => {
             return (
-              <Link className="memberLinkStyle" to={list.to} key={list}>
+              <Link className="memberLinkStyle" to={list.to} key={list.id}>
                 {list.title}
               </Link>
             );
@@ -40,7 +40,7 @@ const Nav = () => {
         <div className="pageLink">
           {LINKBTM_LIST.map(listbtm => {
             return (
-              <Link className="pageLinkLi" to={listbtm.to} key={listbtm}>
+              <Link className="pageLinkLi" to={listbtm.to} key={listbtm.id}>
                 {listbtm.title}
               </Link>
             );
