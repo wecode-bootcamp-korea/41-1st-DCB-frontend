@@ -23,11 +23,11 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
   const filteredCheckedItems = cartItems.filter(item =>
-    checkedItems.has(item.cartsId)
+    checkedItems.has(item.cId)
   );
 
   const totalPrice = filteredCheckedItems.reduce(
-    (acc, cur) => acc + cur.cartsQuantity * cur.itemsPrice,
+    (acc, cur) => acc + cur.cQuantity * parseInt(cur.iPrice),
     0
   );
 
@@ -36,7 +36,7 @@ const Cart = () => {
   const allCheckedHandeler = isChecked => {
     console.log('isChecked :', isChecked);
     if (isChecked) {
-      setCheckedItems(new Set(cartItems.map(item => item.cartsId)));
+      setCheckedItems(new Set(cartItems.map(item => item.cId)));
       setIsAllChecked(true);
     } else {
       setCheckedItems(new Set());

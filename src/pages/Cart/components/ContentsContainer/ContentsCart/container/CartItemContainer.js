@@ -14,7 +14,7 @@ const CartItemContainer = ({
     <div className="cartItemContainer">
       {cartItems.map(cartItem => (
         <CartItemWrap
-          key={cartItem.cartsId}
+          key={cartItem.cId}
           cartItem={cartItem}
           totalPrice={totalPrice}
           checkedItemHandler={checkedItemHandler}

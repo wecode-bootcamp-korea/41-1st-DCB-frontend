@@ -8,10 +8,10 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
 
   const checkHandler = ({ target }) => {
     setChecked(!bChecked);
-    checkedItemHandler(cartItem.cartsId, target.checked);
+    checkedItemHandler(cartItem.cId, target.checked);
   };
 
-  const price = cartItem.itemsPrice * cartItem.cartsQuantity;
+  const price = parseInt(cartItem.iPrice) * cartItem.cQuantity;
   const toStrPrice = price => price.toLocaleString();
 
   useEffect(() => setChecked(isAllChecked), [isAllChecked]);
@@ -28,20 +28,20 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
         <a href="">
           <img
             className="thumbnailImg"
-            src={cartItem.itemsThumbnail}
-            alt={cartItem.itemsName}
+            src={cartItem.iThumbnail}
+            alt={cartItem.iName}
           />
         </a>
       </div>
       <div className="prdboxWrap">
-        <div className="prdName">{cartItem.itemsName}</div>
+        <div className="prdName">{cartItem.iName}</div>
         <div className="quantityPriceWrap">
           <div className="quantity">
             <button className="controlBtn">-</button>
             <input
               className="amount"
               type="text"
-              value={cartItem.cartsQuantity}
+              value={cartItem.cQuantity}
               size="2"
             />
             <button className="controlBtn">+</button>

@@ -1,106 +1,162 @@
 [
   {
     "cId": 1,
-    "cQuantity": 2,
-    "cUserId": 4,
-    "cItemId": 7,
-    "iName": "감성 테이블+의자 세트",
-    "iThumbnail": "http://drive.google.com/uc?export=view&id=1_hzi5K9ShmdK2P4TstXNrjM64mdkaiWJ",
-    "iPrice": "2000.000",
-    "optionDescription": [
-      {
-        "content": "테이블 + 의자 L",
-        "option_id": 2,
-        "categoryName": "Set"
-      }
-    ]
-  },
-  {
-    "cId": 1,
     "cQuantity": 1,
-    "cUserId": 4,
-    "cItemId": 7,
-    "iName": "감성 테이블+의자 세트",
-    "iThumbnail": "http://drive.google.com/uc?export=view&id=1_hzi5K9ShmdK2P4TstXNrjM64mdkaiWJ",
-    "iPrice": "2000.000",
+    "cUserId": 1,
+    "cItemId": 1,
+    "iName": "엠보싱 비닐장갑 200매",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/5b6575423fbb6ad38c01daab840447e8.png",
+    "iPrice": "2490.000",
     "optionDescription": [
       {
-        "content": "테이블 + 의자 L",
-        "option_id": 2,
-        "categoryName": "Set"
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
       }
     ]
   },
   {
-    "cartsId": 2,
-    "itemsName": "쉐이빙젤 200mL",
-    "cartsQuantity": 2,
-    "itemsPrice": 2990,
-    "optionsContent": null,
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/6c690d26ac4aefc4f883ae5e0d1e99bf.png"
+    "cId": 2,
+    "cQuantity": 2,
+    "cUserId": 1,
+    "cItemId": 2,
+    "iName": "쉐이빙젤 200mL",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/6c690d26ac4aefc4f883ae5e0d1e99bf.png",
+    "iPrice": "2990.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 3,
-    "itemsName": "면도용품 선물세트",
-    "cartsQuantity": 1,
-    "itemsPrice": 12890,
-    "optionsContent": null,
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/186b1c5fb9a7012d0333f0852d819b21.png"
+    "cId": 3,
+    "cQuantity": 1,
+    "cUserId": 1,
+    "cItemId": 3,
+    "iName": "면도용품 선물세트",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/186b1c5fb9a7012d0333f0852d819b21.png",
+    "iPrice": "12890.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 4,
-    "itemsName": "도톰한 호텔 수건",
-    "cartsQuantity": 3,
-    "itemsPrice": 16490,
-    "optionsContent": "[옵션: 화이트 5매]",
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/6036410411fb6872b452c3b014f85878.png"
+    "cId": 4,
+    "cQuantity": 3,
+    "cUserId": 1,
+    "cItemId": 4,
+    "iName": "도톰한 호텔 수건",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/6036410411fb6872b452c3b014f85878.png",
+    "iPrice": "16490.000",
+    "optionDescription": [
+      {
+        "content": "white",
+        "option_id": 1,
+        "categoryName": "Color"
+      }
+    ]
   },
   {
-    "cartsId": 5,
-    "itemsName": "치석케어 칫솔 4개입",
-    "cartsQuantity": 1,
-    "itemsPrice": 2890,
-    "optionsContent": "[옵션: 큰 헤드 (4색 혼합)]",
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/e0dd283e263218eeeefd485dd54d43d5.png"
+    "cId": 5,
+    "cQuantity": 1,
+    "cUserId": 1,
+    "cItemId": 5,
+    "iName": "치석케어 칫솔 4개입",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/e0dd283e263218eeeefd485dd54d43d5.png",
+    "iPrice": "2890.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 6,
-    "itemsName": "면도기 스타터 세트",
-    "cartsQuantity": 5,
-    "itemsPrice": 4390,
-    "optionsContent": "[옵션: SENS (부드러운 면도)/사파이어 블루]",
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/20905e575377165b37ef428f12eb91e4.png"
+    "cId": 6,
+    "cQuantity": 5,
+    "cUserId": 1,
+    "cItemId": 6,
+    "iName": "면도기 스타터 세트",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/20905e575377165b37ef428f12eb91e4.png",
+    "iPrice": "4390.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 7,
-    "itemsName": "충치균 항균 가글",
-    "cartsQuantity": 2,
-    "itemsPrice": 1390,
-    "optionsContent": "[옵션: 100mL]",
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/00ca9b87da3865dd70a0450f13e628a6.png"
+    "cId": 7,
+    "cQuantity": 2,
+    "cUserId": 1,
+    "cItemId": 7,
+    "iName": "충치균 항균 가글",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/00ca9b87da3865dd70a0450f13e628a6.png",
+    "iPrice": "1390.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 8,
-    "itemsName": "활력충전 멀티비타민",
-    "cartsQuantity": 3,
-    "itemsPrice": 4690,
-    "optionsContent": null,
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/93f82bb57c05c22613c5b074bb270936.png"
+    "cId": 8,
+    "cQuantity": 3,
+    "cUserId": 1,
+    "cItemId": 8,
+    "iName": "활력충전 멀티비타민",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/93f82bb57c05c22613c5b074bb270936.png",
+    "iPrice": "4690.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 9,
-    "itemsName": "자연유래 성분 치약",
-    "cartsQuantity": 1,
-    "itemsPrice": 1190,
-    "optionsContent": null,
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/3a7f335cd78f718d0c0fc647dae1658c.png"
+    "cId": 9,
+    "cQuantity": 1,
+    "cUserId": 1,
+    "cItemId": 9,
+    "iName": "자연유래 성분 치약",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/3a7f335cd78f718d0c0fc647dae1658c.png",
+    "iPrice": "1190.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   },
   {
-    "cartsId": 10,
-    "itemsName": "장 건강 유산균",
-    "cartsQuantity": 3,
-    "itemsPrice": 12290,
-    "optionsContent": null,
-    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/414927a0fa620b50d16435c5de15d034.png"
+    "cId": 10,
+    "cQuantity": 3,
+    "cUserId": 1,
+    "cItemId": 10,
+    "iName": "장 건강 유산균",
+    "iThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/414927a0fa620b50d16435c5de15d034.png",
+    "iPrice": "12290.000",
+    "optionDescription": [
+      {
+        "content": "option",
+        "option_id": 1,
+        "categoryName": "category name"
+      }
+    ]
   }
 ]
