@@ -5,6 +5,7 @@
   @include positionSort(45px, null, null, 0px);
   @include flexSort(column, null, null);
   padding: 10px;
+  border: 1px solid $color-main;
   background-color: white;
 
   .categoryList {
