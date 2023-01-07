@@ -13,8 +13,15 @@ const Details = () => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumber, setproductTheNumber] = useState(1);
   const [selectOption, setselectOption] = useState([]);
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState([{}]);
   const [options, setOptions] = useState('');
+  const [optionList, setOptionList] = useState([]);
+
+  const addList = e => {
+    e.preventDefault();
+    return setOptionList(...optionList, <Option />);
+  };
+
   const totalPrice = Number(item.price) * productTheNumber;
   const select = e => {
     e.preventDefault();
@@ -47,12 +54,12 @@ const Details = () => {
       .then(data => {
         setItem(data.data);
         setOptions(item.options);
-        console.log('a', options);
-        console.log(item);
+        // console.log('l', data);
+        // console.log('a', item);
       });
   }, []);
 
-  const option = item;
+  const option = item.option_category_id;
   return (
     <div className="detail">
       <div className="contents">
@@ -97,7 +104,7 @@ const Details = () => {
                     <strong className="totalTitle">총 상품금액:</strong>
                     <span className="total">
                       <strong>
-                        <em className="price"> {totalPrice}</em>
+                        <em className="price"> {totalPrice} 원</em>
                       </strong>
                     </span>
                   </div>
@@ -106,10 +113,15 @@ const Details = () => {
                 <>
                   <div className="productOption">
                     <span className="prductOptionName">타입-수량</span>
-                    <select className="productOptionSelect" onChange={select}>
+                    <select
+                      className="productOptionSelect"
+                      onChange={select}
+                      onClick={addList}
+                    >
                       <option disabled selected>
                         -필수! 옵션을 선택해주세요.-
                       </option>
+                      {console.log('v', options)}
 
                       {options.map(data => {
                         return (
@@ -120,15 +132,16 @@ const Details = () => {
                       })}
                     </select>
                   </div>
-
-                  {{ selectOption }.selectOption == '' ? null : (
-                    <Option
-                      product={selectOption}
-                      total={totalPrice}
-                      number={productTheNumber}
-                      item={item}
-                    />
-                  )}
+                  <div value={addList}>
+                    {{ selectOption }.selectOption == '' ? null : (
+                      <Option
+                        product={selectOption}
+                        total={totalPrice}
+                        number={productTheNumber}
+                        item={item}
+                      />
+                    )}
+                  </div>
                 </>
               )}
 

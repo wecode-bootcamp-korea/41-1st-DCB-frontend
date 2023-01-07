@@ -62,7 +62,7 @@ const Option = ({ product, total, item }) => {
         <strong className="totalTitle">총 상품금액: </strong>
         <span className="total">
           <strong>
-            <em className="price"> {totalPrice}</em>
+            <em className="price"> {totalPrice}원</em>
           </strong>
         </span>
       </div>
