@@ -44,13 +44,15 @@ const Nav = () => {
         </div>
       </div>
       <div className="categoryWrap">
-        <div
-          className="categoryWrapLeft"
-          onMouseOver={hoverCategory}
-          onMouseLeave={removeCategory}
-        >
+        <div className="categoryWrapLeft" onMouseEnter={hoverCategory}>
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
+          <div
+            className={isMouseHover ? null : 'hide'}
+            onMouseLeave={removeCategory}
+          >
+            <Category />
+          </div>
         </div>
         <div className="pageLink">
           {LINKBTM_LIST.map(listbtm => {
@@ -62,13 +64,6 @@ const Nav = () => {
           })}
         </div>
         <div className="blank" />
-      </div>
-      <div
-        className={isMouseHover ? null : 'hide'}
-        onMouseEnter={hoverCategory}
-        onMouseLeave={removeCategory}
-      >
-        <Category />
       </div>
     </div>
   );
