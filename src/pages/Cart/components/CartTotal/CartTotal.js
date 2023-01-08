@@ -2,8 +2,12 @@ import React from 'react';
 
 import './CartTotal.scss';
 
-const CartTotal = ({ totalPrice, cartItems }) => {
+const CartTotal = ({ totalPrice, cartItems, checkedItems }) => {
   const toStrPrice = price => price.toLocaleString();
+
+  const orderHandler = () => {
+    if (!checkedItems.size) alert('선택된 상품이 없습니다.');
+  };
 
   return (
     <div className="cartTotal">
@@ -38,7 +42,7 @@ const CartTotal = ({ totalPrice, cartItems }) => {
       </div>
       <div className="buyButtonWrap">
         {cartItems.length ? (
-          <button className="buyButton" disabled={false}>
+          <button className="buyButton" disabled={false} onClick={orderHandler}>
             구매하기
           </button>
         ) : (
