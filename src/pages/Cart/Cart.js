@@ -65,7 +65,7 @@ const Cart = () => {
             isAllChecked={isAllChecked}
             checkedItems={checkedItems}
           />
-          <CartTotal totalPrice={totalPrice} />
+          <CartTotal totalPrice={totalPrice} cartItems={cartItems} />
         </div>
       </div>
     </div>

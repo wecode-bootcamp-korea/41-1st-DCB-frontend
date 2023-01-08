@@ -2,7 +2,7 @@ import React from 'react';
 
 import './CartTotal.scss';
 
-const CartTotal = ({ totalPrice }) => {
+const CartTotal = ({ totalPrice, cartItems }) => {
   const toStrPrice = price => price.toLocaleString();
 
   return (
@@ -37,12 +37,15 @@ const CartTotal = ({ totalPrice }) => {
         </div>
       </div>
       <div className="buyButtonWrap">
-        <button className="buyButton" disabled={false}>
-          구매하기
-        </button>
-        <button className="buyButton" disabled={true}>
-          상품을 담아주세요
-        </button>
+        {cartItems.length ? (
+          <button className="buyButton" disabled={false}>
+            구매하기
+          </button>
+        ) : (
+          <button className="buyButton" disabled={true}>
+            상품을 담아주세요
+          </button>
+        )}
       </div>
     </div>
   );
