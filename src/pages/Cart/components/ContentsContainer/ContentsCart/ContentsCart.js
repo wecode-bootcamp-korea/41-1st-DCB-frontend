@@ -32,8 +32,8 @@ const ContentsCart = ({
       ) : (
         <p className="message">장바구니에 담긴 상품이 없습니다</p>
       )}
-      {console.log('cartItems :', cartItems)}
-      {console.log('checkedItems :', checkedItems)}
+      {/* {console.log('cartItems :', cartItems)}
+      {console.log('checkedItems :', checkedItems)} */}
     </div>
   );
 };

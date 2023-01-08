@@ -8,7 +8,7 @@ const SelectContainer = ({
   allCheckedHandeler,
   checkedItems,
 }) => {
-  console.log(checkedItems);
+  // console.log(checkedItems);
   const cartItemsLength = cartItems.length;
 
   const checkHandler = ({ target }) => {

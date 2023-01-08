@@ -6,15 +6,12 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
   const [bChecked, setChecked] = useState(false);
   const [count, setCount] = useState(cartItem.cQuantity);
 
+  const toStrPrice = price => price.toLocaleString();
+
   const checkHandler = ({ target }) => {
     setChecked(!bChecked);
     checkedItemHandler(cartItem.cId, target.checked);
   };
-
-  const price = parseInt(cartItem.iPrice) * cartItem.cQuantity;
-  const toStrPrice = price => price.toLocaleString();
-
-  useEffect(() => setChecked(isAllChecked), [isAllChecked]);
 
   const quantityHandler = type => {
     if (type === 'plus') {
@@ -24,6 +21,18 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
       setCount(count - 1);
     }
   };
+
+  useEffect(() => setChecked(isAllChecked), [isAllChecked]);
+
+  // count가 변경되면 API호출
+  // {
+  //   method: 'PATCH',
+  //   body: JSON.stringify({ cQuantity: count }),
+  //   headers: {
+  //     Authorization: localStorage.getItem('Token'),
+  //   },
+  // }
+  useEffect(() => {}, [count]);
 
   return (
     <div className="cartItemWrap">
@@ -64,7 +73,9 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
             </button>
           </div>
           <div className="priceDelWrap">
-            <div className="price">{toStrPrice(price)}원</div>
+            <div className="price">
+              {toStrPrice(parseInt(cartItem.iPrice) * count)}원
+            </div>
             <button className="deleteBtn">x</button>
           </div>
         </div>
