@@ -22,13 +22,18 @@ const ContentsCart = ({
         allCheckedHandeler={allCheckedHandeler}
         checkedItems={checkedItems}
       />
-      <CartItemContainer
-        cartItems={cartItems}
-        totalPrice={totalPrice}
-        checkedItemHandler={checkedItemHandler}
-        isAllChecked={isAllChecked}
-      />
-      <p className="message">장바구니에 담긴 상품이 없습니다</p>
+      {cartItems.length ? (
+        <CartItemContainer
+          cartItems={cartItems}
+          totalPrice={totalPrice}
+          checkedItemHandler={checkedItemHandler}
+          isAllChecked={isAllChecked}
+        />
+      ) : (
+        <p className="message">장바구니에 담긴 상품이 없습니다</p>
+      )}
+      {console.log('cartItems :', cartItems)}
+      {console.log('checkedItems :', checkedItems)}
     </div>
   );
 };

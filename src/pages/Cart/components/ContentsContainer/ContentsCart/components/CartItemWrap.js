@@ -34,7 +34,10 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
         </a>
       </div>
       <div className="prdboxWrap">
-        <div className="prdName">{cartItem.iName}</div>
+        <div className="wrap">
+          <div className="prdName">{cartItem.iName}</div>
+          <div className="prdOption">{cartItem.iName}</div>
+        </div>
         <div className="quantityPriceWrap">
           <div className="quantity">
             <button className="controlBtn">-</button>
