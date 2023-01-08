@@ -7,12 +7,19 @@ const SelectContainer = ({
   isAllChecked,
   allCheckedHandeler,
   checkedItems,
+  setCartItems,
 }) => {
   // console.log(checkedItems);
   const cartItemsLength = cartItems.length;
 
   const checkHandler = ({ target }) => {
     allCheckedHandeler(target.checked); //true or false
+  };
+
+  const selectedDelete = () => {
+    console.log('cartItems :', cartItems);
+    console.log('checkedItems :', checkedItems);
+    setCartItems(cartItems.filter(item => !checkedItems.has(item.cId)));
   };
 
   return (
@@ -26,7 +33,9 @@ const SelectContainer = ({
       <div className="selectAll">
         전체선택({checkedItems.size}/{cartItemsLength})
       </div>
-      <button className="selectedDelete">선택삭제</button>
+      <button className="selectedDelete" type="button" onClick={selectedDelete}>
+        선택삭제
+      </button>
     </div>
   );
 };

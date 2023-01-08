@@ -60,6 +60,7 @@ const Cart = () => {
             allCheckedHandeler={allCheckedHandeler}
             isAllChecked={isAllChecked}
             checkedItems={checkedItems}
+            setCartItems={setCartItems}
           />
           <CartTotal
             totalPrice={totalPrice}
