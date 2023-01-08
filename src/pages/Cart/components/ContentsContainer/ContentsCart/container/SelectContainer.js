@@ -8,6 +8,7 @@ const SelectContainer = ({
   allCheckedHandeler,
   checkedItems,
   setCartItems,
+  setCheckedItems,
 }) => {
   // console.log(checkedItems);
   const cartItemsLength = cartItems.length;
@@ -17,9 +18,10 @@ const SelectContainer = ({
   };
 
   const selectedDelete = () => {
-    console.log('cartItems :', cartItems);
-    console.log('checkedItems :', checkedItems);
+    // console.log('cartItems :', cartItems);
+    // console.log('checkedItems :', checkedItems);
     setCartItems(cartItems.filter(item => !checkedItems.has(item.cId)));
+    setCheckedItems(new Set());
   };
 
   return (

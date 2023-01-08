@@ -49,6 +49,8 @@ const Cart = () => {
     }
   };
 
+  console.log('checkedItems :', checkedItems);
+
   return (
     <div className="cart">
       <div className="container">
@@ -61,6 +63,7 @@ const Cart = () => {
             isAllChecked={isAllChecked}
             checkedItems={checkedItems}
             setCartItems={setCartItems}
+            setCheckedItems={setCheckedItems}
           />
           <CartTotal
             totalPrice={totalPrice}
