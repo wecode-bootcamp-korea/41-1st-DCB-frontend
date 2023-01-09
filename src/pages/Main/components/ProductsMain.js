@@ -3,7 +3,7 @@ import { ProductMain } from './ProductMain';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './productsMain.scss';
 
-export const ProductsMain = ({ productName, items }) => {
+export const ProductsMain = ({ productsName, items }) => {
   const [px, setPx] = useState(0);
 
   const overFlowValue = items.length < 5 ? 0 : (items.length - 5) * 265;
@@ -23,7 +23,7 @@ export const ProductsMain = ({ productName, items }) => {
 
   return (
     <div className="productsMain">
-      <p className="productsName">{productName}</p>
+      <p className="productsName">{productsName}</p>
       <FiChevronLeft
         size="25px"
         className="carouselBtn"
@@ -39,12 +39,12 @@ export const ProductsMain = ({ productName, items }) => {
           className="productLists"
           style={{ transform: `translate(${px}px)` }}
         >
-          {items.map(({ id, name, thumbnail, price }) => (
+          {items.map(({ id, product_name, thumbnail, price }) => (
             <ProductMain
               className="productCard"
               key={id}
               id={id}
-              name={name}
+              name={product_name}
               thumbnail={thumbnail}
               price={price}
             />

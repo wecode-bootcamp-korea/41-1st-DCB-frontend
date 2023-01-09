@@ -22,9 +22,7 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
       .then(res => res.json())
       .then(data => {
         if (localStorage.getItem('Token')) {
-          console.log(id, name);
           alert(`장바구니에 ${name} 상품을 담았습니다.`);
-          navigate('/cart');
         } else {
           alert('로그인 창으로 이동합니다.');
           navigate('/login');
