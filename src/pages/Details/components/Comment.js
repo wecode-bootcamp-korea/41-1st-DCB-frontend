@@ -1,8 +1,8 @@
-import './ReviewBottom.scss';
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { BsHandThumbsUp } from 'react-icons/bs';
 import { BsHandThumbsDown } from 'react-icons/bs';
+import './ReviewBottom.scss';
 
 const Comment = ({ value }) => {
   return (

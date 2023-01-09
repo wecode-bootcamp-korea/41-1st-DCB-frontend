@@ -5,20 +5,12 @@ import './Option.scss';
 const Option = ({ product, total, item }) => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [productTheNumbers, setproductTheNumbers] = useState(1);
-  console.log('atotal', item);
-  console.log('productTheNumbers', productTheNumbers);
 
-  const totalPrice = parseInt(Number(item.price)) * productTheNumbers;
-
-  // const able = () => {
-  //   Number(item.price) * productTheNumbers
-  //   pr();
-  // };
+  const totalPrice = parseInt(Number(item.data[0].price)) * productTheNumbers;
 
   const incrementCount = e => {
     e.preventDefault();
     setproductTheNumbers(productTheNumbers => productTheNumbers + 1);
-    // setproductTheNumber(productTheNumber + 1);
   };
   const decrementCount = e => {
     e.preventDefault();
@@ -37,7 +29,9 @@ const Option = ({ product, total, item }) => {
       <div className="option">
         <div className="productOptionSelect">
           <div className="productNameOption">
-            <span className="selectproductName">{item.product_name} -</span>
+            <span className="selectproductName">
+              {item.data[0].product_name} -
+            </span>
             <span className="optionName">{product}</span>
           </div>
 

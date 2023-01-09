@@ -23,6 +23,7 @@
       display: flex;
       flex: 0 0 100%;
       justify-content: right;
+
       .buttonSelector {
         display: inline-block;
         position: relative;
@@ -78,12 +79,12 @@
       }
       .closeZone {
         display: inline-block;
-
         width: 12px;
         height: 12px;
         margin: 10px 0 0 12px;
         vertical-align: middle;
         cursor: pointer;
+
         .close {
           box-sizing: border-box;
           opacity: 60%;

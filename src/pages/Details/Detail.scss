@@ -172,7 +172,6 @@
 
             .cartBtn {
               display: inline-block;
-              box-sizing: border-box;
               width: 50%;
               height: 55px;
               padding: 19px 0;
@@ -197,11 +196,9 @@
               padding: 19px 0;
               border: 1px solid rgb(143, 116, 87);
               border-radius: 5px;
-              background-color: #fff;
               background-color: rgb(143, 116, 87);
               color: #fff;
               font-size: 16px;
-              font-weight: 400;
               font-weight: bold;
               letter-spacing: -0.025em;
               line-height: 6px;

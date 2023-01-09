@@ -10,19 +10,33 @@ import './Detail.scss';
 const Details = () => {
   const navigate = useNavigate();
 
-  const [productDetails, setproductDeatils] = useState([{}]);
+  // TODO:MockData const [productDetails, setproductDeatils] = useState([]);
   const [productTheNumber, setproductTheNumber] = useState(1);
   const [selectOption, setselectOption] = useState([]);
-  const [item, setItem] = useState([{}]);
-  const [options, setOptions] = useState('');
+  const [item, setItem] = useState([]);
+  const [options, setOptions] = useState([{}]);
   const [optionList, setOptionList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://152.67.208.118:3000/items/7', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    })
+      .then(result => result.json())
+      .then(data => {
+        setItem(data);
+        console.log('A', data);
+        console.log('B', item);
+        setOptions(item.data[0].options);
+      });
+  }, []);
 
   const addList = e => {
     e.preventDefault();
     return setOptionList(...optionList, <Option />);
   };
 
-  const totalPrice = Number(item.price) * productTheNumber;
+  const totalPrice = Number(item.data[0].price) * productTheNumber;
   const select = e => {
     e.preventDefault();
     setselectOption(e.target.value);
@@ -39,45 +53,30 @@ const Details = () => {
     setproductTheNumber(value);
   };
 
-  // const a = () => {
-  //   fetch('http://127.0.0.1:3000/items/7')
-  //     .then(response => response.json())
-  //     .then(json => console.log(json));
-  //   a();
-  //   console.log(a);
+  const option = item.data[0].option_category_id;
 
-  useEffect(() => {
-    fetch('http://152.67.208.118:3000/items/7', {
-      headers: { 'Content-Type': 'application/json;charset=utf-8' },
-    })
-      .then(result => result.json())
-      .then(data => {
-        setItem(data.data);
-        setOptions(item.options);
-        // console.log('l', data);
-        // console.log('a', item);
-      });
-  }, []);
-
-  const option = item.option_category_id;
   return (
     <div className="detail">
       <div className="contents">
         <div className="detailAreaPadding">
           <div className="detailArea">
-            <img className="bigImg" src={item.thumbnail} alt="상품사진" />
+            <img
+              className="bigImg"
+              src={item.data[0].thumbnail}
+              alt="상품사진"
+            />
             <div className="infoArea">
               <div className="headingArea">
                 <h3 className="brandName">
-                  <div>{item.brand_name}</div>
-                  <div>{item.product_category}</div>
+                  <div>{item.data[0].brand_name}</div>
+                  <div>{item.data[0].product_category}</div>
                 </h3>
-                <h1 className="productName">{item.product_name}</h1>
+                <h1 className="productName">{item.data[0].product_name}</h1>
               </div>
-              <span className="info">{item.contents}</span>
+              <span className="info">{item.data[0].contents}</span>
               <div className="productInfoDetail">
                 <div className="productPrice">
-                  {parseInt(Number(item.price))}원
+                  {parseInt(Number(item.data[0].price))}원
                 </div>
                 <div className="rate">
                   <AiFillStar size="16" color="rgb(143, 116, 87)" />
@@ -132,8 +131,8 @@ const Details = () => {
                       })}
                     </select>
                   </div>
-                  <div value={addList}>
-                    {{ selectOption }.selectOption == '' ? null : (
+                  <div>
+                    {{ selectOption } == '' ? null : (
                       <Option
                         product={selectOption}
                         total={totalPrice}

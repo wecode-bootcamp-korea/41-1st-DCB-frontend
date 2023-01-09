@@ -1,8 +1,7 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Delivery from './Delivery';
 import Exchange from './Exchange';
-import { FiPlus } from 'react-icons/fi';
+import { FiPlus } from 'react-icons/fi'; // 별 이미지입니다!
 import './ProductDescription.scss';
 
 const ProductDescription = () => {
@@ -27,10 +26,10 @@ const ProductDescription = () => {
   return (
     <div className="productDescription">
       <div className="Description">
-        <img className="img" src={productDetails.thumbnail} alt="대표사진" />
+        <img className="img" src={productDetails[0].thumbnail} alt="대표사진" />
       </div>
 
-      <div className="longDescription">{productDetails.descriptions}</div>
+      <div className="longDescription">{productDetails[0].descriptions}</div>
       <div className="shippingInformation">
         <div
           className="shippingInformationTextBtn"
