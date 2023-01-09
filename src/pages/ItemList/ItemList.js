@@ -20,14 +20,14 @@ const ItemLists = () => {
       .then(res => res.json())
       .then(result => {
         setItems(result.data);
-        setTitle(result.data[0].category_name);
+        setTitle(result.data[0].product_category);
       });
   }, [searchParams]);
 
   return (
     <div className="itemList">
       <div className="adBanner">
-        <span>Let's go Camping!</span>
+        <span>Go Camping!</span>
         <img
           src="./images/오른쪽.png"
           alt="다람쥐"
