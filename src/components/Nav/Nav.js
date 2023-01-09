@@ -10,8 +10,8 @@ import './Nav.scss';
 const Nav = () => {
   const [isMouseHover, setIsMouseHover] = useState(false);
 
-  const hoverCategory = () => {
-    setIsMouseHover(true);
+  const hoverCategory = boolean => {
+    setIsMouseHover(boolean);
   };
 
   const removeCategory = () => {
@@ -46,7 +46,10 @@ const Nav = () => {
         </div>
       </div>
       <div className="categoryWrap">
-        <div className="categoryWrapLeft" onMouseEnter={hoverCategory}>
+        <div
+          className="categoryWrapLeft"
+          onMouseEnter={() => hoverCategory(true)}
+        >
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
           <div
