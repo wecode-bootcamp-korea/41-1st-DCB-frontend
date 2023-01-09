@@ -1,17 +1,22 @@
-## 41기 C팀
+## 🥲 41기 C팀 DCB(Don't Cry Baby)
 
-`front-end` : 서지연, 이다혜, 이세윤, 장찬영
-`back-end` : 김승, 백종호
+<br/>
+• `front-end` : 서지연, 이다혜, 이세윤, 장찬영<br/>
+• `back-end` : 김승, 백종호
+<br/>
 <br/>
 
-## SIMPLE (완벽한 공간을 위한 당신의 가심비 있는 선택)
+## 🎁 SIMPLE
 
-- SIMPLE은 만족스러운 여행을 위한 아이템을 판매하는 e-commerce입니다.
-- SIMPLE은 숙박공간에서도 여행과 감성을 선물합니다.
-- SIMPLE은 가심비를 채워주는 제품을 제공합니다. 가심비는 비용과 상관없이 만족스러운 것을 구매하는 소비 행태입니다. 가심비를 추구하는 MZ세대를 위한 선물을 제공합니다.
-  <br/>
+<br/>
+• SIMPLE은 만족스러운 캠핑을 위한 아이템을 판매하는 e-commerce입니다.<br/>
+• SIMPLE은 캠핑에 감성을 더해주고 그 공간을 더욱 가치있게 바꿔줍니다.<br/>
+• SIMPLE은 가심비를 추구하는 MZ세대를 위한 선물을 제공합니다. 가심비는 비용과 상관없이 만족스러운 것을 구매하는 소비 행태입니다. <br/>
 
-## TECH
+<br/>
 
-`front-end` : HTML, SCSS, React, Javascript, Github
-`back-end` : Javascript, Node.js , Express, Typeorm, MySQL, Github
+## 👨‍💻 TECH
+
+<br/>
+• `front-end` : HTML, SCSS, React, Javascript, Github<br/>
+• `back-end` : Javascript, Node.js , Express, Typeorm, MySQL, Github
