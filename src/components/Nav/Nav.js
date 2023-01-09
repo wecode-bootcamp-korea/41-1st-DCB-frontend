@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
@@ -7,9 +7,15 @@ import { LINK_LIST, LINKBTM_LIST } from './NavData.js';
 import './Nav.scss';
 
 const Nav = () => {
+  const navRef = useRef();
+  const navY = navRef.current.offsetTop;
+
+  console.log(navRef.current); // 출력됐다가 안됐다가
+  console.log(navY);
+
   return (
     <div className="nav">
-      <div className="linkWrap">
+      <div className="linkWrap" ref={navRef.current}>
         <div className="memberLink">
           {LINK_LIST.map(list => {
             return (
