@@ -26,17 +26,15 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
   };
 
   return (
-    <Link to={`/detail/${id}`}>
-      <article className="productMain">
-        <div className="productCard">
-          <img src={thumbnail} alt="product" className="productImage" />
-          <div className="cartIcon" onClick={addCart}>
-            <BsCart3 className="cart" size="28px" />
-          </div>
+    <Link to={`/details/${id}`} className="productMain">
+      <div className="productCard">
+        <img src={thumbnail} alt="product" className="productImage" />
+        <div className="cartIcon" onClick={addCart}>
+          <BsCart3 className="cart" size="28px" />
         </div>
-        <p className="productName">{name}</p>
-        <p className="productPrice">{parseInt(price)}원</p>
-      </article>
+      </div>
+      <p className="productName">{name}</p>
+      <p className="productPrice">{parseInt(price)}원</p>
     </Link>
   );
 };

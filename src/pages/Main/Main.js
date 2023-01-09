@@ -9,7 +9,7 @@ const Main = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    fetch('http://10.58.52.89:3000/itemsFetch/?page=&sort=', {
+    fetch('http://152.67.208.118:3000/items/?page=&sort=', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -19,7 +19,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.52.89:3000/itemsFetch/?page=&sort=cheap', {
+    fetch('http://152.67.208.118:3000/items/?page=&sort=cheap', {
       method: 'GET',
     })
       .then(res => res.json())

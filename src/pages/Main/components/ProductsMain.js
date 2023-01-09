@@ -43,6 +43,7 @@ export const ProductsMain = ({ productName, items }) => {
             <ProductMain
               className="productCard"
               key={id}
+              id={id}
               name={name}
               thumbnail={thumbnail}
               price={price}
