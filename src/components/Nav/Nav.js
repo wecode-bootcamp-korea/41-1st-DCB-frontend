@@ -19,10 +19,22 @@ const Nav = () => {
     setCurrentScroll(window.scrollY);
   };
 
+  const isTokenValid = () => {
+    localStorage.getItem('Token');
+  };
+
   return (
     <div className="nav">
       <div className="linkWrap">
-        <div className="memberLink" />
+        <div className="memberLink">
+          {LINK_LIST.map(list => {
+            return (
+              <Link className="memberLinkStyle" to={list.to} key={list.id}>
+                {list.title}
+              </Link>
+            );
+          })}
+        </div>
         <div className="navMain">
           <Link to="/" className="navLogo">
             SIMPLE
@@ -61,4 +73,5 @@ const Nav = () => {
     </div>
   );
 };
+
 export default Nav;
