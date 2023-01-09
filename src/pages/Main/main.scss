@@ -2,6 +2,7 @@
 
 .main {
   @include flexSort(column, null, center);
+  color: $color-main;
 
   .imageWrap {
     width: 100vw;

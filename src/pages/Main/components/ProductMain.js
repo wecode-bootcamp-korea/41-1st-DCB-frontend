@@ -1,6 +1,6 @@
 import { BsCart3 } from 'react-icons/bs';
 import './productMain.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export const ProductMain = ({ id, name, thumbnail, price }) => {
   const navigate = useNavigate();
@@ -26,15 +26,17 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
   };
 
   return (
-    <article className="productMain">
-      <div className="productCard">
-        <img src={thumbnail} alt="product" className="productImage" />
-        <div className="cartIcon" onClick={addCart}>
-          <BsCart3 className="cart" size="28px" />
+    <Link to={`/detail/${id}`}>
+      <article className="productMain">
+        <div className="productCard">
+          <img src={thumbnail} alt="product" className="productImage" />
+          <div className="cartIcon" onClick={addCart}>
+            <BsCart3 className="cart" size="28px" />
+          </div>
         </div>
-      </div>
-      <p className="productName">{name}</p>
-      <p className="productPrice">{parseInt(price)}원</p>
-    </article>
+        <p className="productName">{name}</p>
+        <p className="productPrice">{parseInt(price)}원</p>
+      </article>
+    </Link>
   );
 };
