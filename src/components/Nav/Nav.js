@@ -14,10 +14,6 @@ const Nav = () => {
     setIsMouseHover(boolean);
   };
 
-  const removeCategory = () => {
-    setIsMouseHover(false);
-  };
-
   return (
     <div className="nav">
       <div className="linkWrap">
