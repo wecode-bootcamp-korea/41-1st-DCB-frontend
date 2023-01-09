@@ -1,30 +1,28 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
-import { LINK_LIST, LINKBTM_LIST } from './NavData.js';
+import { LINK_LIST, LOGIN_LIST, LINKBTM_LIST } from './NavData.js';
 import './Nav.scss';
 
 const Nav = () => {
-  const navRef = useRef();
-  const navTop = navRef.current.offsetTop;
+  const [currentScroll, setCurrentScroll] = useState(0);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-  console.log(navRef.current); // 출력됐다가 안됐다가
-  console.log(navTop);
+  const handleScroll = () => {
+    setCurrentScroll(window.scrollY);
+  };
 
   return (
     <div className="nav">
-      <div className="linkWrap" ref={navTop}>
-        <div className="memberLink">
-          {LINK_LIST.map(list => {
-            return (
-              <Link className="memberLinkStyle" to={list.to} key={list.id}>
-                {list.title}
-              </Link>
-            );
-          })}
-        </div>
+      <div className="linkWrap">
+        <div className="memberLink" />
         <div className="navMain">
           <Link to="/" className="navLogo">
             SIMPLE
@@ -52,7 +50,13 @@ const Nav = () => {
             );
           })}
         </div>
-        <div className="blank" />
+        <div className="blank">
+          {currentScroll >= 110 && (
+            <Link to="/cart">
+              <BsCart3 className="navCartScroll" />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
