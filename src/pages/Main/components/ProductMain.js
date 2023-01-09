@@ -9,9 +9,9 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
     navigate(`/details/${id}`);
   };
 
-  const addCart = e => {
+  const addCart = ({ e, id, name }) => {
     e.stopPropagation();
-    fetch('', {
+    fetch('http://10.58.52.240:3000/cart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -22,6 +22,7 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
       .then(res => res.json())
       .then(data => {
         if (localStorage.getItem('Token')) {
+          console.log(id, name);
           alert(`장바구니에 ${name} 상품을 담았습니다.`);
           navigate('/cart');
         } else {
@@ -35,7 +36,7 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
     <div className="productMain" onClick={() => handleClickItem(id)}>
       <div className="productCard">
         <img src={thumbnail} alt="product" className="productImage" />
-        <div className="cartIcon" onClick={addCart}>
+        <div className="cartIcon" onClick={e => addCart({ e, id, name })}>
           <BsCart3 className="cart" size="28px" />
         </div>
       </div>
