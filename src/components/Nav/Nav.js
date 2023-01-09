@@ -40,7 +40,9 @@ const Nav = () => {
               <CiSearch className="navButtonIcon" />
             </button>
           </div>
-          <BsCart3 className="navCart" />
+          <Link to="/cart">
+            <BsCart3 className="navCart" />
+          </Link>
         </div>
       </div>
       <div className="categoryWrap">
