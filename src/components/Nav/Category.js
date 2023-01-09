@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { RxMagnifyingGlass } from 'react-icons/rx';
 import {
   GiCampingTent,
@@ -9,24 +9,47 @@ import {
 import './category.scss';
 
 export const Category = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const setCategoryParams = id => {
+    searchParams.set('category', id);
+    setSearchParams(searchParams);
+  };
+
+  const navigate = useNavigate();
+
+  const getCategoryParams = () => {
+    if (searchParams.get('category') === '0') {
+      navigate('/');
+    } else {
+      navigate(`/item-list?category=${searchParams.get('category')}`);
+    }
+  };
+
   return (
     <div className="category">
-      <Link to="/" className="categoryList">
-        <RxMagnifyingGlass size="25px" />
-        <p>전체보기</p>
-      </Link>
-      <Link to="/" className="categoryList">
-        <GiCampingTent size="25px" />
-        <p>캠핑 용품</p>
-      </Link>
-      <Link to="/" className="categoryList">
-        <GiLanternFlame size="25px" />
-        <p>조명 + 랜턴</p>
-      </Link>
-      <Link to="/" className="categoryList">
-        <GiLifeInTheBalance size="25px" />
-        <p>라이프 스타일</p>
-      </Link>
+      {CATEGORY.map(({ id, text, icon }) => {
+        return (
+          <div
+            className="categoryList"
+            onClick={() => {
+              setCategoryParams(id);
+              getCategoryParams(id);
+            }}
+            key={id}
+          >
+            {icon}
+            <p>{text}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
+
+const CATEGORY = [
+  { id: 0, text: '전체보기', icon: <RxMagnifyingGlass size="25px" /> },
+  { id: 1, text: '캠핑 용품', icon: <GiCampingTent size="25px" /> },
+  { id: 2, text: '조명 + 랜턴', icon: <GiLanternFlame size="25px" /> },
+  { id: 3, text: '라이프 스타일', icon: <GiLifeInTheBalance size="25px" /> },
+];
