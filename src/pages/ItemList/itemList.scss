@@ -14,10 +14,10 @@
     border-radius: 15px;
     background-color: rgba($color: $color-main, $alpha: 0.3);
     span {
-      @include positionSort(70px, null, null, 120px);
+      @include positionSort(70px, null, null, 180px);
       color: $color-main;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 50px;
+      font-size: 60px;
       font-weight: bolder;
     }
 
