@@ -4,7 +4,8 @@ import { useNavigate, Link } from 'react-router-dom';
 
 export const ProductMain = ({ id, name, thumbnail, price }) => {
   const navigate = useNavigate();
-  const addCart = () => {
+  const addCart = e => {
+    e. ();
     fetch('', {
       method: 'POST',
       headers: {
