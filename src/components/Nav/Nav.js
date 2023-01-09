@@ -8,14 +8,14 @@ import './Nav.scss';
 
 const Nav = () => {
   const navRef = useRef();
-  const navY = navRef.current.offsetTop;
+  const navTop = navRef.current.offsetTop;
 
   console.log(navRef.current); // 출력됐다가 안됐다가
-  console.log(navY);
+  console.log(navTop);
 
   return (
     <div className="nav">
-      <div className="linkWrap" ref={navRef.current}>
+      <div className="linkWrap" ref={navTop}>
         <div className="memberLink">
           {LINK_LIST.map(list => {
             return (
