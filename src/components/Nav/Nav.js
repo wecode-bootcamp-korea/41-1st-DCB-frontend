@@ -48,10 +48,7 @@ const Nav = () => {
         >
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
-          <div
-            className={isMouseHover ? null : 'hide'}
-            onMouseLeave={removeCategory}
-          >
+          <div className={isMouseHover ? null : 'hide'}>
             <Category />
           </div>
         </div>
