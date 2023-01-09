@@ -1,11 +1,16 @@
 import { BsCart3 } from 'react-icons/bs';
 import './productMain.scss';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const ProductMain = ({ id, name, thumbnail, price }) => {
   const navigate = useNavigate();
+
+  const handleClickItem = id => {
+    navigate(`/details/${id}`);
+  };
+
   const addCart = e => {
-    e. ();
+    e.stopPropagation();
     fetch('', {
       method: 'POST',
       headers: {
@@ -27,7 +32,7 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
   };
 
   return (
-    <Link to={`/details/${id}`} className="productMain">
+    <div className="productMain" onClick={() => handleClickItem(id)}>
       <div className="productCard">
         <img src={thumbnail} alt="product" className="productImage" />
         <div className="cartIcon" onClick={addCart}>
@@ -36,6 +41,6 @@ export const ProductMain = ({ id, name, thumbnail, price }) => {
       </div>
       <p className="productName">{name}</p>
       <p className="productPrice">{parseInt(price)}원</p>
-    </Link>
+    </div>
   );
 };
