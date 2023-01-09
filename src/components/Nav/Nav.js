@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
@@ -7,6 +7,21 @@ import { LINK_LIST, LINKBTM_LIST } from './NavData.js';
 import './Nav.scss';
 
 const Nav = () => {
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleChangeInput = e => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmitSearch = e => {
+    e.preventDefault();
+    searchParams.set('search', inputValue);
+    setSearchParams(searchParams);
+    navigate(`/search-list?${searchParams.toString()}`);
+  };
+
   return (
     <div className="nav">
       <div className="linkWrap">
@@ -23,12 +38,16 @@ const Nav = () => {
           <Link to="/" className="navLogo">
             SIMPLE
           </Link>
-          <div className="navSearch">
-            <input className="navInput" />
+          <form className="navSearch" onSubmit={handleSubmitSearch}>
+            <input
+              className="navInput"
+              value={inputValue}
+              onChange={handleChangeInput}
+            />
             <button className="navButton">
               <CiSearch className="navButtonIcon" />
             </button>
-          </div>
+          </form>
           <Link to="/cart">
             <BsCart3 className="navCart" />
           </Link>

@@ -1,28 +1,13 @@
 @import '../../styles/variables';
 
-.itemList {
-  @include widthHeightSort(100vw, 1698px);
+.searchList {
+  @include widthHeightSort(100vw, null);
   @include flexSort(column, null, center);
-  .adBanner {
-    @include widthHeightSort(1018px, 193px);
-    border-radius: 15px;
-  }
 
   .titleArea {
     @include widthHeightSort(1018px, 140px);
     @include flexSort(null, center, center);
     margin-bottom: 20px;
     font-size: 32px;
-  }
-
-  .sort {
-    @include widthHeightSort(1018px, 40px);
-    @include flexSort(null, space-between, null);
-    margin-bottom: 30px;
-
-    .selectList {
-      width: 100px;
-      text-align: center;
-    }
   }
 }
