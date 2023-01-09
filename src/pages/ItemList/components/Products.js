@@ -5,11 +5,11 @@ export const Products = ({ items }) => {
   return (
     <div className="products">
       <div className="productLists">
-        {items.map(({ id, name, thumbnail, price, contents }) => (
+        {items.map(({ id, product_name, thumbnail, price, contents }) => (
           <Product
             key={id}
             id={id}
-            name={name}
+            name={product_name}
             thumbnail={thumbnail}
             price={price}
             contents={contents}
