@@ -7,7 +7,7 @@ const ItemLists = () => {
   const [title, setTitle] = useState('');
 
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/itemsFetch/?page=1', {
+    fetch('http://152.67.208.118:3000/items/?page=1', {
       method: 'GET',
     })
       .then(res => res.json())

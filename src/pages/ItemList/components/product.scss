@@ -2,6 +2,8 @@
 
 .product {
   @include widthHeightSort(328px, null);
+  color: $color-main;
+  text-decoration: none;
 
   .productCard {
     position: relative;
