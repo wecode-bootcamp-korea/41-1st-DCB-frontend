@@ -22,6 +22,7 @@ const Cart = () => {
   console.log('cartItems.length :', cartItems.length);
   console.log('checkedItems.size : ', checkedItems.size);
   console.log('cartItems.length :', cartItems.length);
+
   const isAllChecked =
     cartItems.length === checkedItems.size && cartItems.length > 0;
   console.log('isAllChecked :', isAllChecked);
@@ -35,7 +36,7 @@ const Cart = () => {
 
   useEffect(() => {
     // fetch('data/cartItems.json');
-    fetch('http://10.58.52.240:3000/cart', {
+    fetch('http://10.58.52.240:3000/carts', {
       method: 'GET',
       headers: {
         Authorization: token,

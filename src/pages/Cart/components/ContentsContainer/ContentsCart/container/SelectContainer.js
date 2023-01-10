@@ -11,7 +11,7 @@ const SelectContainer = ({
   setCheckedItems,
 }) => {
   const checkHandler = ({ target }) => {
-    allCheckedHandler(target.checked); //true or false
+    if (cartItems.length > 0) allCheckedHandler(target.checked); //true or false
   };
 
   const selectedDelete = () => {
@@ -19,7 +19,7 @@ const SelectContainer = ({
     setCheckedItems(new Set());
 
     const query = [...checkedItems].map(itemId => `itemId=${itemId}`).join('&');
-    fetch(`http://10.58.52.240:3000/cart?${query}`, {
+    fetch(`http://10.58.52.240:3000/carts?${query}`, {
       method: 'DELETE',
       headers: {
         Authorization:

@@ -21,7 +21,7 @@ const CartItemWrap = ({
   const deleteHandler = () => {
     // http://10.58.52.240:3000/cart?itemId=12&itemId=13
     console.log('cartItem.cartItemId :', cartItem.cartItemId);
-    fetch(`http://10.58.52.240:3000/cart?itemId=${cartItem.cartItemId}`, {
+    fetch(`http://10.58.52.240:3000/carts?itemId=${cartItem.cartItemId}`, {
       method: 'DELETE',
       headers: {
         Authorization:
@@ -31,28 +31,48 @@ const CartItemWrap = ({
   };
 
   const quantityHandler = type => {
+    console.log(
+      JSON.stringify({
+        quantity: `${count + 1}`,
+        itemId: `${cartItem.cartItemId}`,
+      })
+    );
     if (type === 'plus') {
-      fetch(`http://10.58.52.240:3000/cart/plus/${cartItem.cartId}`, {
-        method: 'POST',
+      console.log(count);
+      fetch(`http://10.58.52.240:3000/carts`, {
+        method: 'PATCH',
         headers: {
+          'Content-Type': 'application/json;charset=utf-8',
           Authorization:
             'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
         },
-      });
+        body: JSON.stringify({
+          quantity: `${count + 1}`,
+          itemId: `${cartItem.cartItemId}`,
+        }),
+      }).then(res => console.log(res));
 
       setCount(count + 1);
     } else {
       if (count === 1) return;
-      fetch(`http://10.58.52.240:3000/cart/minus/${cartItem.cartId}`, {
-        method: 'POST',
+      fetch(`http://10.58.52.240:3000/carts`, {
+        method: 'PATCH',
         headers: {
+          'Content-Type': 'application/json;charset=utf-8',
           Authorization:
             'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
         },
-      });
+        body: JSON.stringify({
+          quantity: `${count - 1}`,
+          itemId: `${cartItem.cartItemId}`,
+        }),
+      }).then(res => console.log(res));
+
       setCount(count - 1);
     }
   };
+
+  // useEffect(() => {}, [count]);
 
   // useEffect(() => {
   //   setChecked(isAllChecked);
@@ -70,7 +90,6 @@ const CartItemWrap = ({
   //     Authorization: localStorage.getItem('Token'),
   //   },
   // }
-  useEffect(() => {}, [count]);
 
   return (
     <div className="cartItemWrap">
