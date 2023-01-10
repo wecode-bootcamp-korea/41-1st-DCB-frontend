@@ -6,10 +6,13 @@
     text-align: center;
   }
 
-  .message {
-    padding: 140px 0;
-    background-color: white;
-    color: #dddddd;
-    text-align: center;
+  .container {
+    min-height: 500px;
+    .message {
+      padding: 140px 0;
+      background-color: white;
+      color: #dddddd;
+      text-align: center;
+    }
   }
 }

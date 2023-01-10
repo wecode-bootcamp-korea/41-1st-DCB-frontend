@@ -23,18 +23,20 @@ const ContentsCart = ({
         setCartItems={setCartItems}
         setCheckedItems={setCheckedItems}
       />
-      {cartItems.length ? (
-        <CartItemContainer
-          cartItems={cartItems}
-          totalPrice={totalPrice}
-          checkedItemHandler={checkedItemHandler}
-          checkedItems={checkedItems}
-          setCartItems={setCartItems}
-          setCheckedItems={setCheckedItems}
-        />
-      ) : (
-        <p className="message">장바구니에 담긴 상품이 없습니다</p>
-      )}
+      <div className="container">
+        {cartItems.length ? (
+          <CartItemContainer
+            cartItems={cartItems}
+            totalPrice={totalPrice}
+            checkedItemHandler={checkedItemHandler}
+            checkedItems={checkedItems}
+            setCartItems={setCartItems}
+            setCheckedItems={setCheckedItems}
+          />
+        ) : (
+          <p className="message">장바구니에 담긴 상품이 없습니다</p>
+        )}
+      </div>
     </div>
   );
 };
