@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Products } from './components/products';
 import './search.scss';
 
 const Search = () => {
   const [items, setItems] = useState([]);
-  // const [searchParams, setSearchParams] = useSearchParams;
+  const [searchParams] = useSearchParams();
 
-  // useEffect(() => {
-  //   console.log(searchParams.toString());
-  //   // fetch(`http://152.67.208.118:3000/items/?${location.search}`, {
-  //   //   method: 'GET',
-  //   // })
-  //   //   .then(res => res.json())
-  //   //   .then(result => setItems[result]);
-  // }, [searchParams]);
+  useEffect(() => {
+    fetch(`http://152.67.208.118:3000/items?search=텐트}`, {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(result => setItems[result]);
+    console.log(items);
+  }, [searchParams]);
 
   return (
     <div className="searchList">
-      <div className="titleArea">''에 대한 검색결과</div>
-      {/* <Products items={items} /> */}
+      <div className="titleArea">
+        '{searchParams.get('search')}'에 대한 검색결과
+      </div>
+      <Products items={items} />
     </div>
   );
 };

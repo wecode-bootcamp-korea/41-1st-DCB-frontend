@@ -19,6 +19,7 @@ const Nav = () => {
     e.preventDefault();
     searchParams.set('search', inputValue);
     setSearchParams(searchParams);
+    setInputValue('');
     navigate(`/search-list?${searchParams.toString()}`);
   };
 
@@ -41,7 +42,7 @@ const Nav = () => {
           <form className="navSearch" onSubmit={handleSubmitSearch}>
             <input
               className="navInput"
-              value={inputValue}
+              value={inputValue || ''}
               onChange={handleChangeInput}
             />
             <button className="navButton">
