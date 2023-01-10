@@ -6,7 +6,12 @@
   align-items: center;
   justify-content: center;
   padding: 100px 0px;
-
+  .loginTitle {
+    padding-bottom: 50px;
+    color: $color-main;
+    font-size: 30px;
+    font-weight: 700;
+  }
   .loginBox {
     width: 400px;
     height: 60px;
