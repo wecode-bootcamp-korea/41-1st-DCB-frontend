@@ -9,19 +9,14 @@ import {
 import './category.scss';
 
 export const Category = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const setCategoryParams = id => {
-    searchParams.set('category', id);
-    setSearchParams(searchParams);
-  };
-
-  const navigate = useNavigate();
-
-  const getCategoryParams = () => {
-    if (searchParams.get('category') === '0') {
+    if (id === 0) {
       navigate('/');
     } else {
+      searchParams.set('category', id);
       navigate(`/item-list?category=${searchParams.get('category')}`);
     }
   };
@@ -34,7 +29,6 @@ export const Category = () => {
             className="categoryList"
             onClick={() => {
               setCategoryParams(id);
-              getCategoryParams(id);
             }}
             key={id}
           >
