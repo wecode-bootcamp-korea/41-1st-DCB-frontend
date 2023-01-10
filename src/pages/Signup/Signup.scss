@@ -60,6 +60,64 @@
 
     .agreement {
       display: flex;
+      justify-content: space-between;
+      width: 500px;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid $color-main;
+
+      &Title {
+        display: flex;
+        color: $color-main;
+
+        &Red {
+          color: rgb(153, 15, 15);
+        }
+      }
+
+      &List {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        color: $color-main;
+
+        &Info {
+          display: flex;
+          flex-direction: column;
+
+          // .agreementListInfoBox {
+          //   display: flex;
+          //   align-items: center;
+
+          //   .checkButton {
+          //     width: 25px;
+          //     height: 25px;
+          //     margin-right: 10px;
+          //     // color: rgba(143, 116, 87, 0.434);
+          //     color: $color-main;
+          //   }
+          //   .disabled {
+          //     width: 25px;
+          //     height: 25px;
+          //     margin-right: 10px;
+          //     color: rgba(143, 116, 87, 0.434);
+          //   }
+
+          //   .agreeList {
+          //     font-size: 15px;
+          //   }
+          // }
+          // .agreeDetail {
+          //   color: rgba(143, 116, 87, 0.434);
+          //   font-size: 13px;
+          // }
+          // .agreeDetails {
+          //   color: rgb(153, 15, 15);
+          //   font-size: 13px;
+          //   font-weight: 700;
+          // }
+        }
+      }
     }
 
     .inputButton {
@@ -73,4 +131,36 @@
       font-size: 15px;
     }
   }
+}
+
+.agreementListInfoBox {
+  display: flex;
+  align-items: center;
+
+  .checkButton {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    // color: rgba(143, 116, 87, 0.434);
+    color: $color-main;
+  }
+  .disabled {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    color: rgba(143, 116, 87, 0.434);
+  }
+
+  .agreeList {
+    font-size: 15px;
+  }
+}
+.agreeDetail {
+  color: rgba(143, 116, 87, 0.434);
+  font-size: 13px;
+}
+.agreeDetails {
+  color: rgb(153, 15, 15);
+  font-size: 13px;
+  font-weight: 700;
 }
