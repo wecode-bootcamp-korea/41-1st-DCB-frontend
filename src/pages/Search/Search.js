@@ -8,7 +8,7 @@ const Search = () => {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    fetch(`http://152.67.208.118:3000/items?search=텐트`, {
+    fetch(`http://152.67.208.118:3000/items?${searchParams.toString()}`, {
       method: 'GET',
     })
       .then(res => res.json())
