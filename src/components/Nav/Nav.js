@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
@@ -8,6 +8,7 @@ import './Nav.scss';
 
 const Nav = () => {
   const [currentScroll, setCurrentScroll] = useState(0);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -19,6 +20,10 @@ const Nav = () => {
     setCurrentScroll(window.scrollY);
   };
 
+  const logOut = () => {
+    localStorage.clear();
+  };
+
   const isTokenValid = () => {
     localStorage.getItem('Token');
   };
@@ -27,13 +32,28 @@ const Nav = () => {
     <div className="nav">
       <div className="linkWrap">
         <div className="memberLink">
-          {LINK_LIST.map(list => {
+          {isTokenValid
+            ? LOGIN_LIST.map(list => {
+                return (
+                  <Link className="memberLinkStyle" to={list.to} key={list.id}>
+                    {list.title}
+                  </Link>
+                );
+              })
+            : LINK_LIST.map(list => {
+                return (
+                  <Link className="memberLinkStyle" to={list.to} key={list.id}>
+                    {list.title}
+                  </Link>
+                );
+              })}
+          {/* {LOGIN_LIST.map(list => {
             return (
               <Link className="memberLinkStyle" to={list.to} key={list.id}>
                 {list.title}
               </Link>
             );
-          })}
+          })} */}
         </div>
         <div className="navMain">
           <Link to="/" className="navLogo">
