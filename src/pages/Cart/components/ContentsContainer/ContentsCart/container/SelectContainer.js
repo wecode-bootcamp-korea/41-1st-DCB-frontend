@@ -17,6 +17,15 @@ const SelectContainer = ({
   const selectedDelete = () => {
     setCartItems(cartItems.filter(item => !checkedItems.has(item.cartItemId)));
     setCheckedItems(new Set());
+
+    const query = [...checkedItems].map(itemId => `itemId=${itemId}`).join('&');
+    fetch(`http://10.58.52.240:3000/cart?${query}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization:
+          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+      },
+    });
   };
 
   return (
