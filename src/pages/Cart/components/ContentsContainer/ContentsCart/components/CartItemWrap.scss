@@ -3,6 +3,7 @@
 .cartItemWrap {
   display: flex;
   align-items: center;
+  color: $color-main;
 
   .check {
     width: 1rem;
@@ -43,6 +44,7 @@
 
       .prdName {
         overflow: hidden;
+        color: $color-main;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
@@ -70,12 +72,14 @@
         .controlBtn {
           border: none;
           background-color: transparent;
+          color: $color-main;
           cursor: pointer;
         }
 
         .amount {
           border: none;
           background-color: transparent;
+          color: $color-main;
           text-align: center;
         }
       }
@@ -90,6 +94,7 @@
           padding: 0;
           border: none;
           background-color: transparent;
+          color: $color-main;
           cursor: pointer;
         }
       }

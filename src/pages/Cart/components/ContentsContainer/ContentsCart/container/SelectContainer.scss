@@ -23,7 +23,9 @@
   }
 
   .selectAll {
+    width: 130px;
     padding-left: 10px;
+    color: $color-main;
   }
 
   .selectedDelete {
@@ -32,6 +34,7 @@
     border: 0;
     border-left: 1px solid #e8e8e8;
     background-color: transparent;
+    color: $color-main;
     font-size: 16px;
     cursor: pointer;
   }
