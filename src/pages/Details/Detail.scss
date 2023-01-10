@@ -11,15 +11,15 @@
 
     .detailAreaPadding {
       width: 1018px;
-      height: 650px;
+      // height: 650px;
       margin-top: 40px;
-      padding: 80px 0;
+      padding: 80px 0 20px 0;
       background-color: #ffffff;
 
       .detailArea {
         display: flex;
         width: 1018px;
-        height: 449px;
+        // height: 449px;
         background-color: #ffffff;
         gap: 60px;
 
@@ -30,7 +30,7 @@
         }
         .infoArea {
           width: 526.91px;
-          height: 449.09px;
+          // height: 449.09px;
           background-color: #ffffff;
 
           .headingArea {

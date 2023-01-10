@@ -16,7 +16,7 @@ const ProductDescription = () => {
     return setswitchBtn2(!switchBtn2);
   };
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/items/7')
+    fetch('http://152.67.208.118:3000/items/9')
       .then(result => result.json())
       .then(data => {
         setproductDeatils(data.data);
