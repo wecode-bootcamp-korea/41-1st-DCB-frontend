@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Products } from './components/Products';
+import API from '../../config';
 import './itemList.scss';
 
 const ItemLists = () => {

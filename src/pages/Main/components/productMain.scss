@@ -2,6 +2,8 @@
 
 .productMain {
   @include widthHeightSort(250px, 250px);
+  color: $color-main;
+  text-decoration: none;
 
   .productCard {
     position: relative;
@@ -28,6 +30,7 @@
 
   .productName {
     font-size: 18px;
+    text-decoration: none;
   }
   .productPrice {
     font-size: 18px;
