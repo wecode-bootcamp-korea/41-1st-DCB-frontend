@@ -5,7 +5,7 @@ export const LINK_LIST = [
 ];
 
 export const LOGIN_LIST = [
-  { id: 1, to: '/', title: '마이페이지' },
+  { id: 1, to: '/mypage', title: '마이페이지' },
   { id: 2, to: '/', title: '로그아웃' },
   { id: 3, to: '/', title: '고객센터' },
 ];

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
@@ -8,6 +8,7 @@ import './Nav.scss';
 
 const Nav = () => {
   const [currentScroll, setCurrentScroll] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -20,58 +21,39 @@ const Nav = () => {
     setCurrentScroll(window.scrollY);
   };
 
-  const logOut = () => {
-    localStorage.clear();
-  };
+  const isTokenValid = localStorage.getItem('Token');
 
-  const isTokenValid = () => {
-    localStorage.getItem('Token');
+  const handleLoginUserNav = (e, to) => {
+    if (e.target.title === '로그아웃') {
+      localStorage.clear();
+    }
+    navigate(`${to}`);
   };
 
   return (
     <div className="nav">
       <div className="linkWrap">
         <div className="memberLink">
-          {/* {isTokenValid
+          {isTokenValid
             ? LOGIN_LIST.map(list => {
                 return (
-                  <Link className="memberLinkStyle" to={list.to} key={list.id}>
+                  <span
+                    className="memberLinkStyle"
+                    key={list.id}
+                    title={list.title}
+                    onClick={e => handleLoginUserNav(e, list.to)}
+                  >
                     {list.title}
-                  </Link>
+                  </span>
                 );
               })
             : LINK_LIST.map(list => {
                 return (
-                  <Link className="memberLinkStyle" to={list.to} key={list.id}>
+                  <Link className="memberLinkStyle" key={list.id} to={list.to}>
                     {list.title}
                   </Link>
                 );
-              })} */}
-          {/* {LOGIN_LIST.map(list => {
-            return (
-              <Link className="memberLinkStyle" to={list.to} key={list.id}>
-                {list.title}
-              </Link>
-            );
-          })} */}
-          <Link className="memberLinkStyle" to="/signup">
-            회원가입
-          </Link>
-          <Link className="memberLinkStyle" to="/">
-            로그인
-          </Link>
-          <Link className="memberLinkStyle" to="/">
-            고객센터
-          </Link>
-          <Link className="memberLinkStyle" to="/">
-            마이페이지
-          </Link>
-          <Link className="memberLinkStyle" to="/" onClick={logOut}>
-            로그아웃
-          </Link>
-          <Link className="memberLinkStyle" to="/">
-            고객센터
-          </Link>
+              })}
         </div>
         <div className="navMain">
           <Link to="/" className="navLogo">
