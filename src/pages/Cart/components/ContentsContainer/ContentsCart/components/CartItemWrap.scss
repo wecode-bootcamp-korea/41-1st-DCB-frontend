@@ -3,8 +3,6 @@
 .cartItemWrap {
   display: flex;
   align-items: center;
-  // padding: 10px;
-  // border: 3px solid black;
 
   .check {
     width: 1rem;
@@ -44,7 +42,6 @@
       width: 170px;
 
       .prdName {
-        // flex-grow: 1;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -61,7 +58,6 @@
 
     .quantityPriceWrap {
       display: flex;
-      // flex-grow: 1;
       align-items: center;
       justify-content: space-between;
       width: 210px;
