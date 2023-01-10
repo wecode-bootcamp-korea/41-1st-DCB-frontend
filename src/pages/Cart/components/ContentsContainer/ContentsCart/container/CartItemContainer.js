@@ -9,16 +9,18 @@ const CartItemContainer = ({
   totalPrice,
   checkedItemHandler,
   isAllChecked,
+  checkedItems,
 }) => {
   return (
     <div className="cartItemContainer">
       {cartItems.map(cartItem => (
         <CartItemWrap
-          key={cartItem.cId}
+          key={cartItem.cartItemId}
           cartItem={cartItem}
           totalPrice={totalPrice}
           checkedItemHandler={checkedItemHandler}
           isAllChecked={isAllChecked}
+          checkedItems={checkedItems}
         />
       ))}
     </div>

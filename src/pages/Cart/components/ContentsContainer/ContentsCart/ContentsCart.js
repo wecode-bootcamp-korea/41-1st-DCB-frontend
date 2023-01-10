@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import SelectContainer from './container/SelectContainer';
 import CartItemContainer from './container/CartItemContainer';
@@ -9,7 +9,7 @@ const ContentsCart = ({
   cartItems,
   totalPrice,
   checkedItemHandler,
-  allCheckedHandeler,
+  allCheckedHandler,
   isAllChecked,
   checkedItems,
   setCartItems,
@@ -21,7 +21,7 @@ const ContentsCart = ({
       <SelectContainer
         cartItems={cartItems}
         isAllChecked={isAllChecked}
-        allCheckedHandeler={allCheckedHandeler}
+        allCheckedHandler={allCheckedHandler}
         checkedItems={checkedItems}
         setCartItems={setCartItems}
         setCheckedItems={setCheckedItems}
@@ -32,12 +32,11 @@ const ContentsCart = ({
           totalPrice={totalPrice}
           checkedItemHandler={checkedItemHandler}
           isAllChecked={isAllChecked}
+          checkedItems={checkedItems}
         />
       ) : (
         <p className="message">장바구니에 담긴 상품이 없습니다</p>
       )}
-      {/* {console.log('cartItems :', cartItems)}
-      {console.log('checkedItems :', checkedItems)} */}
     </div>
   );
 };

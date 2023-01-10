@@ -9,7 +9,7 @@ const ContentsContainer = ({
   cartItems,
   totalPrice,
   checkedItemHandler,
-  allCheckedHandeler,
+  allCheckedHandler,
   isAllChecked,
   checkedItems,
   setCartItems,
@@ -21,7 +21,7 @@ const ContentsContainer = ({
         cartItems={cartItems}
         totalPrice={totalPrice}
         checkedItemHandler={checkedItemHandler}
-        allCheckedHandeler={allCheckedHandeler}
+        allCheckedHandler={allCheckedHandler}
         isAllChecked={isAllChecked}
         checkedItems={checkedItems}
         setCartItems={setCartItems}

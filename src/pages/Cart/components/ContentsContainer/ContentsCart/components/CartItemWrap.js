@@ -2,32 +2,70 @@ import React, { useState, useEffect } from 'react';
 
 import './CartItemWrap.scss';
 
-const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
-  const [bChecked, setChecked] = useState(false);
-  const [count, setCount] = useState(cartItem.cQuantity);
+const CartItemWrap = ({
+  cartItem,
+  checkedItemHandler,
+  isAllChecked,
+  checkedItems,
+}) => {
+  const [checked, setChecked] = useState(false);
+  const [count, setCount] = useState(cartItem.cartQuantity);
 
   const toStrPrice = price => price.toLocaleString();
 
   const checkHandler = ({ target }) => {
-    setChecked(!bChecked);
-    checkedItemHandler(cartItem.cId, target.checked);
+    setChecked(!checked);
+    checkedItemHandler(cartItem.cartItemId, target.checked);
+  };
+
+  const deleteHandler = () => {
+    // http://10.58.52.240:3000/cart?itemId=12&itemId=13
+    console.log('cartItem.cartItemId :', cartItem.cartItemId);
+    fetch(`http://10.58.52.240:3000/cart?itemId=${cartItem.cartItemId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization:
+          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+      },
+    });
   };
 
   const quantityHandler = type => {
     if (type === 'plus') {
+      fetch(`http://10.58.52.240:3000/cart/plus/${cartItem.cartId}`, {
+        method: 'POST',
+        headers: {
+          Authorization:
+            'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+        },
+      });
+
       setCount(count + 1);
     } else {
       if (count === 1) return;
+      fetch(`http://10.58.52.240:3000/cart/minus/${cartItem.cartId}`, {
+        method: 'POST',
+        headers: {
+          Authorization:
+            'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+        },
+      });
       setCount(count - 1);
     }
   };
 
-  useEffect(() => setChecked(isAllChecked), [isAllChecked]);
+  // useEffect(() => {
+  //   setChecked(isAllChecked);
+  // }, [isAllChecked]);
+
+  useEffect(() => {
+    setChecked(isAllChecked);
+  }, []);
 
   // count가 변경되면 API호출
   // {
   //   method: 'PATCH',
-  //   body: JSON.stringify({ cQuantity: count }),
+  //   body: JSON.stringify({ cartQuantity: count }),
   //   headers: {
   //     Authorization: localStorage.getItem('Token'),
   //   },
@@ -39,22 +77,26 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
       <input
         className="check"
         type="checkbox"
-        checked={bChecked}
+        checked={checked}
         onChange={e => checkHandler(e)}
       />
       <div className="thumbnail">
         <a href="">
           <img
             className="thumbnailImg"
-            src={cartItem.iThumbnail}
-            alt={cartItem.iName}
+            src={cartItem.itemsThumbnail}
+            alt={cartItem.itemsName}
           />
         </a>
       </div>
       <div className="prdboxWrap">
         <div className="wrap">
-          <div className="prdName">{cartItem.iName}</div>
-          <div className="prdOption">{cartItem.iName}</div>
+          <div className="prdName">{cartItem.itemsName}</div>
+          {cartItem.optionDescription.map(option => (
+            <div className="prdOption" key={cartItem.cartItemId}>
+              {option.categoryName}: {option.content}
+            </div>
+          ))}
         </div>
         <div className="quantityPriceWrap">
           <div className="quantity">
@@ -74,9 +116,11 @@ const CartItemWrap = ({ cartItem, checkedItemHandler, isAllChecked }) => {
           </div>
           <div className="priceDelWrap">
             <div className="price">
-              {toStrPrice(parseInt(cartItem.iPrice) * count)}원
+              {toStrPrice(parseInt(cartItem.itemsPrice) * count)}원
             </div>
-            <button className="deleteBtn">x</button>
+            <button className="deleteBtn" onClick={deleteHandler}>
+              x
+            </button>
           </div>
         </div>
       </div>

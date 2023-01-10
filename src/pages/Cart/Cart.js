@@ -6,28 +6,47 @@ import ContentsContainer from './components/ContentsContainer/ContentsContainer'
 import './Cart.scss';
 
 const Cart = () => {
-  console.log('render!');
+  const token = (() => {
+    localStorage.setItem(
+      'Token',
+      'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI'
+    );
+    return localStorage.getItem('Token');
+  })();
+
   const [cartItems, setCartItems] = useState([]);
-  const [checkedItems, setCheckedItems] = useState(new Set());
-  const [isAllChecked, setIsAllChecked] = useState(true);
+  const [checkedItems, setCheckedItems] = useState([]);
+  // const [isAllChecked, setIsAllChecked] = useState(true);
 
-  useEffect(() => {
-    console.log('fetch');
-    fetch('data/cartItems.json')
-      .then(res => res.json())
-      .then(data => {
-        setCartItems(data);
-        setCheckedItems(new Set(data.map(item => item.cId)));
-      });
-  }, []);
-
+  console.log('cartItems :', cartItems);
+  console.log('cartItems.length :', cartItems.length);
+  console.log('checkedItems.size : ', checkedItems.size);
+  console.log('cartItems.length :', cartItems.length);
+  const isAllChecked =
+    cartItems.length === checkedItems.size && cartItems.length > 0;
+  console.log('isAllChecked :', isAllChecked);
   const filteredCheckedItems = cartItems.filter(item => {
-    return checkedItems.has(item.cId);
+    return checkedItems.has(item.cartItemId);
   });
   const totalPrice = filteredCheckedItems.reduce(
-    (acc, cur) => acc + cur.cQuantity * parseInt(cur.iPrice),
+    (acc, cur) => acc + cur.cartQuantity * parseInt(cur.itemsPrice),
     0
   );
+
+  useEffect(() => {
+    // fetch('data/cartItems.json');
+    fetch('http://10.58.52.240:3000/cart', {
+      method: 'GET',
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(cart => {
+        setCartItems(cart.data);
+        setCheckedItems(new Set(cart.data.map(item => item.cartItemId)));
+      });
+  }, []);
 
   const checkedItemHandler = (id, isChecked) => {
     if (isChecked) {
@@ -39,17 +58,15 @@ const Cart = () => {
     }
   };
 
-  const allCheckedHandeler = isChecked => {
+  const allCheckedHandler = isChecked => {
     if (isChecked) {
-      setCheckedItems(new Set(cartItems.map(item => item.cId)));
-      setIsAllChecked(true);
+      setCheckedItems(new Set(cartItems.map(item => item.cartItemId)));
+      // isAllChecked = true;
     } else {
       setCheckedItems(new Set());
-      setIsAllChecked(false);
+      // isAllChecked = false;
     }
   };
-
-  console.log('checkedItems :', checkedItems);
 
   return (
     <div className="cart">
@@ -59,7 +76,7 @@ const Cart = () => {
             totalPrice={totalPrice}
             cartItems={cartItems}
             checkedItemHandler={checkedItemHandler}
-            allCheckedHandeler={allCheckedHandeler}
+            allCheckedHandler={allCheckedHandler}
             isAllChecked={isAllChecked}
             checkedItems={checkedItems}
             setCartItems={setCartItems}
@@ -76,3 +93,11 @@ const Cart = () => {
   );
 };
 export default Cart;
+
+// useEffect(() => {
+//   // 체크된 아이템 리스트의 길이와 카트 리스트의 길이 비교
+//   // 체크된 아이템 리스트의 길이가 카트 리스트의 길이보다 작으면 setIsAllChecked(false)
+//   // 아니면 setIsAllChecked(true)
+//   // if (checkedItems.size < cartItems.length) setIsAllChecked(false);
+//   // else setIsAllChecked(true);
+// }, [checkedItems]);

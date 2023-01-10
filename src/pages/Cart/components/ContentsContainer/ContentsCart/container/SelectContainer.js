@@ -5,22 +5,17 @@ import './SelectContainer.scss';
 const SelectContainer = ({
   cartItems,
   isAllChecked,
-  allCheckedHandeler,
+  allCheckedHandler,
   checkedItems,
   setCartItems,
   setCheckedItems,
 }) => {
-  // console.log(checkedItems);
-  const cartItemsLength = cartItems.length;
-
   const checkHandler = ({ target }) => {
-    allCheckedHandeler(target.checked); //true or false
+    allCheckedHandler(target.checked); //true or false
   };
 
   const selectedDelete = () => {
-    // console.log('cartItems :', cartItems);
-    // console.log('checkedItems :', checkedItems);
-    setCartItems(cartItems.filter(item => !checkedItems.has(item.cId)));
+    setCartItems(cartItems.filter(item => !checkedItems.has(item.cartItemId)));
     setCheckedItems(new Set());
   };
 
@@ -32,8 +27,9 @@ const SelectContainer = ({
         checked={isAllChecked}
         onChange={e => checkHandler(e)}
       />
+      {console.log(isAllChecked)}
       <div className="selectAll">
-        전체선택({checkedItems.size}/{cartItemsLength})
+        전체선택({checkedItems.size}/{cartItems.length})
       </div>
       <button className="selectedDelete" type="button" onClick={selectedDelete}>
         선택삭제
