@@ -40,7 +40,13 @@ const SelectContainer = ({
       <div className="selectAll">
         전체선택({checkedItems.size}/{cartItems.length})
       </div>
-      <button className="selectedDelete" type="button" onClick={selectedDelete}>
+      {console.log('cartItems.length > 0 :', cartItems.length > 0)}
+      <button
+        className="selectedDelete"
+        type="button"
+        onClick={selectedDelete}
+        disabled={cartItems.length === 0}
+      >
         선택삭제
       </button>
     </div>

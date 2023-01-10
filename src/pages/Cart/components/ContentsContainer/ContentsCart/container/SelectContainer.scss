@@ -35,4 +35,9 @@
     font-size: 16px;
     cursor: pointer;
   }
+
+  .selectedDelete:disabled {
+    color: #dddddd;
+    cursor: default;
+  }
 }
