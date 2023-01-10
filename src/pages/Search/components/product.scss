@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 
 .productSearch {
-  @include widthHeightSort(328px, 328px);
+  @include widthHeightSort(328px, null);
 
   .productCard {
     position: relative;

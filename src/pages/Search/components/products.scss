@@ -1,14 +1,15 @@
 @import '../../../styles/variables';
 
 .productsSearch {
-  @include widthHeightSort(1082px, 450px);
+  @include widthHeightSort(1082px, null);
   .productsName {
     font-size: 30px;
     font-weight: bolder;
   }
   .productLists {
-    @include widthHeightSort(1050px, 450px);
+    @include widthHeightSort(1050px, null);
     @include flexSort(null, center, null);
+    flex-wrap: wrap;
     gap: 20px;
     overflow: hidden;
   }

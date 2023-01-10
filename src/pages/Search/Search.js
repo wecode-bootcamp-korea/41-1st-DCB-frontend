@@ -8,12 +8,11 @@ const Search = () => {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    fetch(`http://152.67.208.118:3000/items?search=텐트}`, {
+    fetch(`http://152.67.208.118:3000/items?search=텐트`, {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(result => setItems[result]);
-    console.log(items);
+      .then(result => setItems(result.data));
   }, [searchParams]);
 
   return (
