@@ -4,7 +4,29 @@ import { EventImages } from './components/EventImages';
 import './main.scss';
 
 const Main = () => {
+  const [productData, setProductData] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    fetch('http://152.67.208.118:3000/items/?page=&sort=', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(result => {
+        setProductData(result.data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch('http://152.67.208.118:3000/items/?page=&sort=cheap', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(result => {
+        setSelectedItems(result.data);
+      });
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,12 +51,15 @@ const Main = () => {
         </div>
       </div>
       <div className="productsList">
-        <ProductsMain productName="따끈따끈한 신상" />
+        <ProductsMain productsName="따끈따끈한 신상" items={productData} />
         <div className="adBanner">
-          <span className="bannerComment">Do you wanna go camping?</span>
+          <span className="bannerComment">Wanna go camping?</span>
           <img className="bannerImg" src="./images/선물.png" alt="선물" />
         </div>
-        <ProductsMain productName="지갑은 가볍게 양손은 무겁게" />
+        <ProductsMain
+          productsName="지갑은 가볍게 양손은 무겁게"
+          items={selectedItems}
+        />
       </div>
     </div>
   );
