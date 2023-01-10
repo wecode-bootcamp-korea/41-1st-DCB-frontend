@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import UserInput from './component/UserInput';
 import { useNavigate } from 'react-router-dom';
 import { SIGNUP_LIST } from './component/SignupData';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 import './Signup.scss';
 
 const Signup = () => {
@@ -82,6 +83,32 @@ const Signup = () => {
               />
             );
           })}
+        </div>
+        <div className="agreement">
+          <div>이용약관 동의</div>
+          <div>
+            <AiOutlineCheckCircle />
+            <div>전체동의합니다</div>
+            <div>
+              선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를
+              이용할 수 있습니다.
+            </div>
+            <AiOutlineCheckCircle />
+            <div>[필수] 이용약관 동의</div>
+            <AiOutlineCheckCircle />
+            <div>[필수] 개인정보 수집 및 이용 동의</div>
+            <AiOutlineCheckCircle />
+            <div>
+              [선택] SMS (문자, 카카오톡 등)으로 혜택과 유용한 정보를 보내드려도
+              될까요?
+            </div>
+            <AiOutlineCheckCircle />
+            <div>[선택] 이메일로 혜택과 정보를 보내드려도 될까요?</div>
+            <div>
+              본인은 만 14세 이상이며, 이용약관, 개인정보 수집 및 이용을
+              확인하였으며, 동의합니다.
+            </div>
+          </div>
         </div>
         <button className="inputButton" onClick={loginClick}>
           가입하기

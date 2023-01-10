@@ -3,7 +3,7 @@
 .signup {
   display: flex;
   justify-content: center;
-  margin: 50px 0px 70px;
+  margin: 50px 0px 100px;
 
   .container {
     display: flex;
@@ -57,6 +57,11 @@
         font-size: 12px;
       }
     }
+
+    .agreement {
+      display: flex;
+    }
+
     .inputButton {
       width: 180px;
       height: 40px;
