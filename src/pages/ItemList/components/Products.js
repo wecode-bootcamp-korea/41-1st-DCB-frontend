@@ -5,15 +5,8 @@ export const Products = ({ items }) => {
   return (
     <div className="products">
       <div className="productLists">
-        {items.map(({ id, product_name, thumbnail, price, contents }) => (
-          <Product
-            key={id}
-            id={id}
-            name={product_name}
-            thumbnail={thumbnail}
-            price={price}
-            contents={contents}
-          />
+        {items.map(items => (
+          <Product key={items.id} {...items} />
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { BsCart3 } from 'react-icons/bs';
 import './productMain.scss';
 
-export const ProductMain = ({ name, thumbnail, price }) => {
+export const ProductMain = ({ product_name, thumbnail, price }) => {
   return (
     <article className="productMain">
       <div className="productCard">
@@ -10,8 +10,8 @@ export const ProductMain = ({ name, thumbnail, price }) => {
           <BsCart3 className="cart" size="28px" />
         </div>
       </div>
-      <p className="productName">{name}</p>
-      <p className="productPrice">{price}</p>
+      <p className="productName">{product_name}</p>
+      <p className="productPrice">{Number(price)}원</p>
     </article>
   );
 };

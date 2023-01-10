@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { BsCart3 } from 'react-icons/bs';
+import { API } from '../../../config';
 import './product.scss';
 
 export const Product = ({ id, name, thumbnail, price, contents }) => {
@@ -10,7 +11,7 @@ export const Product = ({ id, name, thumbnail, price, contents }) => {
 
   const handleClickCart = e => {
     e.stopPropagation();
-    fetch('http://10.58.52.240:3000/cart', {
+    fetch(`${API.cart}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

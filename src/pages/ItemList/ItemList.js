@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Products } from './components/Products';
-import API from '../../config';
+import { API } from '../../config';
 import './itemList.scss';
 
 const ItemLists = () => {
@@ -15,9 +15,7 @@ const ItemLists = () => {
   };
 
   useEffect(() => {
-    fetch(`http://152.67.208.118:3000/items?${searchParams.toString()}`, {
-      method: 'GET',
-    })
+    fetch(`${API.items}/?${searchParams.toString()}`)
       .then(res => res.json())
       .then(result => {
         setItems(result.data);
