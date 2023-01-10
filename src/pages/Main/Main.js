@@ -53,7 +53,7 @@ const Main = () => {
       <div className="productsList">
         <ProductsMain productsName="따끈따끈한 신상" items={productData} />
         <div className="adBanner">
-          <span className="bannerComment">Do you wanna go camping?</span>
+          <span className="bannerComment">Wanna go camping?</span>
           <img className="bannerImg" src="./images/선물.png" alt="선물" />
         </div>
         <ProductsMain
