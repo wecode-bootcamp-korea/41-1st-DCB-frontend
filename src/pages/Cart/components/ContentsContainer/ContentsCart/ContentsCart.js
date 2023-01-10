@@ -23,7 +23,7 @@ const ContentsCart = ({
         setCartItems={setCartItems}
         setCheckedItems={setCheckedItems}
       />
-      <div className="container">
+      <div className="containerContainer">
         {cartItems.length ? (
           <CartItemContainer
             cartItems={cartItems}
