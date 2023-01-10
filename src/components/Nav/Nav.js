@@ -32,7 +32,7 @@ const Nav = () => {
     <div className="nav">
       <div className="linkWrap">
         <div className="memberLink">
-          {isTokenValid
+          {/* {isTokenValid
             ? LOGIN_LIST.map(list => {
                 return (
                   <Link className="memberLinkStyle" to={list.to} key={list.id}>
@@ -46,7 +46,7 @@ const Nav = () => {
                     {list.title}
                   </Link>
                 );
-              })}
+              })} */}
           {/* {LOGIN_LIST.map(list => {
             return (
               <Link className="memberLinkStyle" to={list.to} key={list.id}>
@@ -54,6 +54,24 @@ const Nav = () => {
               </Link>
             );
           })} */}
+          <Link className="memberLinkStyle" to="/signup">
+            회원가입
+          </Link>
+          <Link className="memberLinkStyle" to="/">
+            로그인
+          </Link>
+          <Link className="memberLinkStyle" to="/">
+            고객센터
+          </Link>
+          <Link className="memberLinkStyle" to="/">
+            마이페이지
+          </Link>
+          <Link className="memberLinkStyle" to="/" onClick={logOut}>
+            로그아웃
+          </Link>
+          <Link className="memberLinkStyle" to="/">
+            고객센터
+          </Link>
         </div>
         <div className="navMain">
           <Link to="/" className="navLogo">
