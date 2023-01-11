@@ -3,14 +3,42 @@
 .mypage {
   .grayBack {
     display: flex;
+    align-items: center;
     justify-content: center;
-    background-color: gray;
+    width: 100vw;
+    height: 40vh;
+    background-color: rgba(143, 116, 87, 0.131);
 
     .boxLeft {
       width: 460px;
       height: 200px;
+      margin: 5px;
       padding: 0px 30px 10px;
       background-color: white;
+    }
+    .boxRight {
+      &Top {
+        display: flex;
+
+        &First {
+          width: 280px;
+          height: 140px;
+          margin: 5px 0px;
+          background-color: white;
+        }
+        &Second {
+          width: 280px;
+          height: 140px;
+          margin: 5px;
+          background-color: white;
+        }
+      }
+      &Third {
+        width: 565px;
+        height: 55px;
+        margin-bottom: 5px;
+        background-color: white;
+      }
     }
   }
 }
