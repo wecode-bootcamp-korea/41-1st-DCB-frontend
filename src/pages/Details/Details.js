@@ -36,7 +36,7 @@ const Details = () => {
   };
 
   useEffect(() => {
-    fetch(`http://152.67.208.118:3000/carts`, {
+    fetch(`http://10.58.52.240:3000/carts`, {
       method: 'GET',
       headers: {
         Authorization:
@@ -48,6 +48,7 @@ const Details = () => {
         setCartItems(cart.data);
       });
   }, []);
+  console.log(cartItems);
 
   useEffect(() => {
     fetch(`http://10.58.52.240:3000/items/${productId}`)
@@ -113,7 +114,7 @@ const Details = () => {
 
   const fetchOption = fetchOptionId;
   const fetchItemId = Number(productId);
-  const fetchquantity = productTheNumber;
+  const fetchQuantity = productTheNumber;
 
   // setOptionList(optionList => {
   //   const find = optionList.find(one => one.option === selectOption);
@@ -150,15 +151,17 @@ const Details = () => {
   const totalPrice = Number(item.price) * productTheNumber;
 
   const pass = () => {
+    console.log(methodPicker());
     fetch(`http://10.58.52.240:3000/carts`, {
       method: methodPicker(),
       headers: {
+        'Content-Type': 'application/json;charset=utf-8',
         authorization:
           'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
       },
       body: JSON.stringify({
         optionId: fetchOptionId,
-        quantity: fetchquantity,
+        quantity: fetchQuantity,
         itemId: fetchItemId,
       }),
     }).then(response => response.json());
@@ -199,6 +202,7 @@ const Details = () => {
                         <input
                           className="quantityNumber"
                           value={productTheNumber}
+                          readOnly
                         />
                         <button className="plus" onClick={incrementCount}>
                           +
