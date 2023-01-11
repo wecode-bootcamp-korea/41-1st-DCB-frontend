@@ -1,50 +1,89 @@
 import React from 'react';
-import { useEffect, useState, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import {
+  useNavigate,
+  useParams,
+  useLocation,
+  useSearchParams,
+} from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 import TotalInfo from './components/TotalInfo';
 import Option from './components/Option';
 import './components/TotalInfo';
 import './Detail.scss';
+import { API } from '../../config';
+import Cart from '../Cart/Cart';
 
 const Details = () => {
-  const navigate = useNavigate();
-
-  const params = useParams();
-
   // TODO:MockData const [productDetails, setproductDeatils] = useState([]);
-  const [productTheNumber, setproductTheNumber] = useState(1);
-  const [selectOption, setselectOption] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [productTheNumber, setProductTheNumber] = useState(1);
+  const [selectOption, setSelectOption] = useState('');
   const [item, setItem] = useState({});
   const [options, setOptions] = useState([{}]);
   const [optionList, setOptionList] = useState([]);
+  const [cartItems, setCartItems] = useState({});
+  const [fetchOptionId, setFetchOptionId] = useState();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const params = useParams();
+  const productId = params.id;
+
+  const passCart = () => {
+    navigate(Cart);
+  };
 
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/items/7', {
+    fetch(`http://152.67.208.118:3000/carts`, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      headers: {
+        Authorization:
+          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+      },
     })
-      .then(result => result.json())
-      .then(data => {
-        setItem(data.data[0]);
-        setOptions(data.data[0].options);
+      .then(response => response.json())
+      .then(cart => {
+        setCartItems(cart.data);
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`http://10.58.52.240:3000/items/${productId}`)
+      .then(result => {
+        return result.json();
+      })
+      .then(data => {
+        setItem(data.data);
+        setOptions(data.data.options);
+      });
+  }, [productId]);
+
   const select = e => {
     e.preventDefault();
-    setselectOption(e.target);
+    setSelectOption(e.target);
+  };
+
+  const methodPicker = () => {
+    for (let i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].cartItemId === Number(productId)) {
+        return 'PATCH';
+      } else {
+        return 'POST';
+      }
+    }
   };
 
   const incrementCount = e => {
     e.preventDefault();
-    setproductTheNumber(productTheNumber => productTheNumber + 1);
+    setProductTheNumber(productTheNumber => productTheNumber + 1);
   };
   const decrementCount = e => {
     e.preventDefault();
     const value = productTheNumber - 1;
-    if (value < 0) return;
-    setproductTheNumber(value);
+    if (value < 1) return alert('최소 주문수량은 1개 입니다.');
+    setProductTheNumber(value);
   };
 
   const option = item.option_category_id;
@@ -58,46 +97,72 @@ const Details = () => {
   };
 
   const addToOrder = e => {
+    const filteredItem = item.options.filter(
+      item => item.option_content === e.target.value
+    );
+
+    setFetchOptionId(filteredItem[0].option_id);
+
+    setOptionList([...optionList], filteredItem);
     const newSelectOptions = [...optionList];
     if (!newSelectOptions.includes(e.target.value)) {
       newSelectOptions.push(e.target.value);
       setOptionList(newSelectOptions);
     }
-
-    // setOptionList(optionList => {
-    //   const find = optionList.find(one => one.option === selectOption);
-    //   if (find === undefined) {
-    //     return [
-    //       ...optionList,
-    //       {
-    //         option: selectOption,
-    //       },
-    //     ];
-    //   } else {
-    //     return optionList.map(one => {
-    //       if (one.option !== selectOption) {
-    //         return [
-    //           ...optionList,
-    //           {
-    //             option: selectOption,
-    //           },
-    //         ];
-    //       } else if (one.option === selectOption) {
-    //         return [
-    //           optionList,
-    //           {
-    //             option: selectOption,
-    //           },
-    //         ];
-    //       } else {
-    //         return optionList;
-    //       }
-    //     });
-    //   }
-    // });
   };
 
+  const fetchOption = fetchOptionId;
+  const fetchItemId = Number(productId);
+  const fetchquantity = productTheNumber;
+
+  // setOptionList(optionList => {
+  //   const find = optionList.find(one => one.option === selectOption);
+  //   if (find === undefined) {
+  //     return [
+  //       ...optionList,
+  //       {
+  //         option: selectOption,
+  //       },
+  //     ];
+  //   } else {
+  //     return optionList.map(one => {
+  //       if (one.option !== selectOption) {
+  //         return [
+  //           ...optionList,
+  //           {
+  //             option: selectOption,
+  //           },
+  //         ];
+  //       } else if (one.option === selectOption) {
+  //         return [
+  //           optionList,
+  //           {
+  //             option: selectOption,
+  //           },
+  //         ];
+  //       } else {
+  //         return optionList;
+  //       }
+  //     });
+  //   }
+  // });
+
   const totalPrice = Number(item.price) * productTheNumber;
+
+  const pass = () => {
+    fetch(`http://10.58.52.240:3000/carts`, {
+      method: methodPicker(),
+      headers: {
+        authorization:
+          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+      },
+      body: JSON.stringify({
+        optionId: fetchOptionId,
+        quantity: fetchquantity,
+        itemId: fetchItemId,
+      }),
+    }).then(response => response.json());
+  };
 
   return (
     <div className="detail">
@@ -157,13 +222,18 @@ const Details = () => {
                         className="productOptionSelect"
                         onChange={addToOrder}
                         onClick={select}
+                        // value={form.optionId}
                       >
                         <option disabled selected>
                           - 필수! 선택해주세요 -
                         </option>
                         {options.map(data => {
                           return (
-                            <option key={data.option_id} onChange={onAdd}>
+                            <option
+                              key={data.option_id}
+                              onChange={onAdd}
+                              option_id={data.option_id}
+                            >
                               {data.option_content}
                             </option>
                           );
@@ -198,8 +268,12 @@ const Details = () => {
                 )}
 
                 <div className="actionBtn">
-                  <button className="cartBtn">장바구니 </button>
-                  <button className="submitBtn"> 구매하기 </button>
+                  <button className="cartBtn" onClick={pass}>
+                    장바구니
+                  </button>
+                  <button className="submitBtn" onClick={(pass, passCart)}>
+                    구매하기
+                  </button>
                 </div>
               </div>
             </div>

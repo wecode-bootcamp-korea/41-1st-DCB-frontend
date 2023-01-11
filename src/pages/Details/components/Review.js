@@ -8,10 +8,11 @@ const Review = () => {
   const [reviewData, setreviewData] = useState([]);
 
   useEffect(() => {
-    fetch('data/review.json')
+    fetch('/data/review.json')
       .then(result => result.json())
       .then(data => setreviewData(data));
   }, []);
+  console.log(reviewData);
 
   return (
     <div className="reviewContent">

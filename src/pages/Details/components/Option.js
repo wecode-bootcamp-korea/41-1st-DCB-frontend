@@ -15,14 +15,15 @@ const Option = ({ product, total, item, onRemove, id }) => {
   const decrementCount = e => {
     e.preventDefault();
     const value = productTheNumbers - 1;
-    if (value < 1) return;
+    if (value < 1) return alert('최소 주문수량은 1개 입니다.');
     setproductTheNumbers(value);
   };
-  useEffect(() => {
-    fetch('data/details.json')
-      .then(result => result.json())
-      .then(data => setproductDeatils(data));
-  }, []);
+  // TODO: Mockdata 사용
+  // useEffect(() => {
+  //   fetch('data/details.json')
+  //     .then(result => result.json())
+  //     .then(data => setproductDeatils(data));
+  // }, []);
 
   return (
     <div className="option">
@@ -45,7 +46,7 @@ const Option = ({ product, total, item, onRemove, id }) => {
           <div className="closeZone">
             <AiOutlineClose
               className="close"
-              onClick={() => onRemove(product, id)}
+              onClick={() => onRemove(product)}
             />
           </div>
         </div>

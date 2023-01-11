@@ -3,11 +3,16 @@ import Delivery from './Delivery';
 import Exchange from './Exchange';
 import { FiPlus } from 'react-icons/fi'; // 별 이미지입니다!
 import './ProductDescription.scss';
+import { API } from '../../../config';
+import { useParams } from 'react-router-dom';
 
 const ProductDescription = () => {
   const [productDetails, setproductDeatils] = useState([{}]);
   const [switchBtn, setswitchBtn] = useState(false);
   const [switchBtn2, setswitchBtn2] = useState(false);
+
+  const params = useParams();
+  const productId = params.id;
 
   const turn = e => {
     return setswitchBtn(!switchBtn);
@@ -15,8 +20,9 @@ const ProductDescription = () => {
   const turn2 = e => {
     return setswitchBtn2(!switchBtn2);
   };
+
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/items/9')
+    fetch(`http://10.58.52.240:3000/items/${productId}`)
       .then(result => result.json())
       .then(data => {
         setproductDeatils(data.data);
@@ -26,10 +32,10 @@ const ProductDescription = () => {
   return (
     <div className="productDescription">
       <div className="Description">
-        <img className="img" src={productDetails[0].thumbnail} alt="대표사진" />
+        <img className="img" src={productDetails.thumbnail} alt="대표사진" />
       </div>
 
-      <div className="longDescription">{productDetails[0].descriptions}</div>
+      <div className="longDescription">{productDetails.descriptions}</div>
       <div className="shippingInformation">
         <div
           className="shippingInformationTextBtn"

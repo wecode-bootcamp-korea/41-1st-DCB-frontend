@@ -7,7 +7,7 @@ const ReviewBottom = () => {
   const [reviewComment, setreviewComment] = useState([]);
 
   useEffect(() => {
-    fetch('data/reviewComments.json')
+    fetch('/data/reviewComments.json')
       .then(result => result.json())
       .then(data => setreviewComment(data));
   }, []);
