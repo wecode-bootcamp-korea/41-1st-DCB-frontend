@@ -4,12 +4,14 @@ import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { LINK_LIST, LINKBTM_LIST } from './NavData.js';
+import { Category } from './Category.js';
 import './Nav.scss';
 
 const Nav = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isMouseHover, setIsMouseHover] = useState(false);
 
   const handleChangeInput = e => {
     setInputValue(e.target.value);
@@ -21,6 +23,10 @@ const Nav = () => {
     setSearchParams(searchParams);
     setInputValue('');
     navigate(`/search-list?${searchParams.toString()}`);
+  };
+
+  const hoverCategory = boolean => {
+    setIsMouseHover(boolean);
   };
 
   return (
@@ -55,9 +61,18 @@ const Nav = () => {
         </div>
       </div>
       <div className="categoryWrap">
-        <div className="categoryWrapLeft">
+        <div
+          className="categoryWrapLeft"
+          onMouseEnter={() => hoverCategory(true)}
+        >
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
+          <div
+            className={isMouseHover ? null : 'hide'}
+            onMouseLeave={() => hoverCategory(false)}
+          >
+            <Category />
+          </div>
         </div>
         <div className="pageLink">
           {LINKBTM_LIST.map(listbtm => {

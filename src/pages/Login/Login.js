@@ -37,6 +37,7 @@ const Login = () => {
 
   return (
     <form className="login">
+      <div className="loginTitle">로그인</div>
       <input
         className="loginBox"
         type="text"
