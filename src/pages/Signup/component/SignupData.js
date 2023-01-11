@@ -29,3 +29,23 @@ export const SIGNUP_LIST = [
     name: 'phone',
   },
 ];
+
+export const AGREE_LIST = [
+  {
+    id: 1,
+    title: '[필수] 이용약관 동의',
+  },
+  {
+    id: 2,
+    title: '[필수] 개인정보 수집 및 이용 동의',
+  },
+  {
+    id: 3,
+    title:
+      '[선택] SMS (문자, 카카오톡 등)으로 혜택과 유용한 정보를 보내드려도 될까요?',
+  },
+  {
+    id: 4,
+    title: '[선택] 이메일로 혜택과 정보를 보내드려도 될까요?',
+  },
+];
