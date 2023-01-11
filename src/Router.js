@@ -9,6 +9,7 @@ import ItemList from './pages/ItemList/ItemList';
 import Details from './pages/Details/Details';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
+import Mypage from './pages/Mypage/Mypage';
 
 export default function Router() {
   return (
@@ -22,6 +23,7 @@ export default function Router() {
         <Route path="/item-list" element={<ItemList />} />
         <Route path="/details:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
