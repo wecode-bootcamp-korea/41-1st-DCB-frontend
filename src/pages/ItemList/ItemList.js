@@ -8,6 +8,7 @@ const ItemLists = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [items, setItems] = useState([]);
   const [title, setTitle] = useState('');
+  const [categoryId, setCategoryId] = useState(0);
 
   const setOptionParams = e => {
     searchParams.set('sort', e.target.value);
@@ -18,10 +19,13 @@ const ItemLists = () => {
     fetch(`${API.items}/?${searchParams.toString()}`)
       .then(res => res.json())
       .then(result => {
+        setCategoryId(searchParams.get('category'));
         setItems(result.data);
-        setTitle(result.data[0].product_category);
+        setTitle(
+          categoryId == 0 ? '전체보기' : result.data[0].product_category
+        );
       });
-  }, [searchParams]);
+  }, [searchParams, categoryId]);
 
   return (
     <div className="itemList">
