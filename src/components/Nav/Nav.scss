@@ -91,7 +91,12 @@
 
     &Left {
       display: flex;
+      position: relative;
       align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       &Bar {
         width: 30px;
@@ -125,4 +130,8 @@
       }
     }
   }
+}
+
+.hide {
+  display: none;
 }

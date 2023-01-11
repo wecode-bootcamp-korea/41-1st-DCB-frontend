@@ -4,10 +4,12 @@ import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { LINK_LIST, LOGIN_LIST, LINKBTM_LIST } from './NavData.js';
+import { Category } from './Category.js';
 import './Nav.scss';
 
 const Nav = () => {
   const [currentScroll, setCurrentScroll] = useState(0);
+  const [isMouseHover, setIsMouseHover] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,6 +30,10 @@ const Nav = () => {
       localStorage.clear();
     }
     navigate(`${to}`);
+  };
+
+  const hoverCategory = boolean => {
+    setIsMouseHover(boolean);
   };
 
   return (
@@ -65,13 +71,24 @@ const Nav = () => {
               <CiSearch className="navButtonIcon" />
             </button>
           </div>
-          <BsCart3 className="navCart" />
+          <Link to="/cart">
+            <BsCart3 className="navCart" />
+          </Link>
         </div>
       </div>
       <div className="categoryWrap">
-        <div className="categoryWrapLeft">
+        <div
+          className="categoryWrapLeft"
+          onMouseEnter={() => hoverCategory(true)}
+        >
           <HiOutlineBars3 className="categoryWrapLeftBar" />
           <span className="categoryWrapLeftText">카테고리</span>
+          <div
+            className={isMouseHover ? null : 'hide'}
+            onMouseLeave={() => hoverCategory(false)}
+          >
+            <Category />
+          </div>
         </div>
         <div className="pageLink">
           {LINKBTM_LIST.map(listbtm => {
