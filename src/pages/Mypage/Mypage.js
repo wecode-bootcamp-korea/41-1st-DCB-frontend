@@ -14,17 +14,19 @@ const Mypage = () => {
           </p>
           <button>SIMPLE 회원</button>
         </div>
-        <div>
-          <span>적립금</span>
-          <a>0원</a>
-        </div>
-        <div>
-          <span>쿠폰</span>
-          <a>1개</a>
-        </div>
-        <div>
-          <span>010-1234-5678</span>
-          <a>정보수정</a>
+        <div className="boxRight">
+          <div className="">
+            <span>적립금</span>
+            <Link>0원</Link>
+          </div>
+          <div>
+            <span>쿠폰</span>
+            <Link>1개</Link>
+          </div>
+          <div>
+            <span>010-1234-5678</span>
+            <Link>정보수정</Link>
+          </div>
         </div>
       </div>
       <div />

@@ -2,11 +2,13 @@
 
 .mypage {
   .grayBack {
+    display: flex;
+    justify-content: center;
     background-color: gray;
 
     .boxLeft {
-      width: 300px;
-      height: 100px;
+      width: 460px;
+      height: 200px;
       padding: 0px 30px 10px;
       background-color: white;
     }
