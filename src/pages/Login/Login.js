@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { API } from '../../config';
 import './Login.scss';
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
 
   const loginClick = e => {
     e.preventDefault();
-    fetch('http://10.58.52.89:3000/signin', {
+    fetch(`${API.signin}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ email: loginInfo.email, password: loginInfo.pw }),
@@ -28,7 +29,7 @@ const Login = () => {
       .then(result => {
         if (result.accessToken) {
           localStorage.setItem('Token', result.accessToken);
-          navigate('/main');
+          navigate('/');
         } else {
           alert('이메일, 비밀번호가 일치하지 않습니다.');
         }

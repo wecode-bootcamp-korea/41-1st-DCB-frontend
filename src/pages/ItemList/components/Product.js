@@ -33,10 +33,7 @@ export const Product = ({ id, product_name, thumbnail, price, contents }) => {
     <article className="product" onClick={handleClickItem}>
       <div className="productCard">
         <img src={thumbnail} alt="product" className="productImage" />
-        <div
-          className="cartIcon"
-          onClick={() => handleClickCart(id, product_name)}
-        >
+        <div className="cartIcon" onClick={handleClickCart}>
           <BsCart3 className="cart" size="25px" />
         </div>
       </div>

@@ -3,7 +3,14 @@ import { BsCart3 } from 'react-icons/bs';
 import { API } from '../../../config';
 import './productMain.scss';
 
-export const ProductMain = ({ id, product_name, thumbnail, price }) => {
+export const ProductMain = ({
+  id,
+  product_name,
+  thumbnail,
+  price,
+  option_category_id,
+  options,
+}) => {
   const navigate = useNavigate();
   const handleClickItem = () => {
     navigate(`/details/${id}`);
@@ -17,7 +24,11 @@ export const ProductMain = ({ id, product_name, thumbnail, price }) => {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('Token'),
       },
-      body: JSON.stringify({ id }),
+      body: JSON.stringify({
+        itemId: id,
+        quantity: 1,
+        optionId: option_category_id ? options[0].option_id : null,
+      }),
     })
       .then(res => res.json())
       .then(data => {
@@ -33,10 +44,7 @@ export const ProductMain = ({ id, product_name, thumbnail, price }) => {
     <article className="productMain" onClick={handleClickItem}>
       <div className="productCard">
         <img src={thumbnail} alt="product" className="productImage" />
-        <div
-          className="cartIcon"
-          onClick={() => handleClickCart(id, product_name)}
-        >
+        <div className="cartIcon" onClick={handleClickCart}>
           <BsCart3 className="cart" size="28px" />
         </div>
       </div>
