@@ -11,7 +11,6 @@ export const Product = ({ id, product_name, thumbnail, price, contents }) => {
 
   const handleClickCart = e => {
     e.stopPropagation();
-    console.log('click');
     fetch(`${API.cart}`, {
       method: 'POST',
       headers: {
@@ -36,7 +35,7 @@ export const Product = ({ id, product_name, thumbnail, price, contents }) => {
         <img src={thumbnail} alt="product" className="productImage" />
         <div
           className="cartIcon"
-          onClick={e => handleClickCart(e, id, product_name)}
+          onClick={() => handleClickCart(id, product_name)}
         >
           <BsCart3 className="cart" size="25px" />
         </div>
