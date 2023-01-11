@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import UserInput from './component/UserInput';
 import { useNavigate } from 'react-router-dom';
-import { SIGNUP_LIST } from './component/SignupData';
+import { SIGNUP_LIST, AGREE_LIST } from './component/SignupData';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 import './Signup.scss';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [signupInfo, setSignupInfo] = useState({
     email: '',
     password: '',
@@ -12,6 +14,7 @@ const Signup = () => {
     name: '',
     phone: '',
   });
+  const [isClick, setIsClick] = useState([]);
 
   const handleInfo = e => {
     const { name, value } = e.target;
@@ -19,9 +22,6 @@ const Signup = () => {
   };
 
   const isPasswordCorrect = signupInfo.password === signupInfo.passwordCheck;
-
-  const navigate = useNavigate();
-
   const loginClick = e => {
     e.preventDefault();
     fetch('http://10.58.52.89:3000/signup', {
@@ -55,6 +55,19 @@ const Signup = () => {
     ' phoneNumber must be provided!2 ': '핸드폰 번호를 입력해주세요.',
   };
 
+  const makeButtonCheck = id => {
+    if (isClick.includes(id)) {
+      setIsClick(isClick.filter(i => i !== id));
+      return;
+    }
+    setIsClick([...isClick, id]);
+  };
+
+  const isAllChecked = AGREE_LIST.length === isClick.length;
+  const handleAllCheck = () => {
+    isAllChecked ? setIsClick([]) : setIsClick(AGREE_LIST.map(item => item.id));
+  };
+
   return (
     <form className="signup">
       <div className="container">
@@ -82,6 +95,53 @@ const Signup = () => {
               />
             );
           })}
+        </div>
+        <div className="agreement">
+          <div className="agreementTitle">
+            이용약관 동의<span className="agreementTitleRed">*</span>
+          </div>
+          <div className="agreementList">
+            <div className="agreementListInfo">
+              <div className="agreementListInfoBox">
+                <div className="checkButtonWrapper">
+                  <AiOutlineCheckCircle
+                    className={isAllChecked ? 'checkButton' : 'disabled'}
+                    onClick={handleAllCheck}
+                  />
+                </div>
+                <span className="agreeList">전체 동의합니다</span>
+              </div>
+              <p className="agreeDetail">
+                선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를
+                이용할 수 있습니다.
+              </p>
+              {AGREE_LIST.map(list => {
+                return (
+                  <Fragment key={list.id}>
+                    <div className="agreementListInfoBox">
+                      <div className="checkButtonWrapper">
+                        <AiOutlineCheckCircle
+                          className={
+                            isClick.includes(list.id)
+                              ? 'checkButton'
+                              : 'disabled'
+                          }
+                          onClick={() => makeButtonCheck(list.id)}
+                        />
+                      </div>
+                      <span className="agreeList">{list.title}</span>
+                    </div>
+                    <p className="agreeDetail">{list.info}</p>
+                  </Fragment>
+                );
+              })}
+              <div className="agreeDetails">
+                본인은 만 14세 이상이며, 이용약관, 개인정보 수집 및 이용을
+                <br />
+                확인하였으며, 동의합니다.
+              </div>
+            </div>
+          </div>
         </div>
         <button className="inputButton" onClick={loginClick}>
           가입하기
