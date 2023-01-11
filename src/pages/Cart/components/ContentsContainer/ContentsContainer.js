@@ -29,10 +29,13 @@ const ContentsContainer = ({
         <h2 className="recommendTitle">다른 고객이 함께 구매한 제품</h2>
         <div className="recommendList">
           <div className="recommendListItem">
-            <a href="https://www.wiselycompany.com/web/product/medium/202212/c39235e34a72b08d79a625fba7047669.png">
+            <a href="">
               <img
                 className="thumbnailImg"
-                src="https://www.wiselycompany.com/web/product/medium/202212/c39235e34a72b08d79a625fba7047669.png"
+                src={
+                  JSON.parse(localStorage.getItem('cartsLocalStorage'))[0]
+                    .itemsThumbnail
+                }
                 alt=""
               />
             </a>
@@ -42,10 +45,13 @@ const ContentsContainer = ({
             </div>
           </div>
           <div className="recommendListItem">
-            <a href="https://www.wiselycompany.com/web/product/medium/202212/183475838bd4b89b7ce3c4414cfabf26.png">
+            <a href="">
               <img
                 className="thumbnailImg"
-                src="https://www.wiselycompany.com/web/product/medium/202212/183475838bd4b89b7ce3c4414cfabf26.png"
+                src={
+                  JSON.parse(localStorage.getItem('cartsLocalStorage'))[1]
+                    .itemsThumbnail
+                }
                 alt=""
               />
             </a>
@@ -55,10 +61,13 @@ const ContentsContainer = ({
             </div>
           </div>
           <div className="recommendListItem">
-            <a href="https://www.wiselycompany.com/web/product/medium/202212/25d8f13d46c64e9122b8529b80a942c6.png">
+            <a href="">
               <img
                 className="thumbnailImg"
-                src="https://www.wiselycompany.com/web/product/medium/202212/25d8f13d46c64e9122b8529b80a942c6.png"
+                src={
+                  JSON.parse(localStorage.getItem('cartsLocalStorage'))[2]
+                    .itemsThumbnail
+                }
                 alt=""
               />
             </a>
@@ -68,10 +77,13 @@ const ContentsContainer = ({
             </div>
           </div>
           <div className="recommendListItem">
-            <a href="https://www.wiselycompany.com/web/product/medium/202212/d1124821fe668de23c7addc8035b1047.png">
+            <a href="">
               <img
                 className="thumbnailImg"
-                src="https://www.wiselycompany.com/web/product/medium/202212/d1124821fe668de23c7addc8035b1047.png"
+                src={
+                  JSON.parse(localStorage.getItem('cartsLocalStorage'))[3]
+                    .itemsThumbnail
+                }
                 alt=""
               />
             </a>
