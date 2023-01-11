@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { BsCart3 } from 'react-icons/bs';
 import { HiOutlineBars3 } from 'react-icons/hi2';
@@ -9,6 +9,8 @@ import './Nav.scss';
 
 const Nav = () => {
   const [currentScroll, setCurrentScroll] = useState(0);
+  const [inputValue, setInputValue] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [isMouseHover, setIsMouseHover] = useState(false);
   const navigate = useNavigate();
 
@@ -30,6 +32,18 @@ const Nav = () => {
       localStorage.clear();
     }
     navigate(`${to}`);
+  };
+
+  const handleChangeInput = e => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmitSearch = e => {
+    e.preventDefault();
+    searchParams.set('search', inputValue);
+    setSearchParams(searchParams);
+    setInputValue('');
+    navigate(`/search-list?${searchParams.toString()}`);
   };
 
   const hoverCategory = boolean => {
@@ -65,12 +79,16 @@ const Nav = () => {
           <Link to="/" className="navLogo">
             SIMPLE
           </Link>
-          <div className="navSearch">
-            <input className="navInput" />
+          <form className="navSearch" onSubmit={handleSubmitSearch}>
+            <input
+              className="navInput"
+              value={inputValue || ''}
+              onChange={handleChangeInput}
+            />
             <button className="navButton">
               <CiSearch className="navButtonIcon" />
             </button>
-          </div>
+          </form>
           <Link to="/cart">
             <BsCart3 className="navCart" />
           </Link>

@@ -1,8 +1,8 @@
-const BASE_URL = 'http://10.58.52.89:3000';
+const BASE_URL = 'http://152.67.208.118:3000';
+const CART_URL = 'http://10.58.52.240:3000';
 
-const API = {
+export const API = {
   user: `${BASE_URL}/user`,
   items: `${BASE_URL}/items`,
+  cart: `${CART_URL}/cart`,
 };
-
-export default API;
