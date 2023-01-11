@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Products } from './components/Products';
+import API from '../../config';
 import './itemList.scss';
 
 const ItemLists = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch('data/selectedItems.json')
+    fetch(`${API.items}`)
       .then(res => res.json())
       .then(result => setItems(result));
   }, []);
