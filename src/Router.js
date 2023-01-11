@@ -6,6 +6,7 @@ import Main from './pages/Main/Main';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import ItemList from './pages/ItemList/ItemList';
+import Search from './pages/Search/Search';
 import Details from './pages/Details/Details';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
@@ -21,7 +22,8 @@ export default function Router() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/item-list" element={<ItemList />} />
-        <Route path="/details:id" element={<Details />} />
+        <Route path="/search-list" element={<Search />} />
+        <Route path="/details" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/mypage" element={<Mypage />} />
       </Routes>
