@@ -3,7 +3,15 @@ import { BsCart3 } from 'react-icons/bs';
 import { API } from '../../../config';
 import './product.scss';
 
-export const Product = ({ id, product_name, thumbnail, price, contents }) => {
+export const Product = ({
+  id,
+  product_name,
+  thumbnail,
+  options,
+  option_category_id,
+  price,
+  contents,
+}) => {
   const navigate = useNavigate();
   const handleClickItem = () => {
     navigate(`/details/${id}`);
@@ -17,7 +25,11 @@ export const Product = ({ id, product_name, thumbnail, price, contents }) => {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('Token'),
       },
-      body: JSON.stringify({ id }),
+      body: JSON.stringify({
+        itemId: id,
+        quantity: 1,
+        optionId: option_category_id ? options[0].option_id : null,
+      }),
     })
       .then(res => res.json())
       .then(data => {
