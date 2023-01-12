@@ -1,0 +1,19 @@
+@import '../../../../../styles/variables';
+
+.contentsCart {
+  .title {
+    padding-top: 60px;
+    color: $color-main;
+    text-align: center;
+  }
+
+  .containerContainer {
+    min-height: 600px;
+    .message {
+      padding: 140px 0;
+      background-color: white;
+      color: #dddddd;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../../../styles/variables';
+
+.contentsContainer {
+  .recommend {
+    width: 730px;
+    .recommendTitle {
+      margin-top: 100px;
+      color: $color-main;
+      text-align: center;
+    }
+    .recommendList {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      .thumbnailImg {
+        width: 165px;
+        height: 165px;
+        border-radius: 5%;
+      }
+
+      .description {
+        width: 165px;
+        margin-top: 13px;
+        padding-left: 4px;
+        overflow: hidden;
+        color: $color-main;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        .name {
+          font-size: 16px;
+        }
+        .price {
+          margin-top: 4px;
+          font-size: 18px;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}

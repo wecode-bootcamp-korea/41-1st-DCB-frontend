@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+.cart {
+  .container {
+    display: flex;
+    justify-content: center;
+
+    .sectionContainer {
+      display: flex;
+      max-width: 1050px;
+      padding-bottom: 120px;
+
+      .contentsContainer {
+        width: 500px;
+      }
+    }
+  }
+}

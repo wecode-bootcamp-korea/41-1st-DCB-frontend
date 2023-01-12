@@ -1,0 +1,26 @@
+@import '../../../../../styles/variables';
+
+.contentsOrder {
+  height: 1000px;
+
+  .title {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .billingInfo {
+    height: 100px;
+  }
+
+  .shippingInfo {
+    height: 100px;
+  }
+
+  .discountInfo {
+    height: 100px;
+  }
+
+  .paymethod {
+    height: 100px;
+  }
+}

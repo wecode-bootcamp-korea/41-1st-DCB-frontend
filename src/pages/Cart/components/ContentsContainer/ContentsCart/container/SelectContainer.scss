@@ -1,0 +1,46 @@
+@import '../../../../../../styles/variables';
+
+.selectContainer {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid black;
+
+  .checkAll {
+    width: 1rem;
+    height: 1rem;
+    transition: background 0.2s;
+    border: 1px solid #999;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  .checkAll:checked {
+    border: none;
+    background: $color-main;
+  }
+
+  .selectAll {
+    width: 130px;
+    padding-left: 10px;
+    color: $color-main;
+  }
+
+  .selectedDelete {
+    margin-left: 20px;
+    padding-left: 20px;
+    border: 0;
+    border-left: 1px solid #e8e8e8;
+    background-color: transparent;
+    color: $color-main;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .selectedDelete:disabled {
+    color: #dddddd;
+    cursor: default;
+  }
+}

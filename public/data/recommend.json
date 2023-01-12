@@ -1,0 +1,66 @@
+[
+  {
+    "cartId": 1,
+    "cartQuantity": 1,
+    "cartUserId": 1,
+    "cartItemId": 1,
+    "itemsName": "엠보싱 비닐장갑 200매aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/5b6575423fbb6ad38c01daab840447e8.png",
+    "itemsPrice": "2490.000",
+    "optionDescription": [
+      {
+        "content": "red",
+        "option_id": 1,
+        "categoryName": "Color"
+      }
+    ]
+  },
+  {
+    "cartId": 2,
+    "cartQuantity": 2,
+    "cartUserId": 1,
+    "cartItemId": 2,
+    "itemsName": "쉐이빙젤 200mL",
+    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/6c690d26ac4aefc4f883ae5e0d1e99bf.png",
+    "itemsPrice": "2990.000",
+    "optionDescription": [
+      {
+        "content": "red",
+        "option_id": 1,
+        "categoryName": "Color"
+      }
+    ]
+  },
+  {
+    "cartId": 3,
+    "cartQuantity": 1,
+    "cartUserId": 1,
+    "cartItemId": 3,
+    "itemsName": "면도용품 선물세트",
+    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/186b1c5fb9a7012d0333f0852d819b21.png",
+    "itemsPrice": "12890.000",
+    "optionDescription": [
+      {
+        "content": "red",
+        "option_id": 1,
+        "categoryName": "Color"
+      }
+    ]
+  },
+  {
+    "cartId": 4,
+    "cartQuantity": 3,
+    "cartUserId": 1,
+    "cartItemId": 4,
+    "itemsName": "도톰한 호텔 수건",
+    "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/6036410411fb6872b452c3b014f85878.png",
+    "itemsPrice": "16490.000",
+    "optionDescription": [
+      {
+        "content": "red",
+        "option_id": 1,
+        "categoryName": "Color"
+      }
+    ]
+  }
+]
