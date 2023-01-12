@@ -24,7 +24,11 @@ const SelectContainer = ({
       headers: {
         Authorization: localStorage.getItem('token'),
       },
-    });
+    })
+      .then(response => response.json())
+      .then(result => {
+        // 응답에대한 처리 코드
+      });
 
     setCartItems(
       cartItems.filter(item => !checkedItems.includes(item.cartItemId))

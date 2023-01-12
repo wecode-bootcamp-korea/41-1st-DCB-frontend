@@ -19,17 +19,8 @@ const Cart = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetch('data/cartItems.json')
-  //     .then(response => response.json())
-  //     .then(cart => {
-  //       setCartItems(cart);
-  //       setCheckedItems(cart.map(item => item.cartItemId));
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch('http://10.58.52.240:3000/carts', {
+    fetch('data/cartItems.json', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -62,8 +53,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-localStorage.setItem(
-  'token',
-  'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI'
-);
