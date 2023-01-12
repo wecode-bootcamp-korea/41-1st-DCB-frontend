@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RecommendItem.scss';
 
 const RecommendItem = ({ item }) => {
+  const navigate = useNavigate();
+
+  const handleClickItem = () => {
+    navigate(`/details/${item.id}`);
+  };
+
   return (
-    <div className="recommendItem">
+    <div className="recommendItem" onClick={handleClickItem}>
       <a href="">
         <img className="thumbnailImg" src={item.thumbnail} alt="" />
       </a>
