@@ -1,0 +1,139 @@
+@import '../../styles/variables';
+
+.mypage {
+  .grayWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 40vh;
+    background-color: rgba(143, 116, 87, 0.131);
+    color: $color-main;
+
+    .grayLeft {
+      @include flexSort(column, center, flex-start);
+      width: 460px;
+      height: 200px;
+      margin: 5px;
+      padding-left: 30px;
+      background-color: white;
+      font-size: 23px;
+      .textBrown {
+        color: $color-main;
+        font-weight: 800;
+      }
+      .buttonStyle {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: $color-main;
+        color: white;
+        text-decoration: none;
+      }
+    }
+    .grayRight {
+      &Top {
+        display: flex;
+
+        &First {
+          @include flexSort(column, center, flex-start);
+          width: 280px;
+          height: 140px;
+          margin: 5px 0px;
+          padding-left: 30px;
+          background-color: white;
+          font-size: 18px;
+          span {
+            margin-bottom: 10px;
+          }
+          .linkStyle {
+            color: $color-main;
+            font-weight: 700;
+            text-decoration: none;
+          }
+        }
+        &Second {
+          @include flexSort(column, center, flex-start);
+          width: 280px;
+          height: 140px;
+          margin: 5px;
+          padding-left: 30px;
+          background-color: white;
+          font-size: 18px;
+          span {
+            margin-bottom: 10px;
+          }
+          .linkStyle {
+            color: $color-main;
+            font-weight: 700;
+            text-decoration: none;
+          }
+        }
+      }
+      &Third {
+        @include flexSort(null, space-between, center);
+        width: 565px;
+        height: 55px;
+        margin-bottom: 5px;
+        padding: 0px 30px;
+        background-color: white;
+        .linkStyle {
+          color: $color-main;
+          font-weight: 700;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .whiteWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    .whiteInner {
+      display: flex;
+      justify-content: flex-start;
+      height: 80vh;
+      .whiteLeft {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        .title {
+          color: $color-main;
+          font-size: 25px;
+        }
+        .boxList {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .boxLists {
+            padding: 10px;
+            border: 1px solid $color-main;
+            color: $color-main;
+            font-size: 16px;
+          }
+        }
+      }
+      .whiteRight {
+        width: 800px;
+        .orderStatus {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid $color-main;
+          p {
+            color: $color-main;
+            font-size: 25px;
+          }
+          button {
+            width: 170px;
+            height: 47px;
+            border: 1px solid $color-main;
+            border-radius: 5px;
+            background-color: rgba(143, 116, 87, 0.131);
+            color: $color-main;
+          }
+        }
+      }
+    }
+  }
+}
