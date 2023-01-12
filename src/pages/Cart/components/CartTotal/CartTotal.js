@@ -27,7 +27,15 @@ const CartTotal = ({ cartItems, checkedItems }) => {
           totalPrice: totalPrice,
           paymentMethod: 1,
         }),
+      }).then(reponse => {
+        if (reponse.status === 400) {
+          alert('포인트가 부족합니다.');
+        } else {
+          alert('결제 성공');
+          window.location.reload();
+        }
       });
+      // .then(data => console.log(data));
     }
   };
 
