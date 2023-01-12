@@ -8,18 +8,20 @@ import { useParams } from 'react-router-dom';
 
 const ProductDescription = () => {
   const [productDetails, setproductDeatils] = useState([{}]);
-  const [switchBtn, setswitchBtn] = useState(false);
-  const [switchBtn2, setswitchBtn2] = useState(false);
+
+  const [infoValues, setInfoValues] = useState({
+    isDeliveryOpen: false,
+    isExchangeOpen: false,
+  });
+  const handleInfoContent = e => {
+    setInfoValues(prev => ({
+      ...prev,
+      [e.target.title]: !prev[e.target.title],
+    }));
+  };
 
   const params = useParams();
   const productId = params.id;
-
-  const turn = e => {
-    return setswitchBtn(!switchBtn);
-  };
-  const turn2 = e => {
-    return setswitchBtn2(!switchBtn2);
-  };
 
   useEffect(() => {
     fetch(`http://10.58.52.240:3000/items/${productId}`)
@@ -36,36 +38,40 @@ const ProductDescription = () => {
       </div>
 
       <div className="longDescription">{productDetails.descriptions}</div>
-      <div className="shippingInformation">
-        <div
-          className="shippingInformationTextBtn"
-          onClick={turn}
-          value={switchBtn}
-        >
-          <div className="shippingInformationText"> 배송 정보 </div>
+      {INFO_LIST.map(info => {
+        return (
+          <div className="shippingInformation" key={info.id}>
+            <div
+              className="shippingInformationTextBtn"
+              title={info.name}
+              onClick={handleInfoContent}
+            >
+              <div className="shippingInformationText"> {info.title} </div>
 
-          <FiPlus className="plusTogle" />
-        </div>
-        <div className="deliveryInfo">
-          {switchBtn ? (
-            <Delivery className={switchBtn ? 'deliver' : 'deliveroff'} />
-          ) : null}
-        </div>
-      </div>
-      <div className="exchangeReturn">
-        <div
-          className="exchangeReturnTextBtn"
-          onClick={turn2}
-          value={switchBtn2}
-        >
-          <div className="exchangeReturnText">교환 및 반품정보</div>
-          <FiPlus className="plusTogle" />
-        </div>
-        <div className="exchangeInfo">
-          {switchBtn2 ? <Exchange className="Exchanger" /> : null}
-        </div>
-      </div>
+              <FiPlus className="plusTogle" />
+            </div>
+            {infoValues[info.name] && (
+              <div className="deliveryInfo">{info.component}</div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
 export default ProductDescription;
+
+const INFO_LIST = [
+  {
+    id: 1,
+    title: '배송 정보',
+    name: 'isDeliveryOpen',
+    component: <Delivery className="deliver" />,
+  },
+  {
+    id: 2,
+    title: '교환 및 반품',
+    name: 'isExchangeOpen',
+    component: <Exchange className="exchanger" />,
+  },
+];

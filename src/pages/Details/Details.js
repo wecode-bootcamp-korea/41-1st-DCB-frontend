@@ -120,38 +120,6 @@ const Details = () => {
   const fetchItemId = Number(productId);
   const fetchQuantity = productTheNumber;
 
-  // setOptionList(optionList => {
-  //   const find = optionList.find(one => one.option === selectOption);
-  //   if (find === undefined) {
-  //     return [
-  //       ...optionList,
-  //       {
-  //         option: selectOption,
-  //       },
-  //     ];
-  //   } else {
-  //     return optionList.map(one => {
-  //       if (one.option !== selectOption) {
-  //         return [
-  //           ...optionList,
-  //           {
-  //             option: selectOption,
-  //           },
-  //         ];
-  //       } else if (one.option === selectOption) {
-  //         return [
-  //           optionList,
-  //           {
-  //             option: selectOption,
-  //           },
-  //         ];
-  //       } else {
-  //         return optionList;
-  //       }
-  //     });
-  //   }
-  // });
-
   const totalPrice = Number(item.price) * productTheNumber;
 
   const pass = () => {
@@ -169,6 +137,10 @@ const Details = () => {
         itemId: fetchItemId,
       }),
     }).then(response => response.json());
+  };
+
+  const addCartAlert = () => {
+    return alert('장바구니에 추가하였습니다.');
   };
 
   return (
@@ -276,7 +248,13 @@ const Details = () => {
                 )}
 
                 <div className="actionBtn">
-                  <button className="cartBtn" onClick={pass}>
+                  <button
+                    className="cartBtn"
+                    onClick={() => {
+                      pass();
+                      addCartAlert();
+                    }}
+                  >
                     장바구니
                   </button>
                   <button
