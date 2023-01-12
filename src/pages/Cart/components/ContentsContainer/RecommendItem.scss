@@ -3,10 +3,22 @@
 .recommendItem {
   cursor: pointer;
 
-  .thumbnailImg {
+  .img {
     width: 165px;
     height: 165px;
+    overflow: hidden;
     border-radius: 5%;
+
+    .thumbnailImg {
+      width: 165px;
+      height: 165px;
+      border-radius: 5%;
+    }
+
+    .thumbnailImg:hover {
+      transform: scale(1.15);
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   .description {

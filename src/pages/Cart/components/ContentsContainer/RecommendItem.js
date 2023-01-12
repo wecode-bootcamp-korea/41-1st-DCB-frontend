@@ -11,7 +11,9 @@ const RecommendItem = ({ item }) => {
 
   return (
     <div className="recommendItem" onClick={handleClickItem}>
-      <img className="thumbnailImg" src={item.thumbnail} alt="" />
+      <div className="img">
+        <img className="thumbnailImg" src={item.thumbnail} alt="" />
+      </div>
       <div className="description">
         <div className="name">{item.product_name}</div>
         <div className="price">{toStrPrice(parseInt(item.price))}원</div>
