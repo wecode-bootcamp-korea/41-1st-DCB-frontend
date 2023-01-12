@@ -23,7 +23,7 @@ const CartItemWrap = ({
     fetch(`http://152.67.208.118:3000/carts?cartId=${cartItem.cartId}`, {
       method: 'DELETE',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
     });
     setCartItems(cartItems.filter(item => item.cartId !== cartItem.cartId));
@@ -37,7 +37,7 @@ const CartItemWrap = ({
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
       body: JSON.stringify({
         quantity: `${quantity + count}`,
@@ -77,7 +77,8 @@ const CartItemWrap = ({
           <div className="prdName">{cartItem.itemsName}</div>
           {cartItem.optionDescription.map(option => (
             <div className="prdOption" key={cartItem.cartItemId}>
-              {option.categoryName}: {option.content}
+              {option.categoryName ? `${option.categoryName}:` : ` `}{' '}
+              {option.content}
             </div>
           ))}
         </div>

@@ -22,7 +22,7 @@ const SelectContainer = ({
     fetch(`http://152.67.208.118:3000/carts?${query}`, {
       method: 'DELETE',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
     })
       .then(response => response.json())

@@ -4,7 +4,7 @@ import CartTotal from './components/CartTotal/CartTotal';
 import './Cart.scss';
 
 const Cart = () => {
-  console.log('Render!!!!!!!!!!!!!!!!!');
+  console.log('===================Render===================');
   const [cartItems, setCartItems] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
   console.log('cartItems :', cartItems);
@@ -26,7 +26,7 @@ const Cart = () => {
     fetch('http://152.67.208.118:3000/carts', {
       method: 'GET',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
     })
       .then(response => response.json())
@@ -48,7 +48,12 @@ const Cart = () => {
             setCartItems={setCartItems}
             setCheckedItems={setCheckedItems}
           />
-          <CartTotal cartItems={cartItems} checkedItems={checkedItems} />
+          <CartTotal
+            cartItems={cartItems}
+            checkedItems={checkedItems}
+            setCartItems={setCartItems}
+            setCheckedItems={setCheckedItems}
+          />
         </div>
       </div>
     </div>

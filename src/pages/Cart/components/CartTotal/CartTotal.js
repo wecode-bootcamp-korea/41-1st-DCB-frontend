@@ -1,7 +1,12 @@
 import React from 'react';
 import './CartTotal.scss';
 
-const CartTotal = ({ cartItems, checkedItems }) => {
+const CartTotal = ({
+  cartItems,
+  checkedItems,
+  setCartItems,
+  setCheckedItems,
+}) => {
   const totalPrice = cartItems.reduce((totalPrice, item) => {
     return checkedItems.includes(item.cartId)
       ? totalPrice + item.cartQuantity * parseInt(item.itemsPrice)
@@ -20,7 +25,7 @@ const CartTotal = ({ cartItems, checkedItems }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
-          Authorization: localStorage.getItem('token'),
+          Authorization: localStorage.getItem('Token'),
         },
         body: JSON.stringify({
           cartId: checkedItems,
@@ -32,7 +37,10 @@ const CartTotal = ({ cartItems, checkedItems }) => {
           alert('포인트가 부족합니다.');
         } else {
           alert('결제 성공');
-          window.location.reload();
+          setCartItems(
+            cartItems.filter(item => !checkedItems.includes(item.cartId))
+          );
+          setCheckedItems([]);
         }
       });
       // .then(data => console.log(data));
