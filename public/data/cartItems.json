@@ -1,6 +1,22 @@
 {
   "data": [
     {
+      "cartId": 11,
+      "cartQuantity": 2,
+      "cartUserId": 1,
+      "cartItemId": 1,
+      "itemsName": "엠보싱 비닐장갑 200매aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "itemsThumbnail": "https://www.wiselycompany.com/web/product/tiny/202212/5b6575423fbb6ad38c01daab840447e8.png",
+      "itemsPrice": "2490.000",
+      "optionDescription": [
+        {
+          "content": "blue",
+          "option_id": 2,
+          "categoryName": "Color"
+        }
+      ]
+    },
+    {
       "cartId": 1,
       "cartQuantity": 1,
       "cartUserId": 1,

@@ -9,6 +9,7 @@ const CartItemWrap = ({
   cartItems,
   setCheckedItems,
 }) => {
+  console.log('cartItem :', cartItem);
   const [checked, setChecked] = useState(false);
 
   const quantity = cartItem.cartQuantity;
@@ -50,7 +51,9 @@ const CartItemWrap = ({
     });
     setCartItems(
       cartItems.map(item =>
-        item.cartItemId === cartItem.cartItemId
+        item.cartItemId === cartItem.cartItemId &&
+        item.optionDescription[0].option_id ===
+          cartItem.optionDescription[0].option_id
           ? { ...item, cartQuantity: item.cartQuantity + count }
           : item
       )
