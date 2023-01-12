@@ -1,0 +1,117 @@
+@import '../../../styles/variables';
+
+.comment {
+  display: list-item;
+  padding: 32px 0;
+  border-bottom: 1px solid #d8dde5;
+
+  .mainCommentLeft {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 75%;
+    padding-right: 40px;
+    border-right: 1px solid #d8dde5;
+    vertical-align: top;
+
+    .mainCommentLeftContent {
+      .commentTop {
+        margin-bottom: 8px;
+
+        .shoppingmall {
+          padding: 4px 8px;
+          border: 1px solid #ebeff5;
+          border-radius: 4px;
+          background-color: #fafcff;
+          color: #707680;
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 18px;
+          white-space: nowrap;
+        }
+      }
+      .starDate {
+        display: flex;
+        justify-content: space-between;
+
+        .rateScore {
+          display: flex;
+
+          .starRate {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            color: $color-main;
+          }
+          .veryGood {
+            display: inline-block;
+            margin-left: 8px;
+            color: #14161a;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 20px;
+            vertical-align: text-bottom;
+            white-space: nowrap;
+          }
+        }
+        .uploadDater {
+          position: relative;
+          margin-right: 5px;
+          float: right;
+
+          .uploadDate {
+            display: inline-block;
+            padding: 1px 0;
+            color: #707680;
+          }
+        }
+      }
+      .commentContents {
+        margin-top: 20px;
+        color: #14161a;
+        font-size: 13px;
+        line-height: 18px;
+
+        .commentContent {
+          display: block;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+      .goodToBadClick {
+        display: inline-block;
+        height: 20px;
+        margin-top: 20px;
+        color: #707680;
+
+        .good {
+          margin: 0 4px;
+        }
+        .bad {
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+}
+.mainCommentRight {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 25%;
+  padding-left: 40px;
+  vertical-align: top;
+
+  .whatuserName {
+    margin-bottom: 4px;
+    overflow: hidden;
+    color: #14161a;
+  }
+  .whatProduct {
+    margin-top: 8px;
+    color: #707680;
+  }
+  .whatcount {
+    margin-top: 4px;
+    color: #707680;
+  }
+}

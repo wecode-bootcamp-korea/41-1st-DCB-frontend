@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "comment": "너무 좋아요!",
+    "date": "2022.12.31",
+    "userName": "서지연",
+    "product": "감성 두큰술",
+    "number": 41
+  },
+  {
+    "id": 2,
+    "comment": "너무 좋아요!",
+    "date": "2022.12.31",
+    "userName": "갓종호",
+    "product": "감성 두큰술",
+    "number": 41
+  },
+  {
+    "id": 3,
+    "comment": "너무 좋아요!",
+    "date": "2022.12.31",
+    "userName": "이세윤",
+    "product": "감성 두큰술",
+    "number": 41
+  },
+  {
+    "id": 4,
+    "comment": "너무 좋아요!",
+    "date": "2022.12.31",
+    "userName": "이다혜",
+    "product": "감성 두큰술",
+    "number": 41
+  },
+  {
+    "id": 5,
+    "comment": "너무 좋아요!",
+    "date": "2022.12.31",
+    "userName": "김승",
+    "product": "감성 두큰술",
+    "number": 41
+  },
+  {
+    "id": 6,
+    "comment": "너무 좋아요!",
+    "date": "2022.12.31",
+    "userName": "장찬영",
+    "product": "감성 두큰술",
+    "number": 41
+  }
+]
