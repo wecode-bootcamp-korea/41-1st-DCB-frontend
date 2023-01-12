@@ -4,14 +4,17 @@ import CartTotal from './components/CartTotal/CartTotal';
 import './Cart.scss';
 
 const Cart = () => {
-  console.log('render!!!');
+  console.log('Render!!!!!!!!!!!!!!!!!');
   const [cartItems, setCartItems] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
+  console.log('cartItems :', cartItems);
+  console.log('checkedItems :', checkedItems);
 
   const allCheckedHandler =
     cartItems.length === checkedItems.length && cartItems.length;
 
   const checkedItemHandler = (id, isChecked) => {
+    console.log('cartId :', id);
     if (isChecked) {
       setCheckedItems(prev => [...prev, id]);
     } else {
@@ -20,7 +23,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    fetch('data/cartItems.json', {
+    fetch('http://152.67.208.118:3000/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -29,7 +32,7 @@ const Cart = () => {
       .then(response => response.json())
       .then(cart => {
         setCartItems(cart.data);
-        setCheckedItems(cart.data.map(item => item.cartItemId));
+        setCheckedItems(cart.data.map(item => item.cartId));
       });
   }, []);
 

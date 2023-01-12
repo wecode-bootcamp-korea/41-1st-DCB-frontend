@@ -9,36 +9,31 @@ const CartItemWrap = ({
   cartItems,
   setCheckedItems,
 }) => {
-  console.log('cartItem :', cartItem);
   const [checked, setChecked] = useState(false);
 
   const quantity = cartItem.cartQuantity;
-  const isChecked = checkedItems.includes(cartItem.cartItemId);
+  const isChecked = checkedItems.includes(cartItem.cartId);
 
   const toStrPrice = price => price.toLocaleString();
   const checkHandler = ({ target }) => {
     setChecked(!checked);
-    checkedItemHandler(cartItem.cartItemId, target.checked);
+    checkedItemHandler(cartItem.cartId, target.checked);
   };
   const deleteHandler = () => {
-    fetch(`http://10.58.52.240:3000/carts?itemId=${cartItem.cartItemId}`, {
+    fetch(`http://152.67.208.118:3000/carts?cartId=${cartItem.cartId}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('token'),
       },
     });
-    setCartItems(
-      cartItems.filter(item => item.cartItemId !== cartItem.cartItemId)
-    );
-    setCheckedItems(
-      checkedItems.filter(itemId => itemId !== cartItem.cartItemId)
-    );
+    setCartItems(cartItems.filter(item => item.cartId !== cartItem.cartId));
+    setCheckedItems(checkedItems.filter(cartId => cartId !== cartItem.cartId));
   };
   const quantityHandler = type => {
     if (quantity === 1 && type === 'minus') return;
     const count = type === 'plus' ? 1 : -1;
 
-    fetch(`http://10.58.52.240:3000/carts`, {
+    fetch(`http://152.67.208.118:3000/carts`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -46,7 +41,7 @@ const CartItemWrap = ({
       },
       body: JSON.stringify({
         quantity: `${quantity + count}`,
-        itemId: `${cartItem.cartItemId}`,
+        cartId: `${cartItem.cartId}`,
       }),
     });
     setCartItems(
