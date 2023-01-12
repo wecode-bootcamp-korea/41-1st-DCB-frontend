@@ -1,26 +1,30 @@
 @import '../../../../styles/variables';
 
-.thumbnailImg {
-  width: 165px;
-  height: 165px;
-  border-radius: 5%;
-}
+.recommendItem {
+  cursor: pointer;
 
-.description {
-  width: 165px;
-  margin-top: 13px;
-  padding-left: 4px;
-  overflow: hidden;
-  color: $color-main;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  .name {
-    font-size: 16px;
+  .thumbnailImg {
+    width: 165px;
+    height: 165px;
+    border-radius: 5%;
   }
-  .price {
-    margin-top: 4px;
-    font-size: 18px;
-    font-weight: 800;
+
+  .description {
+    width: 165px;
+    margin-top: 13px;
+    padding-left: 4px;
+    overflow: hidden;
+    color: $color-main;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .name {
+      font-size: 16px;
+    }
+    .price {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 800;
+    }
   }
 }
