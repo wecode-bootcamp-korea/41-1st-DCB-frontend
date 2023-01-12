@@ -4,7 +4,7 @@ import './RecommendItem.scss';
 
 const RecommendItem = ({ item }) => {
   const navigate = useNavigate();
-
+  const toStrPrice = price => price.toLocaleString();
   const handleClickItem = () => {
     navigate(`/details/${item.id}`);
   };
@@ -16,7 +16,7 @@ const RecommendItem = ({ item }) => {
       </a>
       <div className="description">
         <div className="name">{item.product_name}</div>
-        <div className="price">{item.price}원</div>
+        <div className="price">{toStrPrice(parseInt(item.price))}원</div>
       </div>
     </div>
   );
