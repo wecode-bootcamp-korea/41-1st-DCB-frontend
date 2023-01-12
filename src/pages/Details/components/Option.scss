@@ -1,0 +1,106 @@
+.option {
+  .productOptionSelect {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 22px 0;
+    gap: 5%;
+    border-top: 1px solid lightgray;
+
+    .productNameOption {
+      flex: 0 0 70%;
+      width: auto;
+      margin-left: 10px;
+      border: none;
+
+      .optionName {
+        color: #7d7d7d;
+        font-weight: normal;
+        line-height: 18px;
+      }
+    }
+
+    .buttonSelectorDelete {
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: right;
+
+      .buttonSelector {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        width: auto;
+        padding: 0 30px;
+        float: right;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        vertical-align: top;
+
+        .quantityNumber {
+          width: 45px;
+          height: 30px;
+          margin-right: -1px;
+          border: none;
+          line-height: 28px;
+          text-align: center;
+          cursor: default;
+        }
+        .plus {
+          position: absolute;
+          top: 0;
+          right: 0;
+          box-sizing: border-box;
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+          border: none;
+          background-color: transparent;
+          font-size: 20px;
+          font-weight: normal;
+          line-height: 1px;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+        .minus {
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: border-box;
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+          border: none;
+          background-color: transparent;
+          font-size: 20px;
+          font-weight: normal;
+          line-height: 1px;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+      }
+      .closeZone {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 10px 0 0 12px;
+        vertical-align: middle;
+        cursor: pointer;
+
+        .close {
+          box-sizing: border-box;
+          opacity: 60%;
+          color: #7d7d7d;
+        }
+      }
+    }
+    .optionTotalPrice {
+      box-sizing: border-box;
+      width: auto;
+      margin-left: 10px;
+      border: none;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.Description {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+
+  .img {
+    width: 500px;
+    margin: 0px auto;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: top;
+  }
+}
+.longDescription {
+  width: 100%;
+  margin-bottom: 200px;
+  padding: 30px 100px;
+}
+.shippingInformation {
+  margin: 50px 0;
+  padding: 20px 50px;
+  border-bottom: 1px solid lightgray;
+
+  .shippingInformationTextBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    opacity: 60%;
+    cursor: pointer;
+
+    .plusTogle {
+      width: 22px;
+      height: 22px;
+      opacity: 50%;
+    }
+  }
+
+  .deliveryInfo {
+    margin: 50px 0;
+    padding: 0 15px;
+    color: rgb(151, 151, 151);
+    line-height: 25px;
+    .deliver {
+      transform: translateY();
+      transition: all 0.3s;
+    }
+  }
+}
+.exchangeReturn {
+  margin: 50px 0px;
+  padding: 20px 50px 0 50px;
+  border-bottom: 1px solid lightgray;
+
+  .exchangeReturnTextBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    opacity: 60%;
+    cursor: pointer;
+
+    .plusTogle {
+      width: 22px;
+      height: 22px;
+      opacity: 50%;
+    }
+  }
+  .exchangeInfo {
+    margin: 50px 0;
+    padding: 0 10px;
+    color: rgb(151, 151, 151);
+    line-height: 12px;
+  }
+}

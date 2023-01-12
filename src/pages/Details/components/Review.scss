@@ -1,0 +1,141 @@
+@import '../../../styles/variables';
+
+.reteList:first-child .graph .graphScore {
+  width: 79%;
+  background-color: $color-main;
+}
+.reteList:nth-child(2) .graph .graphScore {
+  width: 15%;
+  background-color: $color-main;
+}
+.reteList:nth-child(3) .graph .graphScore {
+  width: 4%;
+  background-color: $color-main;
+}
+.reteList:nth-child(5) .graph .graphScore {
+  width: 4%;
+  background-color: $color-main;
+}
+.reteList:first-child .veryGoodText {
+  font-weight: bold;
+}
+.reteList:first-child .howManyLike {
+  font-weight: bold;
+}
+.reteList:nth-child(n + 2) .veryGoodText {
+  color: #acabab;
+}
+.reteList:nth-child(n + 2) .howManyLike {
+  color: #acabab;
+}
+
+.reviewContent {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 32px;
+
+  .content {
+    margin: 0 auto;
+    font-size: 12px;
+
+    .headerBasic {
+      display: flex;
+      width: 100%;
+      padding: 16px 0;
+      border-bottom: 2px solid #14161a;
+
+      .headerBasicTitle {
+        color: #14161a;
+        font-size: 20px;
+        line-height: 30px;
+
+        .spanHeaderTitle {
+          margin-right: 4px;
+        }
+        .headerTitleNumber {
+          font-weight: bold;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+    .productReviewSummary {
+      padding: 32px 0;
+      border-bottom: 1px solid #ebeff5;
+
+      .productReviewedStar {
+        display: inline-block;
+        width: 399px;
+        border-right: 1px solid #d8dde5;
+
+        .productReviewScore {
+          margin-top: 9px;
+          text-align: center;
+
+          .star {
+            margin: 12px 0;
+            color: $color-main;
+          }
+          .reviewStar {
+            margin-left: 4px;
+            color: $color-main;
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 72px;
+            vertical-align: bottom;
+          }
+        }
+        .likeProduct {
+          margin-top: 8px;
+          color: #14161a;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+      .veryBadToGood {
+        display: inline-block;
+        box-sizing: border-box;
+        width: calc(100% - 399px - 1px);
+        padding-left: 64px;
+        vertical-align: top;
+
+        .veryBadToGoodlist {
+          display: block;
+          margin-block-start: 1em;
+          padding-inline-start: 40px;
+          list-style-type: disc;
+
+          .reteList {
+            display: flex;
+            margin: 4px 0;
+            list-style-type: none;
+
+            .veryGoodText {
+              width: 90px;
+            }
+            .graph {
+              display: inline-block;
+              width: calc(100% - 158px);
+              height: 12px;
+              margin: 3px 0;
+              border-radius: 5px;
+              background-color: #ebeff5;
+
+              .graphScore {
+                height: 100%;
+                border-radius: 5px;
+              }
+            }
+            .howManyLike {
+              width: 64px;
+              margin-left: 12px;
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
