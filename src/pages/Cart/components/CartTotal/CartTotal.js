@@ -3,7 +3,7 @@ import './CartTotal.scss';
 
 const CartTotal = ({ cartItems, checkedItems }) => {
   const totalPrice = cartItems.reduce((totalPrice, item) => {
-    return checkedItems.includes(item.cartItemId)
+    return checkedItems.includes(item.cartId)
       ? totalPrice + item.cartQuantity * parseInt(item.itemsPrice)
       : totalPrice;
   }, 0);
