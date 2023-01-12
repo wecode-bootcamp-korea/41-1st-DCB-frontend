@@ -25,6 +25,7 @@
     width: 83px;
     height: 83px;
     padding: 10px;
+    cursor: pointer;
 
     .thumbnailImg {
       width: 100%;
@@ -41,6 +42,7 @@
 
     .wrap {
       width: 170px;
+      cursor: pointer;
 
       .prdName {
         overflow: hidden;

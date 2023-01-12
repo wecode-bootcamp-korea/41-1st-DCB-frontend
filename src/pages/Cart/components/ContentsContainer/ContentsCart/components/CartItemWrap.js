@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './CartItemWrap.scss';
 
 const CartItemWrap = ({
@@ -14,6 +16,7 @@ const CartItemWrap = ({
   const quantity = cartItem.cartQuantity;
   const isChecked = checkedItems.includes(cartItem.cartId);
 
+  const navigate = useNavigate();
   const toStrPrice = price => price.toLocaleString();
   const checkHandler = ({ target }) => {
     setChecked(!checked);
@@ -55,6 +58,10 @@ const CartItemWrap = ({
     );
   };
 
+  const handleClickItem = () => {
+    navigate(`/details/${cartItem.cartItemId}`);
+  };
+
   return (
     <div className="cartItemWrap">
       <input
@@ -63,17 +70,15 @@ const CartItemWrap = ({
         checked={isChecked}
         onChange={e => checkHandler(e)}
       />
-      <div className="thumbnail">
-        <a href="">
-          <img
-            className="thumbnailImg"
-            src={cartItem.itemsThumbnail}
-            alt={cartItem.itemsName}
-          />
-        </a>
+      <div className="thumbnail" onClick={handleClickItem}>
+        <img
+          className="thumbnailImg"
+          src={cartItem.itemsThumbnail}
+          alt={cartItem.itemsName}
+        />
       </div>
       <div className="prdboxWrap">
-        <div className="wrap">
+        <div className="wrap" onClick={handleClickItem}>
           <div className="prdName">{cartItem.itemsName}</div>
           {cartItem.optionDescription.map(option => (
             <div className="prdOption" key={cartItem.cartItemId}>
