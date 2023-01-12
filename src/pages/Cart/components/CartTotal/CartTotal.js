@@ -15,6 +15,19 @@ const CartTotal = ({ cartItems, checkedItems }) => {
     // TODO: 체크아이템 배열의 길이가 1 이상이면 구매(결제) API 호출
     else {
       console.log('결제 API 호출!!!');
+      console.log('checkedItems :', checkedItems);
+      fetch('http://152.67.208.118:3000/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          Authorization: localStorage.getItem('token'),
+        },
+        body: JSON.stringify({
+          cartId: checkedItems,
+          totalPrice: totalPrice,
+          paymentMethod: 1,
+        }),
+      });
     }
   };
 
