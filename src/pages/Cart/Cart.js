@@ -4,17 +4,12 @@ import CartTotal from './components/CartTotal/CartTotal';
 import './Cart.scss';
 
 const Cart = () => {
-  console.log('===================Render===================');
   const [cartItems, setCartItems] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
-  console.log('cartItems :', cartItems);
-  console.log('checkedItems :', checkedItems);
-
   const allCheckedHandler =
     cartItems.length === checkedItems.length && cartItems.length;
 
   const checkedItemHandler = (id, isChecked) => {
-    console.log('cartId :', id);
     if (isChecked) {
       setCheckedItems(prev => [...prev, id]);
     } else {

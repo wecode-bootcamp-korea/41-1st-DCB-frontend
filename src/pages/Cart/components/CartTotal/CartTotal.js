@@ -19,8 +19,6 @@ const CartTotal = ({
     if (!checkedItems.length) alert('선택된 상품이 없습니다.');
     // TODO: 체크아이템 배열의 길이가 1 이상이면 구매(결제) API 호출
     else {
-      console.log('결제 API 호출!!!');
-      console.log('checkedItems :', checkedItems);
       fetch('http://152.67.208.118:3000/order', {
         method: 'POST',
         headers: {
@@ -43,7 +41,6 @@ const CartTotal = ({
           setCheckedItems([]);
         }
       });
-      // .then(data => console.log(data));
     }
   };
 
