@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ProductsMain } from './components/ProductsMain';
 import { EventImages } from './components/EventImages';
+import { API } from '../../config';
 import './main.scss';
 
 const Main = () => {
@@ -9,9 +10,7 @@ const Main = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/items/?page=&sort=', {
-      method: 'GET',
-    })
+    fetch(`${API.items}/?page=&sort=`)
       .then(res => res.json())
       .then(result => {
         setProductData(result.data);
@@ -19,9 +18,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/items/?page=&sort=cheap', {
-      method: 'GET',
-    })
+    fetch(`${API.items}/?page=&sort=cheap`)
       .then(res => res.json())
       .then(result => {
         setSelectedItems(result.data);

@@ -3,6 +3,7 @@ import UserInput from './component/UserInput';
 import { useNavigate } from 'react-router-dom';
 import { SIGNUP_LIST, AGREE_LIST } from './component/SignupData';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { API } from '../../config';
 import './Signup.scss';
 
 const Signup = () => {
@@ -24,7 +25,7 @@ const Signup = () => {
   const isPasswordCorrect = signupInfo.password === signupInfo.passwordCheck;
   const loginClick = e => {
     e.preventDefault();
-    fetch('http://10.58.52.89:3000/signup', {
+    fetch(`${API.signup}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({

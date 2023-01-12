@@ -13,12 +13,8 @@ export const Category = () => {
   const [searchParams] = useSearchParams();
 
   const setCategoryParams = id => {
-    if (id === 0) {
-      navigate('/');
-    } else {
-      searchParams.set('category', id);
-      navigate(`/item-list?category=${searchParams.get('category')}`);
-    }
+    searchParams.set('category', id);
+    navigate(`/item-list?category=${searchParams.get('category')}`);
   };
 
   return (

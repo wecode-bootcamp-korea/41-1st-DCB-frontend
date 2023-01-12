@@ -1,7 +1,9 @@
 @import '../../../styles/variables';
 
 .product {
-  @include widthHeightSort(328px, 328px);
+  @include widthHeightSort(328px, null);
+  color: $color-main;
+  text-decoration: none;
 
   .productCard {
     position: relative;
