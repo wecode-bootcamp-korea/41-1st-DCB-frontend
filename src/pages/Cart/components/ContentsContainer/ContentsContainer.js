@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ContentsCart from './ContentsCart/ContentsCart';
 import ContentsOrder from './ContentsOrder/ContentsOrder';
-
+import RecommendItem from './RecommendItem';
 import './ContentsContainer.scss';
 
 const ContentsContainer = ({
@@ -13,12 +13,33 @@ const ContentsContainer = ({
   setCartItems,
   setCheckedItems,
 }) => {
-  const [carts, setCarts] = useState([]);
+  const [recommendItems, setRecommendItems] = useState([]);
+  const [randomIndexes, setRandomIndexes] = useState([]);
+
+  const makeRandomIndexes = () => {
+    let randomIndexes = [];
+    let i = 0;
+    while (i < 4) {
+      let n = Math.floor(Math.random() * 11) + 0;
+      if (notSame(n)) {
+        randomIndexes.push(n);
+        i++;
+      }
+    }
+    function notSame(n) {
+      return randomIndexes.every(e => n !== e);
+    }
+    return randomIndexes;
+  };
+
+  useEffect(() => {
+    setRandomIndexes(makeRandomIndexes());
+  }, []);
 
   useEffect(() => {
     fetch('/data/recommend.json')
       .then(res => res.json())
-      .then(data => setCarts(data));
+      .then(data => setRecommendItems(data));
   }, []);
 
   return (
@@ -36,23 +57,11 @@ const ContentsContainer = ({
       <div className="recommend">
         <h2 className="recommendTitle">다른 고객이 함께 구매한 제품</h2>
         <div className="recommendList">
-          {carts.map(item => {
-            return (
-              <div className="recommendListItem" key={item.cartItemId}>
-                <a href="">
-                  <img
-                    className="thumbnailImg"
-                    src={item.itemsThumbnail}
-                    alt=""
-                  />
-                </a>
-                <div className="description">
-                  <div className="name">{item.itemsName}</div>
-                  <div className="price">{item.itemsPrice}원</div>
-                </div>
-              </div>
-            );
-          })}
+          {recommendItems
+            .filter((item, idx) => randomIndexes.includes(idx))
+            .map(item => (
+              <RecommendItem key={item.id} item={item} />
+            ))}
         </div>
       </div>
     </div>
