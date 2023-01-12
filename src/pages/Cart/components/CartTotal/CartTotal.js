@@ -34,7 +34,7 @@ const CartTotal = ({
         if (reponse.status === 400) {
           alert('포인트가 부족합니다.');
         } else {
-          alert('결제 성공');
+          alert('결제 완료.');
           setCartItems(
             cartItems.filter(item => !checkedItems.includes(item.cartId))
           );
