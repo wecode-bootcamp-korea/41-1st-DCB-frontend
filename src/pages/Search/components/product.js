@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import { BsCart3 } from 'react-icons/bs';
 import { API } from '../../../config';
-import './productMain.scss';
+import './product.scss';
 
-export const ProductMain = ({
+export const Product = ({
   id,
   product_name,
   thumbnail,
-  price,
-  option_category_id,
   options,
+  option_category_id,
+  price,
+  contents,
 }) => {
   const navigate = useNavigate();
   const handleClickItem = () => {
@@ -41,15 +42,16 @@ export const ProductMain = ({
       });
   };
   return (
-    <article className="productMain" onClick={handleClickItem}>
+    <article className="productSearch" onClick={handleClickItem}>
       <div className="productCard">
         <img src={thumbnail} alt="product" className="productImage" />
         <div className="cartIcon" onClick={handleClickCart}>
-          <BsCart3 className="cart" size="28px" />
+          <BsCart3 className="cart" size="25px" />
         </div>
       </div>
       <p className="productName">{product_name}</p>
       <p className="productPrice">{Number(price)}원</p>
+      <p className="productDesc">{contents}</p>
     </article>
   );
 };

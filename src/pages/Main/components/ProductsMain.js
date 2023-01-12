@@ -39,15 +39,8 @@ export const ProductsMain = ({ productsName, items }) => {
           className="productLists"
           style={{ transform: `translate(${px}px)` }}
         >
-          {items.map(({ id, product_name, thumbnail, price }) => (
-            <ProductMain
-              className="productCard"
-              key={id}
-              id={id}
-              name={product_name}
-              thumbnail={thumbnail}
-              price={price}
-            />
+          {items.map(items => (
+            <ProductMain className="productCard" key={items.id} {...items} />
           ))}
         </div>
       </div>

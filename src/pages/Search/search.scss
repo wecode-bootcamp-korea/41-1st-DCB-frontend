@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.searchList {
+  @include widthHeightSort(100vw, null);
+  @include flexSort(column, null, center);
+  color: $color-main;
+
+  .titleArea {
+    @include widthHeightSort(1018px, 140px);
+    @include flexSort(null, center, center);
+    margin: 30px 0;
+    font-size: 32px;
+    font-weight: bolder;
+  }
+}

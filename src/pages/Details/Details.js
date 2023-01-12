@@ -32,7 +32,7 @@ const Details = () => {
   const productId = params.id;
 
   const passCart = () => {
-    navigate(Cart);
+    navigate('../Cart/Cart.js');
   };
 
   useEffect(() => {
@@ -45,6 +45,7 @@ const Details = () => {
     })
       .then(response => response.json())
       .then(cart => {
+        console.log(cart.data);
         setCartItems(cart.data);
       });
   }, []);
@@ -67,6 +68,9 @@ const Details = () => {
   };
 
   const methodPicker = () => {
+    if (cartItems.length === 0) {
+      return 'POST';
+    }
     for (let i = 0; i < cartItems.length; i++) {
       if (cartItems[i].cartItemId === Number(productId)) {
         return 'PATCH';
@@ -275,7 +279,13 @@ const Details = () => {
                   <button className="cartBtn" onClick={pass}>
                     장바구니
                   </button>
-                  <button className="submitBtn" onClick={(pass, passCart)}>
+                  <button
+                    className="submitBtn"
+                    onClick={() => {
+                      pass();
+                      passCart();
+                    }}
+                  >
                     구매하기
                   </button>
                 </div>

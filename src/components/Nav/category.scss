@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.category {
+  @include widthHeightSort(270px, 250px);
+  @include positionSort(45px, null, null, 0px);
+  @include flexSort(column, null, null);
+  padding: 10px;
+  border: 1px solid $color-main;
+  background-color: white;
+
+  .categoryList {
+    @include flexSort(null, null, center);
+    padding: 5px;
+    color: $color-main !important;
+    font-size: 16px;
+    text-decoration: none !important;
+    gap: 5px;
+
+    &:hover {
+      background-color: rgba(143, 116, 87, 0.3);
+    }
+  }
+}

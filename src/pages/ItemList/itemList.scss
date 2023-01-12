@@ -1,27 +1,51 @@
 @import '../../styles/variables';
 
 .itemList {
-  @include widthHeightSort(100vw, 1698px);
+  @include widthHeightSort(100vw, null);
   @include flexSort(column, null, center);
+  margin: 30px 0;
+  color: $color-main;
+
   .adBanner {
     @include widthHeightSort(1018px, 193px);
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
     border-radius: 15px;
+    background-color: rgba($color: $color-main, $alpha: 0.3);
+    span {
+      @include positionSort(70px, null, null, 180px);
+      color: $color-main;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 60px;
+      font-weight: bolder;
+    }
+
+    .bannerImgRight {
+      @include widthHeightSort(300px, 230px);
+      @include positionSort(null, 100px, -20px, null);
+    }
   }
 
   .titleArea {
     @include widthHeightSort(1018px, 140px);
     @include flexSort(null, center, center);
-    margin-bottom: 20px;
+    margin: 20px 0;
     font-size: 32px;
+    font-weight: bolder;
   }
 
   .sort {
-    @include widthHeightSort(1018px, 40px);
+    @include widthHeightSort(1010px, 60px);
     @include flexSort(null, space-between, null);
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-main;
 
     .selectList {
       width: 100px;
+      border-color: $color-main;
+      color: $color-main;
       text-align: center;
     }
   }
