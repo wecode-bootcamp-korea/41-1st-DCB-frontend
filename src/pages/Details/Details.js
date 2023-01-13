@@ -39,8 +39,7 @@ const Details = () => {
     fetch(`${API.cart}`, {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+        Authorization: localStorage.getItem('Token'),
       },
     })
       .then(response => response.json())
@@ -129,8 +128,7 @@ const Details = () => {
       method: methodPicker(),
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        authorization:
-          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+        Authorization: localStorage.getItem('Token'),
       },
       body: JSON.stringify({
         optionId: fetchOptionId,

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../../../../../config';
 import './CartItemWrap.scss';
-import { API } from '../../../../../../config';
 
 const CartItemWrap = ({
   cartItem,

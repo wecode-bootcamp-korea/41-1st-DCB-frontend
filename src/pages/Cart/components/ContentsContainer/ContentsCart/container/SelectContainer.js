@@ -1,7 +1,6 @@
 import React from 'react';
 import { API } from '../../../../../../config';
 import './SelectContainer.scss';
-import { API } from '../../../../../../config';
 
 const SelectContainer = ({
   cartItems,
