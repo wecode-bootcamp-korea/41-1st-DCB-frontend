@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ContentsContainer from './components/ContentsContainer/ContentsContainer';
 import CartTotal from './components/CartTotal/CartTotal';
+import { API } from '../../config';
 import './Cart.scss';
 
 const Cart = () => {
@@ -18,7 +19,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    fetch('http://152.67.208.118:3000/carts', {
+    fetch(`${API.cart}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('Token'),

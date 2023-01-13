@@ -1,4 +1,5 @@
 import React from 'react';
+import { API } from '../../../../config';
 import './CartTotal.scss';
 
 const CartTotal = ({

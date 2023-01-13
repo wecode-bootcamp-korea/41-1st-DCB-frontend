@@ -1,4 +1,5 @@
 import React from 'react';
+import { API } from '../../../../../../config';
 import './SelectContainer.scss';
 
 const SelectContainer = ({
@@ -19,7 +20,7 @@ const SelectContainer = ({
   const deleteHandler = () => {
     const query = checkedItems.map(cartId => `cartId=${cartId}`).join('&');
 
-    fetch(`http://152.67.208.118:3000/carts?${query}`, {
+    fetch(`${API.cart}?${query}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('Token'),

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { API } from '../../../../../../config';
 import './CartItemWrap.scss';
 
 const CartItemWrap = ({
@@ -23,7 +23,7 @@ const CartItemWrap = ({
     checkedItemHandler(cartItem.cartId, target.checked);
   };
   const deleteHandler = () => {
-    fetch(`http://152.67.208.118:3000/carts?cartId=${cartItem.cartId}`, {
+    fetch(`${API.cart}?cartId=${cartItem.cartId}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('Token'),
@@ -36,7 +36,7 @@ const CartItemWrap = ({
     if (quantity === 1 && type === 'minus') return;
     const count = type === 'plus' ? 1 : -1;
 
-    fetch(`http://152.67.208.118:3000/carts`, {
+    fetch(`${API.cart}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
