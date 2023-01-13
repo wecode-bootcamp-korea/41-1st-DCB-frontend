@@ -27,7 +27,7 @@ const ProductDescription = () => {
     fetch(`${API.items}/${productId}`)
       .then(result => result.json())
       .then(data => {
-        setproductDeatils(data.data);
+        setproductDeatils(data.data[0]);
       });
   }, []);
 

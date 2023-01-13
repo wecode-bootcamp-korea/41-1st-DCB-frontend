@@ -178,7 +178,7 @@ const Details = () => {
                         </button>
                         <input
                           className="quantityNumber"
-                          value={productTheNumber}
+                          value={productTheNumber || ''}
                           readOnly
                         />
                         <button className="plus" onClick={incrementCount}>
