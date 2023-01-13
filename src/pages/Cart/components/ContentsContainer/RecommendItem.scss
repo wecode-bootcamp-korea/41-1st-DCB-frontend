@@ -1,0 +1,42 @@
+@import '../../../../styles/variables';
+
+.recommendItem {
+  cursor: pointer;
+
+  .img {
+    width: 165px;
+    height: 165px;
+    overflow: hidden;
+    border-radius: 5%;
+
+    .thumbnailImg {
+      width: 165px;
+      height: 165px;
+      border-radius: 5%;
+    }
+
+    .thumbnailImg:hover {
+      transform: scale(1.15);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .description {
+    width: 165px;
+    margin-top: 13px;
+    padding-left: 4px;
+    overflow: hidden;
+    color: $color-main;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .name {
+      font-size: 16px;
+    }
+    .price {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+  }
+}

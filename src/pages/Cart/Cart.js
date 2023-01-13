@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ContentsContainer from './components/ContentsContainer/ContentsContainer';
 import CartTotal from './components/CartTotal/CartTotal';
+import { API } from '../../config';
 import './Cart.scss';
 
 const Cart = () => {
-  console.log('render!!!');
   const [cartItems, setCartItems] = useState([]);
   const [checkedItems, setCheckedItems] = useState([]);
-
   const allCheckedHandler =
     cartItems.length === checkedItems.length && cartItems.length;
 
@@ -20,16 +19,16 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    fetch('data/cartItems.json', {
+    fetch(`${API.cart}`, {
       method: 'GET',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
     })
       .then(response => response.json())
       .then(cart => {
         setCartItems(cart.data);
-        setCheckedItems(cart.data.map(item => item.cartItemId));
+        setCheckedItems(cart.data.map(item => item.cartId));
       });
   }, []);
 
@@ -45,7 +44,12 @@ const Cart = () => {
             setCartItems={setCartItems}
             setCheckedItems={setCheckedItems}
           />
-          <CartTotal cartItems={cartItems} checkedItems={checkedItems} />
+          <CartTotal
+            cartItems={cartItems}
+            checkedItems={checkedItems}
+            setCartItems={setCartItems}
+            setCheckedItems={setCheckedItems}
+          />
         </div>
       </div>
     </div>
