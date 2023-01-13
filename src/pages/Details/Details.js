@@ -36,29 +36,29 @@ const Details = () => {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.240:3000/carts`, {
+    fetch(`${API.cart}`, {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+        Authorization: localStorage.getItem('Token'),
       },
     })
       .then(response => response.json())
       .then(cart => {
-        console.log(cart.data);
         setCartItems(cart.data);
       });
   }, []);
-  console.log(cartItems);
 
   useEffect(() => {
-    fetch(`http://10.58.52.240:3000/items/${productId}`)
+    fetch(`${API.items}/${productId}`)
       .then(result => {
         return result.json();
       })
       .then(data => {
-        setItem(data.data);
-        setOptions(data.data.options);
+        setItem(data.data[0]);
+        console.log(data);
+        console.log('a', item);
+        console.log(data.data[0]);
+        setOptions(data.data[0].options);
       });
   }, [productId]);
 
@@ -124,12 +124,11 @@ const Details = () => {
 
   const pass = () => {
     console.log(methodPicker());
-    fetch(`http://10.58.52.240:3000/carts`, {
+    fetch(`${API.cart}`, {
       method: methodPicker(),
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        authorization:
-          'eyJhbGciOiJIUzI1NiJ9.NA.BTas9NAaYhQqppm4rSzCAqkvmLEO-Z6xVtYuKDnQvxI',
+        Authorization: localStorage.getItem('Token'),
       },
       body: JSON.stringify({
         optionId: fetchOptionId,
@@ -142,7 +141,7 @@ const Details = () => {
   const addCartAlert = () => {
     return alert('장바구니에 추가하였습니다.');
   };
-
+  console.log(options);
   return (
     <div className="detail">
       <div className="contents">
@@ -177,7 +176,7 @@ const Details = () => {
                         </button>
                         <input
                           className="quantityNumber"
-                          value={productTheNumber}
+                          value={productTheNumber || ''}
                           readOnly
                         />
                         <button className="plus" onClick={incrementCount}>

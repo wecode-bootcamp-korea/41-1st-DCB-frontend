@@ -24,10 +24,10 @@ const ProductDescription = () => {
   const productId = params.id;
 
   useEffect(() => {
-    fetch(`http://10.58.52.240:3000/items/${productId}`)
+    fetch(`${API.items}/${productId}`)
       .then(result => result.json())
       .then(data => {
-        setproductDeatils(data.data);
+        setproductDeatils(data.data[0]);
       });
   }, []);
 
