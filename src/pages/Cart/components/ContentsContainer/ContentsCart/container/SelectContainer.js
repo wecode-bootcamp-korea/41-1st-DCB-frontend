@@ -1,4 +1,5 @@
 import React from 'react';
+import { API } from '../../../../../../config';
 import './SelectContainer.scss';
 
 const SelectContainer = ({
@@ -13,16 +14,16 @@ const SelectContainer = ({
     if (allCheckedHandler) {
       setCheckedItems([]);
     } else {
-      setCheckedItems(cartItems.map(item => item.cartItemId));
+      setCheckedItems(cartItems.map(item => item.cartId));
     }
   };
   const deleteHandler = () => {
-    const query = checkedItems.map(itemId => `itemId=${itemId}`).join('&');
+    const query = checkedItems.map(cartId => `cartId=${cartId}`).join('&');
 
-    fetch(`http://10.58.52.240:3000/carts?${query}`, {
+    fetch(`${API.cart}?${query}`, {
       method: 'DELETE',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
     })
       .then(response => response.json())
@@ -30,9 +31,7 @@ const SelectContainer = ({
         // 응답에대한 처리 코드
       });
 
-    setCartItems(
-      cartItems.filter(item => !checkedItems.includes(item.cartItemId))
-    );
+    setCartItems(cartItems.filter(item => !checkedItems.includes(item.cartId)));
     setCheckedItems([]);
   };
 

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { API } from '../../../../../../config';
 import './CartItemWrap.scss';
 
 const CartItemWrap = ({
@@ -9,44 +11,40 @@ const CartItemWrap = ({
   cartItems,
   setCheckedItems,
 }) => {
-  console.log('cartItem :', cartItem);
   const [checked, setChecked] = useState(false);
 
   const quantity = cartItem.cartQuantity;
-  const isChecked = checkedItems.includes(cartItem.cartItemId);
+  const isChecked = checkedItems.includes(cartItem.cartId);
 
+  const navigate = useNavigate();
   const toStrPrice = price => price.toLocaleString();
   const checkHandler = ({ target }) => {
     setChecked(!checked);
-    checkedItemHandler(cartItem.cartItemId, target.checked);
+    checkedItemHandler(cartItem.cartId, target.checked);
   };
   const deleteHandler = () => {
-    fetch(`http://10.58.52.240:3000/carts?itemId=${cartItem.cartItemId}`, {
+    fetch(`${API.cart}?cartId=${cartItem.cartId}`, {
       method: 'DELETE',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
     });
-    setCartItems(
-      cartItems.filter(item => item.cartItemId !== cartItem.cartItemId)
-    );
-    setCheckedItems(
-      checkedItems.filter(itemId => itemId !== cartItem.cartItemId)
-    );
+    setCartItems(cartItems.filter(item => item.cartId !== cartItem.cartId));
+    setCheckedItems(checkedItems.filter(cartId => cartId !== cartItem.cartId));
   };
   const quantityHandler = type => {
     if (quantity === 1 && type === 'minus') return;
     const count = type === 'plus' ? 1 : -1;
 
-    fetch(`http://10.58.52.240:3000/carts`, {
+    fetch(`${API.cart}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('Token'),
       },
       body: JSON.stringify({
         quantity: `${quantity + count}`,
-        itemId: `${cartItem.cartItemId}`,
+        cartId: `${cartItem.cartId}`,
       }),
     });
     setCartItems(
@@ -60,6 +58,10 @@ const CartItemWrap = ({
     );
   };
 
+  const handleClickItem = () => {
+    navigate(`/details/${cartItem.cartItemId}`);
+  };
+
   return (
     <div className="cartItemWrap">
       <input
@@ -68,21 +70,20 @@ const CartItemWrap = ({
         checked={isChecked}
         onChange={e => checkHandler(e)}
       />
-      <div className="thumbnail">
-        <a href="">
-          <img
-            className="thumbnailImg"
-            src={cartItem.itemsThumbnail}
-            alt={cartItem.itemsName}
-          />
-        </a>
+      <div className="thumbnail" onClick={handleClickItem}>
+        <img
+          className="thumbnailImg"
+          src={cartItem.itemsThumbnail}
+          alt={cartItem.itemsName}
+        />
       </div>
       <div className="prdboxWrap">
-        <div className="wrap">
+        <div className="wrap" onClick={handleClickItem}>
           <div className="prdName">{cartItem.itemsName}</div>
           {cartItem.optionDescription.map(option => (
             <div className="prdOption" key={cartItem.cartItemId}>
-              {option.categoryName}: {option.content}
+              {option.categoryName ? `${option.categoryName}:` : ` `}{' '}
+              {option.content}
             </div>
           ))}
         </div>
