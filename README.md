@@ -106,6 +106,6 @@
 
 ## Team
 
-https://github.com/mia-seo | https://github.com/sally-dot |https://github.com/seyoonleee|https://github.com/Jangchan0|https://github.com/5ERN |https://github.com/JongHoB |
+[<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>](https://github.com/mia-seo) | [<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>](https://github.com/sally-dot) |[<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>](https://github.com/seyoonleee)|[<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>](https://github.com/Jangchan0)|[<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>](https://github.com/5ERN) |[<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>](https://github.com/JongHoB) |
 ---|---|---|---|---|---|
 서지연(FE)|이다혜(FE)|이세윤(FE)|장찬영(FE)|김승(BE)|백종호(BE)|
