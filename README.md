@@ -28,9 +28,11 @@
 | 로그인                   | <img src = "https://user-images.githubusercontent.com/78012131/212284013-5be69786-5fe0-48af-aed8-588fde1360af.gif" width = "400px"> | 프론트엔드:이다혜/백엔드:백종호       |
 | 카테고리 & 아이템 리스트 | <img src = "https://user-images.githubusercontent.com/78012131/212270912-985d50e9-81b0-4c0d-87e4-051aa381b416.gif" width = "400px"> | 프론트엔드:서지연/백엔드:백종호       |
 | 검색                     | <img src = "https://user-images.githubusercontent.com/78012131/212270879-3f34fe3c-e3cb-404d-b39f-0c86a0113bc9.gif" width = "400px"> | 프론트엔드:서지연/백엔드:백종호       |
-| 장바구니                 |                                                                                                                                     | 프론트엔드:이세윤/백엔드:김 승        |
+| 장바구니 추천상품          | <img src = "https://user-images.githubusercontent.com/118165018/212543416-39fa5686-30c1-4e08-aa1b-016be8681a72.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승        |
+| 장바구니 수량 조절         | <img src = "https://user-images.githubusercontent.com/118165018/212543514-98c962f4-6143-477d-8448-ff47f5aa4b94.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승        |
+| 장바구니 삭제             | <img src = "https://user-images.githubusercontent.com/118165018/212543507-89e6fd56-0040-4174-8d97-567d9ac0a0f2.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승        |
+| 결제                    | <img src = "https://user-images.githubusercontent.com/118165018/212543511-200eb22b-f04d-4ee4-8717-89a64f373276.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승/백종호 |
 | 상세 페이지              | <img src = "https://user-images.githubusercontent.com/78012131/212272684-4238aad5-04ad-4086-857b-f851aea02129.gif" width = "400px"> | 프론트엔드:장찬영/백엔드:김           |
-| 결제                     |                                                                                                                                     | 프론트엔드:이세윤/백엔드:김 승/백종호 |
 | 네비게이션 바            | <img src = "https://user-images.githubusercontent.com/78012131/212284028-5cd81f7c-d12a-4a9f-a648-6240028a5670.gif" width = "400px"> | 프론트엔드:이다혜                     |
 | 마이페이지               | <img src = "https://user-images.githubusercontent.com/78012131/212284620-95afec86-d3cf-49b3-901c-0ec7c2decdff.gif" width = "400px"> | 프론트엔드:이다혜                     |
 | Footer                   | <img src = "https://user-images.githubusercontent.com/78012131/212285091-b0e6f717-cf88-4f96-8d74-e3d06733d98d.gif" width = "400px"> | 프론트엔드:이다혜                     |
@@ -41,20 +43,34 @@
 
 ## 기술 스택
 
-백엔드
+백엔드: 
+<img src="https://img.shields.io/badge/Node.js-339933?style=flat&amp;logo=Node.js&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Express-000000?style=flat&amp;logo=Express&amp;logoColor=white">
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&amp;logo=MySQL&amp;logoColor=white">
+<img src="https://img.shields.io/badge/JWT-CC6699?style=flat&amp;logo=JSON&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Dbmate-009DC7?style=flat&amp;logo=Bcrypt&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Bcrypt-CA424?style=flat&amp;logo=Bcrypt&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Oracle Cloud Infrastructure-F80000?style=flat&amp;logo=Oracle&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Nodemon-76D04B?style=flat&amp;logo=Nodemon&amp;logoColor=white">
+<img src="https://camo.githubusercontent.com/5504b994073478321bda246013e7f4bc16c5b0850e21da685ec55000748c4d59/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f547970654f524d2d4538333532343f7374796c653d666c61742d737175617265" alt="typeorm Badge" data-canonical-src="https://img.shields.io/badge/TypeORM-E83524?style=flat-square" style="max-width: 100%;">
 
-- Express
-- Node.js
-- TYPEORM
-- JWT
-- BCRYPT
-- ORACLE CLOUD
+프론트엔드: 
+<img src="https://img.shields.io/badge/Javscript-F7DF1E?style=flat&amp;logo=javascript&amp;logoColor=white">
+<img src="https://img.shields.io/badge/React.js-61DAFB?style=flat&amp;logo=React&amp;logoColor=white">
+<img src="https://img.shields.io/badge/sass-CC6699?style=flat&amp;logo=sass&amp;logoColor=white">
+<img src="https://img.shields.io/badge/React Router-CA4245?style=flat&amp;logo=ReactRouter&amp;logoColor=white">
 
-프론트엔드
+COMMON: 
+<img src="https://img.shields.io/badge/Git-F05032?style=flat&amp;logo=Git&amp;logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&amp;logo=GitHub&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Prettier-F7B93E?style=flat&amp;logo=prettier&amp;logoColor=white">
+<img src="https://img.shields.io/badge/RestfulAPI-F7533E?style=flat&amp;logo=RestfulAPII&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Slack-4A154B?style=flat&amp;logo=Slack&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Trello-0052CC?style=flat&amp;logo=Trello&amp;logoColor=white">
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&amp;logo=Notion&amp;logoColor=white">
+<img src="https://img.shields.io/badge/VSCode-007ACC?style=flat&amp;logo=Visual Studio Code&amp;logoColor=white">
+<img src="https://img.shields.io/badge/.env-ECD53F?style=for-the-badge&logo=.env&logoColor=white">
 
-- React
-- React-Router
-- SASS
 
 ## 구현 사항 설명
 

@@ -50,7 +50,7 @@ const SelectContainer = ({
         className="selectedDelete"
         type="button"
         onClick={deleteHandler}
-        disabled={cartItems.length === 0}
+        disabled={cartItems.length === 0 || checkedItems.length === 0}
       >
         선택삭제
       </button>
