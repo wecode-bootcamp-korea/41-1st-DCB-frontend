@@ -64,7 +64,7 @@ const Main = () => {
 export default Main;
 
 const EVENTIMAGES = [
-  { id: 1, src: './images/10.jpg', alt: '하늘' },
-  { id: 2, src: './images/12.jpg', alt: '바다' },
-  { id: 3, src: './images/14.jpg', alt: '하늘과 바다' },
+  { id: 1, src: './images/10.JPG', alt: '하늘' },
+  { id: 2, src: './images/12.JPG', alt: '바다' },
+  { id: 3, src: './images/14.JPG', alt: '하늘과 바다' },
 ];
