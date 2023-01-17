@@ -32,7 +32,7 @@
 | 장바구니 수량 조절         | <img src = "https://user-images.githubusercontent.com/118165018/212543514-98c962f4-6143-477d-8448-ff47f5aa4b94.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승        |
 | 장바구니 삭제             | <img src = "https://user-images.githubusercontent.com/118165018/212543507-89e6fd56-0040-4174-8d97-567d9ac0a0f2.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승        |
 | 결제                    | <img src = "https://user-images.githubusercontent.com/118165018/212543511-200eb22b-f04d-4ee4-8717-89a64f373276.gif" width = "400px"> | 프론트엔드:이세윤/백엔드:김 승/백종호 |
-| 상세 페이지              | <img src = "https://user-images.githubusercontent.com/78012131/212272684-4238aad5-04ad-4086-857b-f851aea02129.gif" width = "400px"> | 프론트엔드:장찬영/백엔드:김           |
+| 상세 페이지              | <img src = "https://user-images.githubusercontent.com/78012131/212272684-4238aad5-04ad-4086-857b-f851aea02129.gif" width = "400px"> | 프론트엔드:장찬영/백엔드:김 승          |
 | 네비게이션 바            | <img src = "https://user-images.githubusercontent.com/78012131/212284028-5cd81f7c-d12a-4a9f-a648-6240028a5670.gif" width = "400px"> | 프론트엔드:이다혜                     |
 | 마이페이지               | <img src = "https://user-images.githubusercontent.com/78012131/212284620-95afec86-d3cf-49b3-901c-0ec7c2decdff.gif" width = "400px"> | 프론트엔드:이다혜                     |
 | Footer                   | <img src = "https://user-images.githubusercontent.com/78012131/212285091-b0e6f717-cf88-4f96-8d74-e3d06733d98d.gif" width = "400px"> | 프론트엔드:이다혜                     |
